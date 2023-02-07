@@ -1,6 +1,7 @@
 ﻿using GameStop.DAL;
 using GameStop.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,10 +18,12 @@ namespace GameStop.Controllers
             _context = context;
         }
 
-        public IActionResult Index(int? id)
+        public async Task<IActionResult> ProductIndex(int? id)
         {
+            Product product = await _context.Products.Include(p => p.ProductImages).FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == id);
 
-            return View();
+                return View();
+            
         }
     }
 }
