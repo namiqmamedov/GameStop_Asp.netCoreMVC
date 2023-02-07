@@ -1,0 +1,177 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | GameStop</title>
+    <link rel="stylesheet" href="~/assets/style/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css” />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+          integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+          integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/dwfa874e29/images/favicons/favicon.ico">
+</head>
+
+
+
+<div id="cart-section-product" class="cartSection">
+    <div class="cart-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="cart-text">
+                    <h1 class="name-cart">Your cart</h1>
+                    <span class="countProduct">(2 products)</span>
+                </div>
+                <div class="cart-items">
+
+                    <div class="cartBox">
+                        <div class="all-details d-flex">
+                            <div class="leftDetail">
+                                <div class="product-img">
+                                    <a href="./productDetails.html"><img src="https://media.gamestop.com/i/gamestop/11179571/UNCHARTED-Legacy-of-Thieves-Collection----PlayStation-5?$thumb$" alt="img"></a>
+                                </div>
+                                <div class="product-details">
+                                    <div class="item-attributes">
+                                        <div class="product-name">
+                                            <a href="./productDetails.html"><h3 class="product-title">UNCHARTED: Legacy of Thieves Collection - PlayStation 5</h3></a>
+                                        </div>
+                                        <div class="product-condition">
+                                            <span class="condition">Condition</span>
+                                            <span class="condition-name">Pre-Owned</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rightDetail">
+                                <div class="qtyOrder">
+                                    <select class="selectpicker">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="remove-item">
+                                    <div class="item-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" fill="none" stroke-miterlimit="10"><path d="M20 9v12a2 2 0 01-2 2H6a2 2 0 01-2-2V9M1 5h22M12 12v6M8 12v6M16 12v6M8 5V1h8v4"></path></g></svg>
+                                    </div>
+                                </div>
+                                <div class="price-section">
+                                    <div class="currentPrice">
+                                        <span class="price-current-main">$ 37.99</span>
+                                    </div>
+                                    <div class="oldPrice">
+                                        <span class="price-old-main">$ 65.12</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="all-details d-flex">
+                            <div class="leftDetail">
+                                <div class="product-img">
+                                    <a href="./productDetails.html"><img src="https://media.gamestop.com/i/gamestop/11097389/The-Last-of-Us-Part-II---PlayStation-4?$thumb$"></a>
+                                </div>
+                                <div class="product-details">
+                                    <div class="item-attributes">
+                                        <div class="product-name">
+                                            <a href="./productDetails.html"><h3 class="product-title">The Last of Us Part II - PlayStation 4</h3></a>
+                                        </div>
+                                        <div class="product-condition">
+                                            <span class="condition">Condition</span>
+                                            <span class="condition-name">New</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rightDetail">
+                                <div class="qtyOrder">
+                                    <select class="selectpicker">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="remove-item">
+                                    <div class="item-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" fill="none" stroke-miterlimit="10"><path d="M20 9v12a2 2 0 01-2 2H6a2 2 0 01-2-2V9M1 5h22M12 12v6M8 12v6M16 12v6M8 5V1h8v4"></path></g></svg>
+                                    </div>
+                                </div>
+                                <div class="price-section">
+                                    <div class="currentPrice">
+                                        <span class="price-current-main">$ 56.30</span>
+                                    </div>
+                                    <div class="oldPrice">
+                                        <span class="price-old-main">$ 70.39</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="priceBox">
+                        <div class="allPrice">
+                            <div class="product-price">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col order-summary">
+                                            <h2 class="mb-2 order-summary">Order Summary</h2>
+
+                                            <div class="save-price">
+                                                You Save:
+                                                <span class="save-price-main">42.22 USD</span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-8">
+
+                                                    <div class="cart-price-section">
+                                                        <p class="font-bold sub-title-os">
+                                                            Total Price
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p class="cart-total-price"> $94.29</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="checkout-and-pay col-11">
+                                                <a class="checkout-btn" asp-controller="cart" asp-action="checkout" role="button">
+                                                    <span class="checkout-text">
+                                                        Proceed To Checkout
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

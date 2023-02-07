@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consoles, Collectibles, Video Games, and More – Buy, Sell or Trade | GameStop</title>
+  <link rel="stylesheet" href="/style/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css”/> <link
+    rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+    integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+    integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/dwfa874e29/images/favicons/favicon.ico">
+</head>
+
+<body>
+  
+  <!-- start header -->
+
+  <div class="header-banner">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand p-3" href="#">FREE 1-3 Day Shipping Over $59</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="text-right d-flex">
+          <div class="shopping">
+            <a href="#" style="margin: 0 15px;">
+              <i class="fa-solid fa-shop"></i>
+              Ross Henderson Shopping Center - GameStop
+            </a>
+          </div>
+          <div class="check-order">
+            <a href="~/assets/account.html">
+              <i style="font-size: 15.5px;" class="fa-solid fa-clipboard-list"></i>
+              Check an Order
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+    </nav>
+  </div>
+
+  <div class="promo-header">
+    <div class="promo">
+      <div class="text">
+        <a href="~/assets/powerup.html">
+          <p>Take An Extra 20% Off</p>
+          <span class="d-flex price">
+
+            <p>Clearance Prices.*</p>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="header-main">
+    <div class="container-fluid">
+      <div class="main-header">
+        <div class="header-wrapper">
+          <nav>
+            <input type="checkbox" id="menu" name="menu" class="m-menu__checkbox">
+            <label id="mMenu" class="m-menu__toggle" for="menu" onclick="topFunction()">
+              <svg class="hamburger" width="39" height="28" viewBox="0 0 24 24" fill="none" stroke="#000000"
+                stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
+                <line x1="1" y1="12" x2="21" y2="12"></line>
+                <line x1="1" y1="6" x2="21" y2="6"></line>
+                <line x1="1" y1="18" x2="21" y2="18"></line>
+              </svg>
+              <span id="m-menu" class="d-flex">Menu</span>
+            </label>
+            <label class="m-menu__overlay" for="menu"></label>
+            <div id="menu1" class="m-menu">
+              <div id="menu-header" class="m-menu__header">
+                <label class="m-menu__toggle" for="menu">
+                  <svg class="close" width="25" height="35" viewBox="0 0 24 24" fill="none" stroke="#000000"
+                    stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </label>
+                <span>Menu</span>
+              </div>
+              <div class="all-menu">
+                <div class="store-container">
+                  <a href="~/assets/trade.html">
+                    <div class="store d-flex">
+                      <div class="store-header">
+                        <span class="store-name">Ross Henderson Shopping Center - GameStop</span>
+
+                        <br>
+                        <span class="store-time">Opens at CL:OS</span>
+                      </div>
+                      <div class="store-icon">
+                        <i class="fa-solid fa-shop"></i>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="category-header">
+                  Shop By Category
+                </div>
+                <ul id="menuUl" class="menu-ul" onclick="topNav()">
+
+                  <li>
+                    <label class="a-label__chevron" for="item-2">Video Games</label>
+                    <input type="checkbox" id="item-2" name="item-2" class="m-menu__checkbox">
+                    <div id="m-menu2" class="m-menu">
+                      <div class="m-menu__header">
+                        <div class="back-label">
+                          <label onclick="backNav()" class="m-menu__toggle" for="item-2">
+                            <i id="backNav" class="fa-solid fa-chevron-left"></i>
+                            </svg>
+                            <span class="prev">Back</span>
+                          </label>
+                
+                        </div>
+
+                      </div>
+                      <ul class="menu-ul-1">
+                        <div class="category-games">
+                          <a href="">
+                            <span>Video Games</span>
+                          </a>
+                        </div>
+
+                        <li><label><a href="~/assets/xbox-X.html">Xbox Series X|S</a></label></li>
+                        <li><label><a href="~/assets/xbox-one..html">Xbox One</a></label></li>
+                        <li><label><a href="~/assets/ps-5.html">Playstation 5</a></label></li>
+                        <li><label><a href="~/assets/ps-4.html">Playstation 4</a></label></li>
+                        <li><label><a href="~/assets/nintendo.html">Nintendo Switch</a></label></li>
+                        <li><label><a href="~/assets/pre-owned-games.html">Pre Owned Games</a></label></li>
+                        <li><label><a href="~/assets/retro-gaming.html">Retro Gaming</a></label></li>
+                    </div>
+                  </li>
+
+                  <li>
+                    <label class="a-label__chevron" for="item-3">Consoles & Hardware</label>
+                    <input type="checkbox" id="item-3" name="item-3" class="m-menu__checkbox">
+                    <div id="m-menu2" class="m-menu">
+                      <div class="m-menu__header">
+                        <div class="back-label">
+                          <label onclick="backNav()" class="m-menu__toggle" for="item-3">
+                            <i id="backNav" class="fa-solid fa-chevron-left"></i>
+                            </svg>
+                            <span class="prev">Back</span>
+                          </label>
+                        </div>
+                      </div>
+                      <ul class="menu-ul-1">
+                        <div class="category-games">
+                          <a href="#">
+                            <span>Consoles & Hardware</span>
+                          </a>
+                        </div>
+
+                        <li><label><a href="~/assets/xbox-x-console.html">Xbox Series X|S</a></label></li>
+                        <li><label><a href="~/assets/xbox-one-console.html">Xbox One</a></label></li>
+                        <li><label><a href="~/assets/ps-5-console.html">Playstation 5</a></label></li>
+                        <li><label><a href="~/assets/ps-4-console.html">Playstation 4</a></label></li>
+                        <li><label><a href="~/assets/nintendo-console.html">Nintendo Switch</a></label></li>
+                        <li><label><a href="~/assets/vr-hardware.html">Virtual Reality</a></label></li>
+                        <li><label><a href="~/assets/arcade-hardware.html">Arcade</a></label></li>
+                    </div>
+                  </li>
+
+                  <li>
+                    <label class="a-label__chevron" for="item-4">Gaming Accessories</label>
+                    <input type="checkbox" id="item-4" name="item-4" class="m-menu__checkbox">
+                    <div id="m-menu2" class="m-menu">
+                      <div class="m-menu__header">
+                        <div class="back-label">
+                          <label onclick="backNav()" class="m-menu__toggle" for="item-4">
+                            <i id="backNav" class="fa-solid fa-chevron-left"></i>
+                            </svg>
+                            <span class="prev">Back</span>
+                          </label>
+                        </div>
+                      </div>
+                      <ul class="menu-ul-1">
+                        <div class="category-games">
+                          <a href="#">
+                            <span>Gaming Accessories</span>
+                          </a>
+                        </div>
+
+                        <li><label><a href="~/assets/cases-stands.html">Cases & Stands</a></label></li>
+                        <li><label><a href="~/assets/chargers-cables.html">Chargers & Cables</a></label></li>
+                        <li><label><a href="~/assets/controllers.html">Controllers</a></label></li>
+                        <li><label><a href="~/assets/gaming-headsets.html">Gaming Headsets</a></label></li>
+                        <li><label><a href="~/assets/memory.html">Memory</a></label></li>
+                        <li><label><a href="~/assets/racing-wheels.html">Racing Wheels</a></label></li>
+                        <li><label><a href="~/assets/skins.html">Skins</a></label></li>
+                        <li><label><a href="~/assets/thumb-grips.html">Thumb Grips</a></label></li>
+                    </div>
+                  </li>
+
+                  <li>
+                    <label class="a-label__chevron" for="item-5">PC</label>
+                    <input type="checkbox" id="item-5" name="item-5" class="m-menu__checkbox">
+                    <div id="m-menu2" class="m-menu">
+                      <div class="m-menu__header">
+                        <div class="back-label">
+                          <label onclick="backNav()" class="m-menu__toggle" for="item-5">
+                            <i id="backNav" class="fa-solid fa-chevron-left"></i>
+                            </svg>
+                            <span class="prev">Back</span>
+                          </label>
+                        </div>
+                      </div>
+                      <ul class="menu-ul-1">
+                        <div class="category-games">
+                          <a href="#">
+                            <span>PC</span>
+                          </a>
+                        </div>
+                        <li><label><a href="~/assets/controller.html">Controllers</a></label></li>
+                        <li><label><a href="~/assets/component.html">Components</a></label></li>
+                        <li><label><a href="~/assets/desktop.html">Desktops</a></label></li>
+                        <li><label><a href="~/assets/games.html">Games</a></label></li>
+                        <li><label><a href="~/assets/headset.html">Headsets</a></label></li>
+                        <li><label><a href="~/assets/keyboard.html">Keyboards</a></label></li>
+                        <li><label><a href="~/assets/laptop.html">Laptops</a></label></li>
+                        <li><label><a href="~/assets/mice.html">Mice</a></label></li>
+                        <li><label><a href="~/assets/monitor.html">Monitors</a></label></li>
+                        <li><label><a href="~/assets/networking.html">Networking</a></label></li>
+                    </div>
+                  </li>
+
+                  <li>
+                    <label class="a-label__chevron" for="item-6">Electronics</label>
+                    <input type="checkbox" id="item-6" name="item-6" class="m-menu__checkbox">
+                    <div id="m-menu2" class="m-menu">
+                      <div class="m-menu__header">
+                        <div class="back-label">
+                          <label onclick="backNav()" class="m-menu__toggle" for="item-6">
+                            <i id="backNav" class="fa-solid fa-chevron-left"></i>
+                            </svg>
+                            <span class="prev">Back</span>
+                          </label>
+                        </div>
+                      </div>
+                      <ul class="menu-ul-1">
+                        <div class="category-games">
+                          <a href="#">
+                            <span>Electronics</span>
+                          </a>
+                        </div>
+
+                        <li><label><a href="~/assets/accessories.html">Accessories</a></label></li>
+                        <li><label><a href="~/assets/audio.html">Audio</a></label></li>
+                        <li><label><a href="~/assets/camera.html">Cameras</a></label></li>
+                        <li><label><a href="~/assets/cell-phone.html">Cell Phones</a></label></li>
+                        <li><label><a href="~/assets/smart-home-automation.html">Smart Home Automation</a></label></li>
+                        <li><label><a href="~/assets/wearable-technology.html">Smart Watches & Fitness Trackers</a></label></li>
+                        <li><label><a href="~/assets/tablet.html">Tablets</a></label></li>
+                        <li><label><a href="~/assets/home-theater.html">TV & Home Theater</a></label></li>
+                    </div>
+                  </li>
+
+                  <li>
+                    <label class="a-label__chevron" for="item-7">Collectibles</label>
+                    <input type="checkbox" id="item-7" name="item-7" class="m-menu__checkbox">
+                    <div id="m-menu2" class="m-menu">
+                      <div class="m-menu__header">
+                        <div class="back-label">
+                          <label onclick="backNav()" class="m-menu__toggle" for="item-7">
+                            <i id="backNav" class="fa-solid fa-chevron-left"></i>
+                            </svg>
+                            <span class="prev">Back</span>
+                          </label>
+                        </div>
+                      </div>
+                      <ul class="menu-ul-1">
+                        <div class="category-games">
+                          <a href="#">
+                            <span>Collectibles</span>
+                          </a>
+                        </div>
+
+                        <li><label><a href="~/assets/coin.html">Coins</a></label></li>
+                        <li><label><a href="~/assets/figure.html">Figures</a></label></li>
+                        <li><label><a href="~/assets/model-kits.html">Model Kits</a></label></li>
+                        <li><label><a href="~/assets/replicas.html">Replicas</a></label></li>
+                        <li><label><a href="~/assets/statues.html">Statues</a></label></li>
+                        <li><label><a href="~/assets/ticket-collection.html">Ticket Collections</a></label></li>
+                        <span class="hr"></span>
+                        <div class="category-new">
+                          <li>
+                            <label>
+                              <a href="~/assets/anime.html">Anime</a>
+                            </label>
+                          </li>
+                          <li>
+                            <label>
+                              <a href="~/assets/funko.html">Funko</a>
+                            </label>
+                          </li>
+                          <li><label>
+                              <a href="~/assets/hashbro.html">Hashbro</a>
+                            </label>
+                          </li>
+                          <li><label>
+                              <a href="~/assets/marvel.html">Marvel</a>
+                            </label>
+                          </li>
+                          <li><label>
+                              <a href="~/assets/pokemon.html">Pokemon</a>
+                            </label>
+                          </li>
+                          <li><label>
+                              <a href="~/assets/star-wars.html">Star Wars</a>
+                            </label>
+                          </li>                      
+                        </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <label class="a-label__chevron" for="item-8">Toys & Games</label>
+                    <input type="checkbox" id="item-8" name="item-8" class="m-menu__checkbox">
+                    <div id="m-menu2" class="m-menu">
+                      <div class="m-menu__header">
+                        <div class="back-label">
+                          <label onclick="backNav()" class="m-menu__toggle" for="item-8">
+                            <i id="backNav" class="fa-solid fa-chevron-left"></i>
+                            </svg>
+                            <span class="prev">Back</span>
+                          </label>
+                        </div>
+                      </div>
+                      <ul class="menu-ul-1">
+                        <div class="category-games">
+                          <a href="#">
+                            <span>Toys & Games</span>
+                          </a>
+                        </div>
+                        <li><label><a href="~/assets/action-figures.html">Action Figures & Playsets</a></label></li>
+                        <li><label><a href="~/assets/blind-bags.html">Blind Bags</a></label></li>
+                        <li><label><a href="~/assets/board-games.html">Boards Games</a></label></li>
+                        <li><label><a href="~/assets/construction-sets.html">Building & Construction Sets</a></label></li>
+                        <li><label><a href="~/assets/card-games.html">Card Games</a></label></li>
+                        <li><label><a href="~/assets/nerf-toy.html">NERF & Toy Blasters</a></label></li>
+                        <li><label><a href="~/assets/puzzle.html">Puzzles</a></label></li>
+                        <li><label><a href="~/assets/scooters-ride.html">Scooters & Ride Ons</a></label></li>
+                        <li><label><a href="~/assets/stuffed-animal.html">Stuffed Animals & Plush</a></label></li>
+                        <li><label><a href="~/assets/trading-card.html">Trading Cards</a></label></li>
+                    </div>
+                  </li>
+                  <li>
+                    <label class="a-label__chevron" for="item-9">Home</label>
+                    <input type="checkbox" id="item-9" name="item-9" class="m-menu__checkbox">
+                    <div id="m-menu2" class="m-menu">
+                      <div class="m-menu__header">
+                        <div class="back-label">
+                          <label onclick="backNav()" class="m-menu__toggle" for="item-9">
+                            <i id="backNav" class="fa-solid fa-chevron-left"></i>
+                            </svg>
+                            <span class="prev">Back</span>
+                          </label>
+                        </div>
+                      </div>
+                      <ul class="menu-ul-1">
+                        <div class="category-games">
+                          <a href="#">
+                            <span>Home</span>
+                          </a>
+                        </div>
+                        <li><label><a href="~/assets/bedroom.html">Bedroom</a></label></li>
+                        <li><label><a href="~/assets/kitchen.html">Kitchen</a></label></li>
+                        <li><label><a href="~/assets/lighting.html">Lighting</a></label></li>
+                        <li><label><a href="~/assets/smart-automation.html">Smart Home Automation</a></label></li>
+                        <li><label><a href="~/assets/wall-art.html">Wall Art</a></label></li>
+                        <li><label><a href="~/assets/furniture.html">Furniture</a></label></li>
+                    </div>
+                  </li>
+                  <li>
+                    <label class="a-label__chevron" for="item-10">Clothing</label>
+                    <input type="checkbox" id="item-10" name="item-10" class="m-menu__checkbox">
+                    <div id="m-menu2" class="m-menu">
+                      <div class="m-menu__header">
+                        <div class="back-label">
+                          <label onclick="backNav()" class="m-menu__toggle" for="item-10">
+                            <i id="backNav" class="fa-solid fa-chevron-left"></i>
+                            </svg>
+                            <span class="prev">Back</span>
+                          </label>
+                        </div>
+                      </div>
+                      <ul class="menu-ul-1">
+                        <div class="category-games">
+                          <a href="#">
+                            <span>Clothing</span>
+                          </a>
+                        </div>
+                        <li><label><a href="~/assets/women.html">Women's</a></label></li>
+                        <li><label><a href="~/assets/men.html">Men's</a></label></li>
+                        <li><label><a href="~/assets/kid.html">Kid's</a></label></li>
+                        <li><label><a href="~/assets/bag.html">Bags</a></label></li>
+                        <li><label><a href="~/assets/clothing-accessories.html">Accessories</a></label></li>
+                        <li><label><a href="~/assets/watch.html">Watches</a></label></li>
+                    </div>
+                  </li>
+                  <li>
+                    <label>
+                      <a class="deals" href="~/assets/deals.html">
+                    </label>Deals</a>
+                  </li>
+
+                  <div class="category-header2">
+                    Explore More
+                  </div>                  
+                  <li>
+                    <label>
+                      <a href="~/assets/trade.html">
+                    </label>Trade In</a>
+                  </li>
+                  <li>
+                    <label>
+                      <a href="~/assets/gift-card.html">
+                    </label>Gift Cards</a>
+                  </li>
+
+
+                  <div class="content-support">
+                    <hr>
+                    Support
+                  </div>
+                  <li><label>
+                      <a href="~/assets/faq.html">
+                    </label>Frequently Asked Questions</a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+            <div class="header-brand">
+              <a href="index.html">
+                <img class="nav-logo"
+                  src="https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/dwcf0a1c6d/images/svg-icons/logo-gs-mono.svg"
+                  alt="Logo">
+              </a>
+            </div>
+
+            <div class="header-search">
+              <div class="container">
+
+                <div class="row d-flex justify-content-center align-items-center">
+
+                  <div class="search">
+                    <i class="fa fa-search"></i>
+                    <input type="text" class="form-control" placeholder="Search games,consoles & more">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          
+
+            <div class="last-section">
+              <div class="section-last">
+                <div class="trade-ins">
+                  <a href="~/assets/trade.html">
+                    <div class="icon">
+                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                      </div>
+                      <div class="text">
+                        <span>Trade Ins</span>
+                      </div>
+                  </a>
+                </div>
+
+                <div class="popup-rewards">
+                  <a href="~/assets/powerup.html">
+                    <div class="icon">
+                      <img src="https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/dw49576b4b/images/svg-icons/powerup-icon.svg" alt="">
+                    </svg>
+                    </div>
+                    <div class="text">
+                      <span>PowerUp Rewards</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="sign-in">
+                  <a href="~/assets/login.html">
+                    <div class="icon">
+                      <i class="fa-regular fa-user"></i>
+                    </div>
+                    <div class="text">
+                      <span>Sign In</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="cart">
+                  <a href="~/assets/cart.html">
+                    <div class="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </div>
+                    <div class="text">
+                      <span class="minicart-quantity">
+                        0
+                      </span>
+                      <span>Cart</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+
+          </nav>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- end header -->
+
+  <div class="affContent">
+    <div class="mainAff">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="allAff col-lg-12">
+                    <div class="af-main">
+                        <div class="contentTop">
+                            <h1>Affiliate Application</h1>
+                            <h2>Build a Better Site <h2>
+                                <p>Promoting GameStop products on your Website enriches your site with an endless stream of content and gives your readers a reason to keep coming back. There is truly something for everyone at GameStop!
+                                </p>
+                        </div>
+                        <ul class="contentDesc">
+                            <li>Get the easiest and most powerful commission earnings tools in online commerce
+                            </li>
+                            <li>Link to thousands of games, systems, accessories, toys and more
+                            </li>
+                            <li>Plus, link to our bargain sections, best-seller lists, gaming platforms and so much more
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="af-main">
+                        <div class="contentTop">
+                            <h2>It's Easy and Free<h2>
+                                <p>There's no charge to participate in the GameStop Affiliate Program. In fact, we pay you!
+                                </p>
+                        </div>
+                        <ul class="contentDesc">
+                            <li>Earn commission for click-throughs and purchases on GameStop.com
+                            </li>
+                            <li>Benefit from our exciting promotions and creative
+                            </li>
+                            <li>Plus, we have the world's largest collection of gaming products... which means more earning potential for you
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="af-main">
+                        <div class="contentTop">
+                            <h2>A Name They Know and Trust
+                            <h2>
+                                <p>When you link to GameStop.com, you send your customers to a trusted retailer with over 4,000 stores. Plus, you gain the confidence of knowing that they'll receive the same high-quality service and competitive prices we give to all our GameStop customers!
+                                </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+
+
+<div class="scroll-up">
+    <a href="#" class="to-top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+  </div>
+
+
+
+  <footer>
+    <div class="container">
+      <span id="hr"></span>
+      <div class="row">
+        <div id="h-item" class="col-12 col-lg-8">
+          <div class="footer-item d-flex">
+            <div class="content">
+              <a class="title" href="#">
+                <h5>Get Help</h5>
+              </a>
+              <ul>
+                <li><a href="~/assets/faq.html">Frequently Asked Questions</a></li>
+                <li><a href="~/assets/return.html">Returns</a></li>
+                <li><a href="~/assets/support.html">24/7 Support</a></li>
+              </ul>
+            </div>
+            <div class="content">
+              <a class="title" href="#">
+                <h5>LEGAL & PRIVACY</h5>
+              </a>
+              <ul>
+                <li><a href="~/assets/transparency.html">CA Transparency Act</a></li>
+                <li><a href="~/assets/condition.html">Conditions of Use</a></li>
+                <li><a href="~/assets/PrivacyPolicy.html">Privacy Policy</a></li>
+                <li><a href="~/assets/TermsCondition.html">PowerUp Rewards Terms & Conditions</a></li>
+              </ul>
+            </div>
+            <div class="content">
+              <a class="title" href="#">
+                <h5>ABOUT US</h5>
+              </a>
+              <ul>
+                <li><a href="~/assets/accessibility.html">Accessibility</a></li>
+                <li><a href="~/assets/affiliates.html">Affiliates</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mb-signup">
+          <form action="#" role="form">
+            <div class="footer-signup">
+              <div class="ftr-title">
+                <h5>Sign Up</h5>
+              </div>
+              <p class="mb-2">Get Exclusive Promotions, Coupons, and the Latest Events</p>
+              <div class="input d-flex">
+                <input type="text" class="form-control" placeholder="Enter Your Email">
+                <span class="input-group">
+                  <button type="submit" class="btn">
+                    JOIN
+                  </button>
+                </span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item col-sm-4">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                Get Help
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ul>
+                  <li><a href="~/assets/faq.html">Frequently Asked Questions</a></li>
+                  <li><a href="">Order Status</a></li>
+                  <li><a href="">PowerUp Rewards Credit Card</a></li>
+                  <li><a href="">Recall Notices</a></li>
+                  <li><a href="">Returns</a></li>
+                  <li><a href="">Store Feedback</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item col-sm-4"">
+            <h2 class=" accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Legal Privacy
+            </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ul>
+                  <li><a href="">CA Privacy Right</a></li>
+                  <li><a href="">CA Transparency Act</a></li>
+                  <li><a href="">Conditions of Use</a></li>
+                  <li><a href="">Do Not Sell My Personal Information</a></li>
+                  <li><a href="">Privacy Policy</a></li>
+                  <li><a href="">PowerUp Rewards Terms & Conditions</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item col-sm-4"">
+            <h2 class=" accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              About Us
+            </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <ul>
+                  <li><a href="~/assets/accessibility.html">Accessibility</a></li>
+                  <li><a href="~/assets/affiliate.html">Affiliates</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="footer-social">
+            <form action="#" role="form">
+              <div id="h-signup" class="footer-signup">
+                <div class="ftr-title">
+                  <h5>Sign Up</h5>
+                </div>
+                <p class="mb-2">Get Exclusive Promotions, Coupons, and the Latest Events</p>
+                <div class="input d-flex">
+                  <input type="text" class="form-control" placeholder="Enter Your Email">
+                  <span class="input-group">
+                    <button type="submit" class="btn">
+                      JOIN
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </form>
+            <div class="content-app">
+              <div id="app-title" class="app-title">
+                <h5>Get The App</h5>
+              </div>
+              <div class="app">
+                <a href="https://apps.apple.com/us/app/gamestop/id406033647">
+                  <img
+                    src="https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/v1672246282215/images/apple-store.png"
+                    alt="">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.gamestop.powerup">
+                  <img
+                    src="https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/v1672246282215/images/play-store.png"
+                    alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-social-spacer">
+            <h5>CONNECT WITH US</h5>
+            <div class="footer-icon">
+              <a href="https://www.facebook.com/GameStop" class="icon icon-facebook" target="_blank">
+              </a>
+              <a href="https://www.twitter.com/GameStop" class="icon icon-twitter" target="_blank"></a>
+              <a href="https://www.youtube.com/GameStopVideo" class="icon icon-youtube" target="_blank"></a>
+              <a href="https://www.instagram.com/gamestop/?hl=en" class="icon icon-instagram" target="_blank"></a>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-12 footer-subtext">
+          <div class="content-text">
+            <span class="footer-copyright">
+              <span>© 1999-2023 GameStop</span>
+            </span>
+            <ul class="footer-country-list">
+              <li class="country">Australia & New Zeeland</li>
+              <li class="country">Austria</li>
+              <li class="country">Canada</li>
+              <li class="country">France</li>
+              <li class="country">Germany</li>
+              <li class="country">Ireland</li>
+              <li class="country">Italy</li>
+              <li class="country">Switzerland</li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+    integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/script/slider.js"></script>
+  <script src="/script/lock-menu.js"></script>
+</body>
+
+</html>
