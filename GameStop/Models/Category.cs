@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace GameStop.Models
 {
-    public class Category
+    public class Category : BaseEntity
     {
-        public int Id { get; set; }
 
         [StringLength(255)]
         public string Name { get; set; }

@@ -18,7 +18,7 @@ namespace GameStop.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> ProductIndex(int? id)
+        public async Task<IActionResult> Index(int? id)
         {
             Product product = await _context.Products.Include(p => p.ProductImages).FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == id);
 

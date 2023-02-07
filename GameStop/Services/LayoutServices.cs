@@ -1,5 +1,6 @@
 ﻿using GameStop.DAL;
 using GameStop.Interface;
+using GameStop.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -24,6 +25,18 @@ namespace GameStop.Services
         {
             return await _context.Settings.
                 ToDictionaryAsync(s => s.Key, s => s.Value);
+        }
+
+        public async Task<IEnumerable<Category>> GetCategoriesAsync()
+        {
+            return await _context.Categories
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Subcategory>> GetSubcategoriesAsync()
+        {
+            return await _context.Subcategories
+                .ToListAsync();
         }
     }
 }

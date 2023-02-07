@@ -18,9 +18,7 @@ namespace GameStop.Models
 
         [Column("Money")]
         public double Price { get; set; }
-        public double Pric1e { get; set; }
 
-        [Column("Money")]
         [DisplayName("Discounted Price")]
         public double DiscountedPrice { get; set; }
 
