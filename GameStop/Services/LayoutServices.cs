@@ -33,9 +33,14 @@ namespace GameStop.Services
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Subcategory>> GetSubcategoriesAsync()
+        public async Task<IEnumerable<SubCategory>> GetSubCategoriesAsync()
         {
-            return await _context.Subcategories
+            return await _context.SubCategories
+                .ToListAsync();
+        }
+        public async Task<IEnumerable<Product>> GetProductsAsync()
+        {
+            return await _context.Products
                 .ToListAsync();
         }
     }

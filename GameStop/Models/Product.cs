@@ -11,8 +11,6 @@ namespace GameStop.Models
     public class Product : BaseEntity
     {
 
-        public string MyProperty { get; set; }
-
         [StringLength(255)]
         public string Title { get; set; }
 
@@ -26,9 +24,11 @@ namespace GameStop.Models
         public string Image { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-        public int SubcategoryId { get; set; }
-        public Subcategory Subcategory { get; set; }
-        public IEnumerable<ProductImage> ProductImages{ get; set; }
+
+        public int SubCategoryId { get; set; }
+        public SubCategory SubCategory { get; set; }
+
+        public IEnumerable<ProductImage> ProductImages { get; set; }
 
     }
 }

@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using GameStop.DAL;
+using GameStop.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +11,16 @@ namespace GameStop.Controllers
 {
     public class CategoryController : Controller
     {
-        public IActionResult Index(int? id)
+        private readonly AppDbContext _context;
+
+        public CategoryController(AppDbContext context)
         {
+            _context = context;
+        }
+
+        public async Task<IActionResult> Index(int? id)
+        {
+
             return View();
         }
     }

@@ -11,6 +11,64 @@
     <Compile Remove="Migrations\20230206115954_CreatedSettingsTable.Designer.cs" />
     <Compile Remove="Migrations\20230206165256_CreatedProductsTable.cs" />
     <Compile Remove="Migrations\20230206165256_CreatedProductsTable.Designer.cs" />
+    <Compile Remove="Migrations\20230206165327_CreatedProductsTable.cs" />
+    <Compile Remove="Migrations\20230206165327_CreatedProductsTable.Designer.cs" />
+    <Compile Remove="Migrations\20230206165911_CreatedProductImagesTable.cs" />
+    <Compile Remove="Migrations\20230206165911_CreatedProductImagesTable.Designer.cs" />
+    <Compile Remove="Migrations\20230206170217_CreatedCategoriesTable.cs" />
+    <Compile Remove="Migrations\20230206170217_CreatedCategoriesTable.Designer.cs" />
+    <Compile Remove="Migrations\20230206171041_CreatedSubcategoriesTable.cs" />
+    <Compile Remove="Migrations\20230206171041_CreatedSubcategoriesTable.Designer.cs" />
+    <Compile Remove="Migrations\20230206172021_UpdatedProductsTable.cs" />
+    <Compile Remove="Migrations\20230206172021_UpdatedProductsTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207054846_UpdatedProductTableRemoveSecondSameColumnName.cs" />
+    <Compile Remove="Migrations\20230207054846_UpdatedProductTableRemoveSecondSameColumnName.Designer.cs" />
+    <Compile Remove="Migrations\20230207071040_UpdatedCategoryTableAddedBaseEntity.cs" />
+    <Compile Remove="Migrations\20230207071040_UpdatedCategoryTableAddedBaseEntity.Designer.cs" />
+    <Compile Remove="Migrations\20230207152050_UpdatedCategoryAndSubCategoryTable.cs" />
+    <Compile Remove="Migrations\20230207152050_UpdatedCategoryAndSubCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207152231_UpdatedCategoryAndSubCategoryTable.cs" />
+    <Compile Remove="Migrations\20230207152231_UpdatedCategoryAndSubCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207152527_UpdatedCategoryTable.cs" />
+    <Compile Remove="Migrations\20230207152527_UpdatedCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207153050_UpdatedSubCategoryTable.cs" />
+    <Compile Remove="Migrations\20230207153050_UpdatedSubCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207203913_UpdatedSubCategoryTable.cs" />
+    <Compile Remove="Migrations\20230207203913_UpdatedSubCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207205454_UpdatedProductAndCategoryTable.cs" />
+    <Compile Remove="Migrations\20230207205454_UpdatedProductAndCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207205814_UpdatedProductAndCategoryTable.cs" />
+    <Compile Remove="Migrations\20230207205814_UpdatedProductAndCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207210033_UpdatedProductAndCategoryTable.cs" />
+    <Compile Remove="Migrations\20230207210033_UpdatedProductAndCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207210123_UpdatedProductTable.cs" />
+    <Compile Remove="Migrations\20230207210123_UpdatedProductTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207210212_UpdatedCategoryTable.cs" />
+    <Compile Remove="Migrations\20230207210212_UpdatedCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207210305_UpdatedCategoryTable.cs" />
+    <Compile Remove="Migrations\20230207210305_UpdatedCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207210516_UpdatedProductTableRelationWithCategoryAndSubCategory.cs" />
+    <Compile Remove="Migrations\20230207210516_UpdatedProductTableRelationWithCategoryAndSubCategory.Designer.cs" />
+    <Compile Remove="Migrations\20230207210638_UpdatedProductTableRelationWithCategoryAndSubCategory.cs" />
+    <Compile Remove="Migrations\20230207210638_UpdatedProductTableRelationWithCategoryAndSubCategory.Designer.cs" />
+    <Compile Remove="Migrations\20230207210757_UpdatedProductTableRelationWithCategoryAndSubCategory.cs" />
+    <Compile Remove="Migrations\20230207210757_UpdatedProductTableRelationWithCategoryAndSubCategory.Designer.cs" />
+    <Compile Remove="Migrations\20230207210946_UpdatedProductTableRelationWithCategoryAndSubCategory.cs" />
+    <Compile Remove="Migrations\20230207210946_UpdatedProductTableRelationWithCategoryAndSubCategory.Designer.cs" />
+    <Compile Remove="Migrations\20230207211340_UpdatedProductTableRelationWithCategory.cs" />
+    <Compile Remove="Migrations\20230207211340_UpdatedProductTableRelationWithCategory.Designer.cs" />
+    <Compile Remove="Migrations\20230207211616_UpdatedProductTableRelationWithCategory.cs" />
+    <Compile Remove="Migrations\20230207211616_UpdatedProductTableRelationWithCategory.Designer.cs" />
+    <Compile Remove="Migrations\20230207211741_UpdatedProductTableRelationWithCategory.cs" />
+    <Compile Remove="Migrations\20230207211741_UpdatedProductTableRelationWithCategory.Designer.cs" />
+    <Compile Remove="Migrations\20230207212010_UpdatedProductTable.cs" />
+    <Compile Remove="Migrations\20230207212010_UpdatedProductTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207212105_UpdatedProductTable.cs" />
+    <Compile Remove="Migrations\20230207212105_UpdatedProductTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207212427_UpdatedSubCategoryTable.cs" />
+    <Compile Remove="Migrations\20230207212427_UpdatedSubCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20230207212634_UpdatedSubCategoryTable.cs" />
+    <Compile Remove="Migrations\20230207212634_UpdatedSubCategoryTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +82,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ViewModels\Category\" />
     <Folder Include="wwwroot\assets\" />
   </ItemGroup>
 

@@ -10,6 +10,8 @@ namespace GameStop.ComponentViewModels.Header
     {
         public Dictionary<string, string> Settings { get; set; }
         public IEnumerable<Category> Categories { get; set; }
-        public IEnumerable<Subcategory> Subcategories { get; set; }
+        public IEnumerable<SubCategory> SubCategories { get; set; }
+        public IEnumerable<Product> Products { get; set; }
+
     }
 }

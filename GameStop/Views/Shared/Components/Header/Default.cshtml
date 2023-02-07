@@ -70,7 +70,7 @@
                             </label>
                             <span>Menu</span>
                         </div>
-                      
+
 
                         <div class="all-menu">
                             <div class="store-container">
@@ -87,49 +87,51 @@
                                         </div>
                                     </div>
                                 </a>
-                            </div> 
-                                <div class="category-header">
-                                    Shop By Category
-                                </div>
-                                
-                                    <ul id="menuUl" class="menu-ul" onclick="topNav()">
+                            </div>
+                            <div class="category-header">
+                                Shop By Category
+                            </div>
 
-                                        <li>
-                                            @foreach (Category category in Model.Categories)
-                                            {
-                                                <label class="a-label__chevron" for="item-2">@category.Name</label>
-                                            }
-                                            <input type="checkbox" id="item-2" name="item-2" class="m-menu__checkbox">
-                                            <div id="m-menu2" class="m-menu">
-                                                <div class="m-menu__header">
-                                                    <div class="back-label">
-                                                        <label onclick="backNav()" class="m-menu__toggle" for="item-2">
-                                                            <i id="backNav" class="fa-solid fa-chevron-left"></i>
-                                                            </svg>
-                                                            <span class="prev">Back</span>
-                                                        </label>
+                            <ul id="menuUl" class="menu-ul" onclick="topNav">
+                                @foreach (Category category in Model.Categories)
+                                {
+                                    <li @*asp-route-id="@Model.Subcategories.Select(s => s.Id).ToList()"*@>
+                                        <label class="a-label__chevron" for="item-2">@category.Name</label>
 
-                                                    </div>
+                                        <input type="checkbox" id="item-2" name="item-2" class="m-menu__checkbox">
+                                        <div id="m-menu2" class="m-menu">
+                                            <div class="m-menu__header">
+                                                <div class="back-label">
+                                                    <label onclick="backNav()" class="m-menu__toggle" for="item-2">
+                                                        <i id="backNav" class="fa-solid fa-chevron-left"></i>
+                                                        <span class="prev">Back</span>
+                                                    </label>
 
                                                 </div>
-                                                <ul class="menu-ul-1">
-                                                    <div class="category-games">
-                                                        <a href="~/assets/">
-                                                            <span>Video Games</span>
-                                                        </a>
-                                                    </div>
 
-                                                    @foreach (Subcategory subcategory in Model.Subcategories)
-	                                                {
-                                                       <li><label><a href="~/assets/xbox-X.html">@subcategory.Name</a></label></li>
-	                                                }
                                             </div>
-                                        </li>
+                                            <ul class="menu-ul-1">
+                                                <div class="category-games">
+                                                    <a href="~/assets/">
+                                                        <span>@category.Name</span>
+                                                    </a>
+                                                </div>
 
-                                    </ul>
+                                                @*@foreach (SubCategory item in Model.SubCategories)
+                                                {
+                                                    <li><label><a asp-controller="product" asp-action="index" asp-route-id="@item.CategoryId">@item.Name</a></label></li>
+                                                }*@
+                                            </ul>
 
 
-                                </div>
+                                        </div>
+                                    </li>
+                                }
+
+                            </ul>
+
+
+                        </div>
 
 
 

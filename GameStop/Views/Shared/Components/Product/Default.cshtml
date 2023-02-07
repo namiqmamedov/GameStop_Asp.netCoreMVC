@@ -1,38 +1,59 @@
 ﻿@model IEnumerable<Product>
 
-    <div id="br_crumbs" class="row">
-        <div style="margin-bottom: 1px;" class="breadcrumbs">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item active" aria-current="page">
-                        Xbox Series X|S
-                    </li>
-                </ol>
+<div class="card-boxes">
+    <div id="product-base" class="product-carousel">
+        <div id="productCard" class="card-box d-flex flex-wrap col-12 col-lg-12 col-md-6 col-xs-12">
+
+            @foreach (Product product in Model)
+            {
+                <div class="card">
+                    <a href="~/assets/productDetails.html">
+
+                        <img src="~/assets/img/@product.Image"
+                             class="card-img-top" alt="">
+
+                        <div class="card-body">
+                            <div class="card-price d-flex">
+                                <span class="price">$@product.Price</span>
+                                <span class="currentPrice"></span>
+                                <span class="price-design">
+                                    <span class="oldPrice"></span>
+                                </span>
+                            </div>
+                            <span class="moreOptions">More Options</span>
+                            <p class="card-text">@product.Title</p>
+                            <div class="customer-rating d-flex">
+                                <div class="star-rating4">
+                                    <div class="star4"></div>
+                                </div>
+                                <div class="rating-count">
+                                    (3)
+                                </div>
+                            </div>
+                            <div class="badge-content">
+                                <span class="badge"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+
+
+
+
+
+            <nav class="pagination-container">
+
+                <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+                </button>
+                <div id="pagination-numbers">
+
+                </div>
+
+
+                <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+                </button>
             </nav>
         </div>
     </div>
-
-
-
-    <div class="category-card">
-        <div class="container">
-            <div class="row">
-
-            </div>
-            <div class="row paginationRes">
-                <div class="col-12 text-center pagaga">
-                    <nav class="pagination-mobile">
-                        <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
-                        </button>
-
-                        <div id="pagination-numbers1">
-
-                        </div>
-
-                        <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
-                        </button>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>

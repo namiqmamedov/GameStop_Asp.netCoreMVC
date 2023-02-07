@@ -3,13 +3,15 @@
 @{ 
     Dictionary<string, string> settings = await layoutservices.GetSettingsAsync();
     IEnumerable<Category> categories = await layoutservices.GetCategoriesAsync();
-    IEnumerable<Subcategory> subcategories = await layoutservices.GetSubcategoriesAsync();
+    IEnumerable<SubCategory> subcategories = await layoutservices.GetSubCategoriesAsync();
+    IEnumerable<Product> products = await layoutservices.GetProductsAsync();
 
     HeaderVM headerVM = new HeaderVM
     {
         Settings = settings,
         Categories = categories,
-        Subcategories = subcategories
+        SubCategories = subcategories,
+        Products = products,
 
     };
 }

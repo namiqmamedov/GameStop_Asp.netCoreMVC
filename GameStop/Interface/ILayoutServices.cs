@@ -10,6 +10,7 @@ namespace GameStop.Interface
     {
         Task<Dictionary<string, string>> GetSettingsAsync();
         Task<IEnumerable<Category>> GetCategoriesAsync();
-        Task<IEnumerable<Subcategory>> GetSubcategoriesAsync();
+        Task<IEnumerable<SubCategory>> GetSubCategoriesAsync();
+        Task<IEnumerable<Product>> GetProductsAsync();
     }
 }

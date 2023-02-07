@@ -1,5 +1,6 @@
 ﻿using GameStop.DAL;
 using GameStop.Models;
+using GameStop.ViewModels.Products;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -20,9 +21,11 @@ namespace GameStop.Controllers
 
         public async Task<IActionResult> Index(int? id)
         {
-            Product product = await _context.Products.Include(p => p.ProductImages).FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == id);
-
-                return View();
+            ProductVM productVM = new ProductVM
+            {
+                Products = await _context.Products.Where(p => p.IsDeleted == false).ToListAsync()
+            };
+           return View(productVM);
             
         }
     }
