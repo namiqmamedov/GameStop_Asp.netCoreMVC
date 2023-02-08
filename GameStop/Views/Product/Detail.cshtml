@@ -43,7 +43,16 @@
             <div class="item-overlay__mainImg">
                 <img id="mainImg1" src="https://media.gamestop.com/i/gamestop/11097389/The-Last-of-Us-Part-II---PlayStation-4?fmt=auto&$pdp-gallery2x$" alt="" class="item-overlay__img" /> <button id="prev" style="visibility: hidden;" class="item-overlay__btnlft overlay-btn"> <img src="/images/icon-next.svg" alt="next symbol image" class="item-overlay__btnlft-img overlay-btn__img next-btn" /> </button> <button id="next" style="visibility: hidden;" class="item-overlay__btnrgt overlay-btn"> <img src="/images/icon-next.svg" alt="next symbol image" class="item-overlay__btnrgt-img overlay-btn__img prev-btn" /> </button>
             </div>
-            <div class="overlay-img__btns"> <button class="overlay-img__btn" data-img="0"> <img src="https://media.gamestop.com/i/gamestop/11097389/The-Last-of-Us-Part-II---PlayStation-4?fmt=auto&$pdp-gallery$" alt="shoe product image" class="overlay-img__btn-img" /> </button><button class="overlay-img__btn" data-img="4"> <img src="https://media.gamestop.com/i/gamestop/11097392_11097391_11097390_11097389_SCR16/The-Last-of-Us-Part-II---PlayStation-4?$screen2x$" alt=" shoe product image" class="overlay-img__btn-img" /> </button>  <button class="overlay-img__btn" data-img="1"> <img src="https://media.gamestop.com/i/gamestop/11097389_ALT01/The-Last-of-Us-Part-II---PlayStation-4?fmt=auto&$pdp-gallery$" alt="shoe product image" class="overlay-img__btn-img" /> </button> <button class="overlay-img__btn" data-img="2"> <img src="https://media.gamestop.com/i/gamestop/11097392_11097391_11097390_11097389_SCR17/The-Last-of-Us-Part-II---PlayStation-4?fmt=auto&$pdp-gallery$" alt="shoe product image" class="overlay-img__btn-img" /> </button> <button class="overlay-img__btn" data-img="3"> <img src="https://media.gamestop.com/i/gamestop/11097392_11097391_11097390_11097389_SCR21/The-Last-of-Us-Part-II---PlayStation-4?fmt=auto&$pdp-gallery$" alt="shoe product image" class="overlay-img__btn-img" /> </button> <button class="overlay-img__btn" data-img="4"> <img src="https://media.gamestop.com/i/gamestop/11097392_11097391_11097390_11097389_SCR20/The-Last-of-Us-Part-II---PlayStation-4?fmt=auto&$pdp-gallery$" alt="shoe product image" class="overlay-img__btn-img" /> </button> <button class="overlay-img__btn" data-img="4"> <img src="https://media.gamestop.com/i/gamestop/11097392_11097391_11097390_11097389_SCR19/The-Last-of-Us-Part-II---PlayStation-4?fmt=auto&$pdp-gallery$" alt=" shoe product image" class="overlay-img__btn-img" /> </button></div>
+            <div class="overlay-img__btns">
+                @foreach (ProductImage productImage in Model.Product.ProductImages)
+                {
+                    <button class="overlay-img__btn">
+                        <img src="~/assets/img/@productImage.Image" alt="shoe product image" class="overlay-img__btn-img" />
+                    </button>
+                }
+
+
+            </div>
         </div>
     </div>
     <button class="head-cart__item-btn"></button>
@@ -54,7 +63,9 @@
             <div class="row">
                 <section id="mb-img" class="img">
                     <div class="container-fluid">
-                        <button class="img-main__btnlft img-main__btn"> <img src="" alt="next symbol image" class="img-main__btnlft-img img-main__btn-img" /> </button> <button class="img-main__btnrgt img-main__btn"> <img src="" alt="next symbol image" class="img-main__btnrgt-img img-main__btn-img" /> </button>
+                        <button class="img-main__btnlft img-main__btn">
+                            <img src="" alt="next symbol image" class="img-main__btnlft-img img-main__btn-img" />
+                        </button> <button class="img-main__btnrgt img-main__btn"> <img src="" alt="next symbol image" class="img-main__btnrgt-img img-main__btn-img" /> </button>
                         <div class="imgMain">
                             <div id="br_crumbs-details" class="row">
                                 <div class="breadcrumbs">
@@ -67,7 +78,7 @@
                                 </div>
                             </div>
                             <div class="main-img">
-                                <img src="~/assets/img/@Model.Product.Image"  id="lgOnly" title="click" class="img-main" />
+                                <img src="~/assets/img/@Model.Product.Image" id="lgOnly" title="click" class="img-main" />
                                 <div class="for-mb">
                                     <div class="mb-image">
                                         <img src="https://media.gamestop.com/i/gamestop/11097389/The-Last-of-Us-Part-II---PlayStation-4?fmt=auto&$pdp-gallery$" alt="" class="img-main" /> <img src="https://media.gamestop.com/i/gamestop/11097392_11097391_11097390_11097389_SCR17/The-Last-of-Us-Part-II---PlayStation-4?fmt=auto&$pdp-gallery$" alt="
@@ -76,14 +87,22 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="img-btns"> <button class="img-btn"> <img src="https://media.gamestop.com/i/gamestop/11097389/The-Last-of-Us-Part-II---PlayStation-4?fmt=auto&$thumb$" alt="shoe product image" class="img-btn__img" /> </button><button class="img-btn"> <img src="https://media.gamestop.com/i/gamestop/11097392_11097391_11097390_11097389_SCR16/The-Last-of-Us-Part-II---PlayStation-4?$screen2x$" alt="shoe product image" class="img-btn__img" /> </button> <button class="img-btn"> <img src="https://media.gamestop.com/i/gamestop/11097389_ALT01/The-Last-of-Us-Part-II---PlayStation-4?fmt=auto&$thumb$" alt="shoe product image" class="img-btn__img" /> </button> <button class="img-btn"> <img src="https://media.gamestop.com/i/gamestop/11097392_11097391_11097390_11097389_SCR17/The-Last-of-Us-Part-II---PlayStation-4?fmt=auto&$pdp-gallery$" alt="shoe product image" class="img-btn__img" /> </button> <button class="img-btn"> <img src="https://media.gamestop.com/i/gamestop/11097392_11097391_11097390_11097389_SCR21/The-Last-of-Us-Part-II---PlayStation-4?fmt=auto&$thumb$" alt="shoe product image" class="img-btn__img" /> </button> <button class="img-btn"> <img src="https://media.gamestop.com/i/gamestop/11097392_11097391_11097390_11097389_SCR20/The-Last-of-Us-Part-II---PlayStation-4?fmt=auto&$pdp-gallery$" alt="shoe product image" class="img-btn__img" /> </button> <button class="img-btn"> <img src="https://media.gamestop.com/i/gamestop/11097392_11097391_11097390_11097389_SCR19/The-Last-of-Us-Part-II---PlayStation-4?fmt=auto&$pdp-gallery$" alt="shoe product image" class="img-btn__img" /> </button> </div>
+                            <div class="img-btns">
+                                @foreach (ProductImage productImage in Model.Product.ProductImages)
+                                {
+                                    <button class="img-btn">
+                                        <img src="~/assets/img/@productImage.Image" alt="shoe product image" class="img-btn__img" />
+                                    </button>
+                                }
+                            </div>
+
                         </div>
                         <section class="product-description">
                             <div class="container-fluid">
                                 <div class="descMain">
                                     <div class="tablist-product">
                                         <div class="all-table">
-                                            <h3 class="title-text"></h3>
+                                            <h3 class="title-text">@Model.Product.Title</h3>
                                             <button data-index="1" class="btn-main one">
                                                 <div class="btn-details"> <span class="nt-1">Features</span> </div>
                                             </button>
@@ -1108,7 +1127,7 @@
                             <div class="card-price d-flex">
                                 @if (Model.Product.Price > 0)
                                 {
-                                    <span class="price">@Model.Product.Price</span>
+                                    <span class="price">$@Model.Product.Price</span>
                                 }
                                 else
                                 {
@@ -1117,7 +1136,8 @@
 
                                 @if (Model.Product.DiscountedPrice > 0)
                                 {
-                                    <span class="currentPrice">$@Model.Product.DiscountedPrice</span>
+                                    <span class="currentPrice">$@Model.Product.DiscountedPrice.ToString()</span>
+
                                 }
 
                                 @if (Model.Product.OldPrice > 0)
@@ -1127,7 +1147,13 @@
                                     </span>
                                 }
 
-                                <span class="price-saving">Save $51.99</span>
+                                @if (Model.Product.DiscountedPrice > 0)
+                                {
+                                    <span class="price-saving">Save   $@((Model.Product.OldPrice) - (Model.Product.DiscountedPrice)) </span>
+
+                                }
+
+
                             </div>
                             <div class="pro-reward ">
                                 <div class="reward d-flex">
@@ -2325,197 +2351,6 @@
     </main>
 
 
-    <div class="scroll-up">
-        <a href="#" class="to-top">
-            <i class="fa-solid fa-arrow-up"></i>
-        </a>
-    </div>
-
-    <footer>
-        <div class="container">
-            <span id="hr"></span>
-            <div class="row">
-                <div id="h-item" class="col-12 col-lg-8">
-                    <div class="footer-item d-flex">
-                        <div class="content">
-                            <a class="title" href="#">
-                                <h5>Get Help</h5>
-                            </a>
-                            <ul>
-                                <li><a href="./faq.html">Frequently Asked Questions</a></li>
-                                <li><a href="./return.html">Returns</a></li>
-                                <li><a href="./support.html">24/7 Support</a></li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <a class="title" href="#">
-                                <h5>LEGAL & PRIVACY</h5>
-                            </a>
-                            <ul>
-                                <li><a href="./transparency.html">CA Transparency Act</a></li>
-                                <li><a href="./condition.html">Conditions of Use</a></li>
-                                <li><a href="./PrivacyPolicy.html">Privacy Policy</a></li>
-                                <li><a href="./TermsCondition.html">PowerUp Rewards Terms & Conditions</a></li>
-                            </ul>
-                        </div>
-                        <div class="content">
-                            <a class="title" href="#">
-                                <h5>ABOUT US</h5>
-                            </a>
-                            <ul>
-                                <li><a href="./accessibility.html">Accessibility</a></li>
-                                <li><a href="./affiliates.html">Affiliates</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-signup">
-                    <form action="#" role="form">
-                        <div class="footer-signup">
-                            <div class="ftr-title">
-                                <h5>Sign Up</h5>
-                            </div>
-                            <p class="mb-2">Get Exclusive Promotions, Coupons, and the Latest Events</p>
-                            <div class="input d-flex">
-                                <input type="text" class="form-control" placeholder="Enter Your Email">
-                                <span class="input-group">
-                                    <button type="submit" class="btn">
-                                        JOIN
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item col-sm-4">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                Get Help
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li><a href="./faq.html">Frequently Asked Questions</a></li>
-                                    <li><a href="">Order Status</a></li>
-                                    <li><a href="">PowerUp Rewards Credit Card</a></li>
-                                    <li><a href="">Recall Notices</a></li>
-                                    <li><a href="">Returns</a></li>
-                                    <li><a href="">Store Feedback</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item col-sm-4" ">
-                        <h2 class=" accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Legal Privacy
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li><a href="">CA Privacy Right</a></li>
-                                    <li><a href="">CA Transparency Act</a></li>
-                                    <li><a href="">Conditions of Use</a></li>
-                                    <li><a href="">Do Not Sell My Personal Information</a></li>
-                                    <li><a href="">Privacy Policy</a></li>
-                                    <li><a href="">PowerUp Rewards Terms & Conditions</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item col-sm-4" ">
-                        <h2 class=" accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                About Us
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li><a href="./accessibility.html">Accessibility</a></li>
-                                    <li><a href="./affiliate.html">Affiliates</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <div class="footer-social">
-                        <form action="#" role="form">
-                            <div id="h-signup" class="footer-signup">
-                                <div class="ftr-title">
-                                    <h5>Sign Up</h5>
-                                </div>
-                                <p class="mb-2">Get Exclusive Promotions, Coupons, and the Latest Events</p>
-                                <div class="input d-flex">
-                                    <input type="text" class="form-control" placeholder="Enter Your Email">
-                                    <span class="input-group">
-                                        <button type="submit" class="btn">
-                                            JOIN
-                                        </button>
-                                    </span>
-                                </div>
-                            </div>
-                        </form>
-                        <div class="content-app">
-                            <div id="app-title" class="app-title">
-                                <h5>Get The App</h5>
-                            </div>
-                            <div class="app">
-                                <a href="https://apps.apple.com/us/app/gamestop/id406033647">
-                                    <img src="https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/v1672246282215/images/apple-store.png"
-                                         alt="">
-                                </a>
-                                <a href="https://play.google.com/store/apps/details?id=com.gamestop.powerup">
-                                    <img src="https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/v1672246282215/images/play-store.png"
-                                         alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-social-spacer">
-                        <h5>CONNECT WITH US</h5>
-                        <div class="footer-icon">
-                            <a href="https://www.facebook.com/GameStop" class="icon icon-facebook" target="_blank">
-                            </a>
-                            <a href="https://www.twitter.com/GameStop" class="icon icon-twitter" target="_blank"></a>
-                            <a href="https://www.youtube.com/GameStopVideo" class="icon icon-youtube" target="_blank"></a>
-                            <a href="https://www.instagram.com/gamestop/?hl=en" class="icon icon-instagram" target="_blank"></a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-12 footer-subtext">
-                    <div class="content-text">
-                        <span class="footer-copyright">
-                            <span>© 1999-2023 GameStop</span>
-                        </span>
-                        <ul class="footer-country-list">
-                            <li class="country">Australia & New Zeeland</li>
-                            <li class="country">Austria</li>
-                            <li class="country">Canada</li>
-                            <li class="country">France</li>
-                            <li class="country">Germany</li>
-                            <li class="country">Ireland</li>
-                            <li class="country">Italy</li>
-                            <li class="country">Switzerland</li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
             integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
@@ -2534,7 +2369,6 @@
     <script src="~/assets/script/zoomEffect.js"></script>
     <script src="~/assets/script/checkbox.js"></script>
     <script src="~/assets/script/scroll-top.js"></script>
-    <script src="~/assets/script/lock-menu.js"></script>
 </body>
 
 </html>
