@@ -15,10 +15,16 @@ namespace GameStop.Models
         public string Title { get; set; }
 
         [Column("Money")]
-        public double Price { get; set; }
+        public double? Price { get; set; }
 
         [DisplayName("Discounted Price")]
-        public double DiscountedPrice { get; set; }
+        public double? DiscountedPrice { get; set; }
+
+        [DisplayName("Old Price")]
+        public double? OldPrice { get; set; }
+
+        [StringLength(255)]
+        public string Brand { get; set; }
 
         [StringLength(255)]
         public string Image { get; set; }
