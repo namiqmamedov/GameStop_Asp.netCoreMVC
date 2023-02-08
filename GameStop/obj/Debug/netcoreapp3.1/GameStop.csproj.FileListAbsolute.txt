@@ -169,4 +169,5 @@ C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Vi
 C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductListPartial.cshtml.g.cs
 C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Product\Default.cshtml.g.cs
 C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
-C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\_ProductDetailPartial.cshtml.g.cs
+C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Views\Product\ProductDetail.cshtml.g.cs
+C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductDetailPartial.cshtml.g.cs
