@@ -8,7 +8,6 @@ namespace GameStop.ViewModels.Products
 {
     public class ProductDetailVM
     {
-        public Dictionary<string, string> Settings { get; set; }
         public IEnumerable<Category> Categories { get; set; }
         public IEnumerable<SubCategory> SubCategories { get; set; }
         public Product Product { get; set; }

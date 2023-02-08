@@ -35,6 +35,7 @@ namespace GameStop.Models
         public SubCategory SubCategory { get; set; }
 
         public IEnumerable<ProductImage> ProductImages { get; set; }
+        public IEnumerable<ProductFeatures> ProductFeatures { get; set; }
 
     }
 }

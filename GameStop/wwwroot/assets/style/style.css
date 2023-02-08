@@ -17979,6 +17979,14 @@ Media Queries
         font-size: 16px;
     }
 
+    .product-description .description .video__desc {
+        width: 68%; 
+        border: none;
+        transition: height 0.1s linear 0s; 
+        display: block; 
+        height: 494.775px;
+    }
+
     .product-description .specifications .product-table {
         margin: 17.5px 0;
     }
