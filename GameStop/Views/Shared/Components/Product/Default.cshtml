@@ -7,7 +7,7 @@
             @foreach (Product product in Model)
             {
                 <div class="card">
-                    <a asp-controller="product" asp-action="productdetail" asp-route-id="@product.Id">
+                    <a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">
 
                         <img src="~/assets/img/@product.Image"
                              class="card-img-top" alt="">

@@ -604,7 +604,7 @@
                                 <div class="descMain">
                                     <div class="tablist-product">
                                         <div class="all-table">
-                                            <h3 class="title-text">The Last of Us Part II 4</h3>
+                                            <h3 class="title-text"></h3>
                                             <button data-index="1" class="btn-main one">
                                                 <div class="btn-details"> <span class="nt-1">Features</span> </div>
                                             </button>
@@ -1618,15 +1618,38 @@
                 <section id="mb-price" class="price-main ">
                     <div class="priceContext">
                         <div class="container-fluid">
-                            <h2 class="price-main__heading">The Last of Us Part II - PlayStation 4 </h2>
-                            <span class="brand-product"> <a href="#"> Sony </a> </span>
+                            <h2 class="price-main__heading">@Model.Title</h2>
+                            <span class="brand-product"> <a href="#">@Model.Brand</a></span>
                             <div class="customer-rating d-flex">
                                 <div class="star-rating4">
                                     <div class="star4"></div>
                                 </div>
                                 <div class="rating-count"> 413 ratings </div>
                             </div>
-                            <div class="card-price d-flex"><span class="price"></span><span class="currentPrice">$18.00</span> <span class="price-design"><span class="oldPrice">$69.99</span> </span> <span class="price-saving">Save $51.99</span></div>
+                            <div class="card-price d-flex">
+                                @if (Model.Price > 0)
+                                {
+                                    <span class="price">@Model.Price</span>
+                                }
+                                else
+                                {
+                                    <span class="price"></span>
+                                }
+
+                                @if (Model.DiscountedPrice > 0)
+                                {
+                                    <span class="currentPrice">$@Model.DiscountedPrice</span>
+                                }
+
+                                @if (Model.OldPrice > 0)
+                                {
+                                    <span class="price-design">
+                                        <span class="oldPrice">$@Model.OldPrice</span>
+                                    </span>
+                                }
+
+                                <span class="price-saving">Save $51.99</span>
+                            </div>
                             <div class="pro-reward ">
                                 <div class="reward d-flex">
                                     <div class="rewardsPro d-flex">

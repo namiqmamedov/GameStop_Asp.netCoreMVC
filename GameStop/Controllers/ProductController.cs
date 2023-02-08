@@ -29,7 +29,7 @@ namespace GameStop.Controllers
             
         }
 
-        public async Task<IActionResult> ProductDetail(int? id)
+        public async Task<IActionResult> Detail(int? id)
         {
             Product product = await _context.Products.FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == id);
 
