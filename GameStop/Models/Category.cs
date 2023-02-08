@@ -13,5 +13,6 @@ namespace GameStop.Models
         public string Name { get; set; }
         public IEnumerable<Product> Products { get; set; }
         public IEnumerable<SubCategory> SubCategories { get; set; }
+        public string For { get; set; }
     }
 }
