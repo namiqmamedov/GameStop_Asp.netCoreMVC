@@ -29,11 +29,15 @@ namespace GameStop.Controllers
             
         }
 
-        public async Task<IActionResult> Detail(int? id)
+        public IActionResult Detail(int? id)
         {
-            Product product = await _context.Products.FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == id);
+            ProductDetailVM productDetailVM  = new ProductDetailVM
+            {
+                Product = _context.Products.FirstOrDefault(p => p.IsDeleted == false && p.Id == id),
+            };
 
-            return View(product);
+
+            return View(productDetailVM);
         }
 
 
