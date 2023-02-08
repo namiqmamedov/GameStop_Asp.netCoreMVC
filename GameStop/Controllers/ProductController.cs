@@ -28,5 +28,14 @@ namespace GameStop.Controllers
            return View(productVM);
             
         }
+
+        public async Task<IActionResult> ProductDetail(int? id)
+        {
+            Product product = await _context.Products.FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == id);
+
+            return PartialView("_ProductDetailPartial", product);
+        }
+
+
     }
 }
