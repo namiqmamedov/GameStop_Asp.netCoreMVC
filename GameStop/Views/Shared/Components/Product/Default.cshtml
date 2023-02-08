@@ -14,11 +14,26 @@
 
                         <div class="card-body">
                             <div class="card-price d-flex">
-                                <span class="price">$@product.Price</span>
-                                <span class="currentPrice">$@product.DiscountedPrice</span>
-                                <span class="price-design">
-                                    <span class="oldPrice"></span>
-                                </span>
+                                @if (product.Price > 0)
+                                {
+                                    <span class="price">$@product.Price</span>
+                                }
+                                else
+                                {
+                                    <span class="price"></span>
+                                }
+
+                                @if (product.DiscountedPrice > 0)
+                                {
+                                    <span class="currentPrice">$@product.DiscountedPrice</span>
+                                }
+
+                                @if (product.OldPrice > 0)
+                                {
+                                    <span class="price-design">
+                                        <span class="oldPrice">$@product.OldPrice</span>
+                                    </span>
+                                }
                             </div>
                             <span class="moreOptions">More Options</span>
                             <p class="card-text">@product.Title</p>
