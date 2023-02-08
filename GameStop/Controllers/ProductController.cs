@@ -33,7 +33,7 @@ namespace GameStop.Controllers
         {
             Product product = await _context.Products.FirstOrDefaultAsync(p => p.IsDeleted == false && p.Id == id);
 
-            return PartialView("_ProductDetailPartial", product);
+            return View(product);
         }
 
 
