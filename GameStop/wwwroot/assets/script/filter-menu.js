@@ -8,7 +8,7 @@ $(".write-menu").click(function () {
 
 $(".bar").click(function () {
   $(".header-main").css({
-    position: "sticky"
+    position: "static"
   });
 
 });
@@ -30,14 +30,14 @@ $(".add-to-cart-menu").click(function () {
 
 $(".bar1").click(function () {
   $(".header-main").css({
-    position: "sticky"
+      position: "static"
   });
 
 });
 
 $(".bar2").click(function () {
   $(".header-main").css({
-    position: "sticky"
+      position: "static"
   });
 
 });

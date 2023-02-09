@@ -74,7 +74,7 @@ html {
 }
 
 .pd .header-main{
-    position: static;
+    position: static !important;
 }
 
 .paginationRes {
@@ -15184,13 +15184,13 @@ footer #hr {
     }
 
         #mb-img .imgMain {
-            height: 530px !important;
+            height: 604px !important;
         }
 
             #mb-img .imgMain .main-img {
                 width: 100% !important;
                 height: 88% !important;
-                padding-left: 73px;
+                padding-left: 102px;
                 text-align: center;
             }
 
@@ -17980,11 +17980,17 @@ Media Queries
     }
 
     .product-description .description .video__desc {
-        width: 68%; 
+        width: 68%;
         border: none;
-        transition: height 0.1s linear 0s; 
-        display: block; 
+        transition: height 0.1s linear 0s;
+        display: block;
         height: 494.775px;
+        padding-left: 19px;
+    }
+
+    .product-description .description .video__section {
+        margin-bottom: 43px;
+        margin-top: 13.5px;
     }
 
     .product-description .specifications .product-table {
