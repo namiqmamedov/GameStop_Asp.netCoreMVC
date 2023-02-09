@@ -31,10 +31,24 @@ namespace GameStop.Controllers
 
         public IActionResult Detail(int? id)
         {
+
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
             ProductDetailVM productDetailVM  = new ProductDetailVM
             {
                 Product = _context.Products.Include(p=>p.ProductImages).Include(p=>p.ProductFeatures).Include(p=>p.ProductSpecs).FirstOrDefault(p => p.IsDeleted == false && p.Id == id),
             };
+
+            
+
+            if (productDetailVM == null)
+            {
+                return NotFound();
+
+            }
 
 
             return View(productDetailVM);

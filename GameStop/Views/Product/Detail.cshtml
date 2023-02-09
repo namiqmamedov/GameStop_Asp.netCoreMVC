@@ -180,14 +180,24 @@
                                                                 <th> <span>Online Multiplayer</span> </th>
                                                                 <td> <span>@productSpecs.IsOnline</span> </td>
                                                             </tr>
-                                                            <tr>
-                                                                <th> <span>Number of Online Players</span> </th>
-                                                                <td> <span>@productSpecs.OnlinePlayers</span> </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th> <span>Perspective</span> </th>
-                                                                <td> <span>@productSpecs.Perspective</span> </td>
-                                                            </tr>
+
+                                                            if (productSpecs.OnlinePlayers != null)
+                                                            {
+                                                                <tr>
+                                                                    <th> <span>Number of Online Players</span> </th>
+                                                                    <td> <span>@productSpecs.OnlinePlayers</span> </td>
+                                                                </tr>
+                                                            }
+
+
+                                                            if (productSpecs.Perspective != null)
+                                                            {
+                                                                <tr>
+                                                                    <th> <span>Perspective</span> </th>
+                                                                    <td> <span>@productSpecs.Perspective</span> </td>
+                                                                </tr>
+                                                            }
+
                                                             <tr>
                                                                 <th> <span>Genre</span> </th>
                                                                 <td> <span>@productSpecs.Genre</span> </td>
@@ -202,10 +212,13 @@
                                                     <tbody>
                                                         @foreach (ProductSpecs productSpecs in Model.Product.ProductSpecs)
                                                         {
-                                                            <tr>
-                                                                <th> <span>Franchise</span> </th>
-                                                                <td> <span>@productSpecs.Franchise</span> </td>
-                                                            </tr>
+                                                            if (productSpecs.Franchise != null)
+                                                            {
+                                                                <tr>
+                                                                    <th> <span>Franchise</span> </th>
+                                                                    <td> <span>@productSpecs.Franchise</span> </td>
+                                                                </tr>
+                                                            }
                                                             <tr>
                                                                 <th> <span>Publisher Name</span> </th>
                                                                 <td> <span>@productSpecs.PublisherName</span> </td>
@@ -224,36 +237,55 @@
                                                     <tbody>
                                                         @foreach (ProductSpecs productSpecs in Model.Product.ProductSpecs)
                                                         {
+                                                            if (productSpecs.Franchise != null)
+                                                            {
+                                                                <tr>
+                                                                    <th> <span>Product Length</span> </th>
+                                                                    <td> <span>@productSpecs.ProdLength</span> </td>
+                                                                </tr>
+                                                            }
+                                                            if (productSpecs.ProdWidth != null)
+                                                            {
                                                             <tr>
-                                                                <th> <span>Product Length</span> </th>
-                                                                <td> <span>@productSpecs.ProdLength</span> </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th> <span>Publisher Name</span> </th>
+                                                                <th> <span>Product Width</span> </th>
                                                                 <td> <span>@productSpecs.ProdWidth</span> </td>
                                                             </tr>
+                                                            }
+                                                            if (productSpecs.ProdHeight != null)
+                                                            {
                                                             <tr>
-                                                                <th> <span>Developer Name</span> </th>
+                                                                <th> <span>Product Height</span> </th>
                                                                 <td> <span>@productSpecs.ProdHeight</span> </td>
                                                             </tr>
+                                                            }
+                                                            if (productSpecs.UnitOfMeasure != null)
+                                                            {
                                                             <tr>
-                                                                <th> <span>Developer Name</span> </th>
+                                                                <th> <span>Product Unit of Measure</span> </th>
                                                                 <td> <span>@productSpecs.UnitOfMeasure</span> </td>
                                                             </tr>
+                                                            }
+                                                            if (productSpecs.ProdWeight != null)
+                                                            {
                                                             <tr>
-                                                                <th> <span>Developer Name</span> </th>
+                                                                <th> <span>Product Weight</span> </th>
                                                                 <td> <span>@productSpecs.ProdWeight</span> </td>
                                                             </tr>
+                                                            }
+                                                            if (productSpecs.WeightUntOfMeasure != null)
+                                                            {
                                                             <tr>
-                                                                <th> <span>Developer Name</span> </th>
+                                                                <th> <span>Product Weight Unit of Measure</span> </th>
                                                                 <td> <span>@productSpecs.WeightUntOfMeasure</span> </td>
                                                             </tr>
+                                                            }
                                                         }
                                                     </tbody>
                                                 </table>
                                             </div>
                                             <hr style="color: #d5d5d5; opacity: .75;margin: 2.5rem 0;" class="border-structure">
                                         </div>
+
                                         <div class="tableProd rating-and-reviews ">
                                             <h1 class="trackingText">Rating & Reviews</h1>
                                             <div class="reviewsProd d-flex">
@@ -609,6 +641,7 @@
                                             </div>
                                             <hr style="color: #d5d5d5; opacity: .75;margin: 2.5rem 0;" class="border-structure">
                                         </div>
+
                                         <div class="carousel-bottom">
                                             <div>
                                                 <div class="more-like-this-carousel">
@@ -1173,7 +1206,7 @@
                                                 </svg>
                                             </div>
                                             <div class="text-box">
-                                                <div class="main-text"><span class="stock__text">In Stock</span> <span>at</span> <span class="store__name">Nearby Stores</span></div>
+                                                <div class="main-text"><span class="stock__text">@(Model.Product.Count > 0 ? "In Stock":"Out of Stock")</span> <span>at</span> <span class="store__name">Nearby Stores</span></div>
                                                 <div class="sub-text">Unavailable at Ross Henderson S/C</div>
                                             </div>
                                         </div>
@@ -1286,6 +1319,7 @@
                         </div>
                     </div>
                 </section>
+
                 <section id="mb-product-description" class="product-description">
                     <div class="container-fluid">
                         <div class="descMain">
@@ -1328,162 +1362,112 @@
                                     <hr style="color: #d5d5d5; opacity: .75;margin: 2.5rem 0;" class="border-structure ">
                                 </div>
                                 <div class="tableProd specifications">
-                                    <h1 class="trackingText sssss">Product Specifications</h1>
+                                    <h1 class="trackingText">Specifications</h1>
+                                    <h1 class="trackingText2">General</h1>
                                     <div class="product-table">
                                         <table class="w-100 table-auto border-collapse">
                                             <tbody>
-                                                <tr>
-                                                    <th> <span>Product ID</span> </th>
-                                                    <td> <span>217700</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Brand Name</span> </th>
-                                                    <td> <span>Sony</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>GameStop Exclusive</span> </th>
-                                                    <td> <span>No</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>UPC</span> </th>
-                                                    <td> <span>711719529705</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Vendor Part Number</span> </th>
-                                                    <td> <span>3003180</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Number of Players</span> </th>
-                                                    <td> <span>1</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Online Multiplayer</span> </th>
-                                                    <td> <span>No</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Genre</span> </th>
-                                                    <td> <span>Action</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Publisher Name</span> </th>
-                                                    <td> <span>Sony</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Developer Name</span> </th>
-                                                    <td> <span>Naughty Dog</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Manufacturer</span> </th>
-                                                    <td> <span>Sony</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Online Multiplayer</span> </th>
-                                                    <td> <span>No</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Franchise</span> </th>
-                                                    <td> <span>The Last of Us</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Product Height</span> </th>
-                                                    <td> <span>0.4</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Product Weight</span> </th>
-                                                    <td> <span>0.1</span> </td>
-                                                </tr>
+                                                @foreach (ProductSpecs productSpecs in Model.Product.ProductSpecs)
+                                                {
+                                                    <tr>
+                                                        <th> <span>UPC</span> </th>
+                                                        <td> <span>@productSpecs.UPC</span> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th> <span>Brand Name</span> </th>
+                                                        <td> <span>@productSpecs.BrandName</span> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th> <span>GameStop Exclusive</span> </th>
+                                                        <td> <span>@productSpecs.IsExclusive</span> </td>
+                                                    </tr>
+                                                }
                                             </tbody>
                                         </table>
                                     </div>
-                                    <h1 class="trackingText">Gameplay</h1>
+                                    <h1 class="trackingText2">Gameplay</h1>
                                     <div class="product-table">
                                         <table class="w-100 table-auto border-collapse">
                                             <tbody>
-                                                <tr>
-                                                    <th> <span>Brand Name</span> </th>
-                                                    <td> <span>Sony</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>GameStop Exclusive</span> </th>
-                                                    <td> <span>No</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>UPC</span> </th>
-                                                    <td> <span>711719529705</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Vendor Part Number</span> </th>
-                                                    <td> <span>3003180</span> </td>
-                                                </tr>
+                                                @foreach (ProductSpecs productSpecs in Model.Product.ProductSpecs)
+                                                {
+                                                    <tr>
+                                                        <th> <span>Number of Players</span> </th>
+                                                        <td> <span>@productSpecs.NumberOfPlayers</span> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th> <span>Online Multiplayer</span> </th>
+                                                        <td> <span>@productSpecs.IsOnline</span> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th> <span>Number of Online Players</span> </th>
+                                                        <td> <span>@productSpecs.OnlinePlayers</span> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th> <span>Perspective</span> </th>
+                                                        <td> <span>@productSpecs.Perspective</span> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th> <span>Genre</span> </th>
+                                                        <td> <span>@productSpecs.Genre</span> </td>
+                                                    </tr>
+                                                }
                                             </tbody>
                                         </table>
                                     </div>
-                                    <h1 class="trackingText">General</h1>
+                                    <h1 class="trackingText2">Fandom</h1>
                                     <div class="product-table">
                                         <table class="w-100 table-auto border-collapse">
                                             <tbody>
-                                                <tr>
-                                                    <th> <span>Brand Name</span> </th>
-                                                    <td> <span>Sony</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>GameStop Exclusive</span> </th>
-                                                    <td> <span>No</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>UPC</span> </th>
-                                                    <td> <span>711719529705</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Vendor Part Number</span> </th>
-                                                    <td> <span>3003180</span> </td>
-                                                </tr>
+                                                @foreach (ProductSpecs productSpecs in Model.Product.ProductSpecs)
+                                                {
+                                                    <tr>
+                                                        <th> <span>Franchise</span> </th>
+                                                        <td> <span>@productSpecs.Franchise</span> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th> <span>Publisher Name</span> </th>
+                                                        <td> <span>@productSpecs.PublisherName</span> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th> <span>Developer Name</span> </th>
+                                                        <td> <span>@productSpecs.DeveloperName</span> </td>
+                                                    </tr>
+                                                }
                                             </tbody>
                                         </table>
                                     </div>
-                                    <h1 class="trackingText">Fandom</h1>
+                                    <h1 class="trackingText2">Dimension</h1>
                                     <div class="product-table">
                                         <table class="w-100 table-auto border-collapse">
                                             <tbody>
-                                                <tr>
-                                                    <th> <span>Brand Name</span> </th>
-                                                    <td> <span>Sony</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>GameStop Exclusive</span> </th>
-                                                    <td> <span>No</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>UPC</span> </th>
-                                                    <td> <span>711719529705</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Vendor Part Number</span> </th>
-                                                    <td> <span>3003180</span> </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <h1 class="trackingText">Dimension</h1>
-                                    <div class="product-table">
-                                        <table class="w-100 table-auto border-collapse">
-                                            <tbody>
-                                                <tr>
-                                                    <th> <span>Product Height</span> </th>
-                                                    <td> <span>0.4</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Product Weight</span> </th>
-                                                    <td> <span>0.1</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Product Length</span> </th>
-                                                    <td> <span>4.4</span> </td>
-                                                </tr>
-                                                <tr>
-                                                    <th> <span>Product Width</span> </th>
-                                                    <td> <span>3.53</span> </td>
-                                                </tr>
+                                                @foreach (ProductSpecs productSpecs in Model.Product.ProductSpecs)
+                                                {
+                                                    <tr>
+                                                        <th> <span>Product Length</span> </th>
+                                                        <td> <span>@productSpecs.ProdLength</span> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th> <span>Product Width</span> </th>
+                                                        <td> <span>@productSpecs.ProdWidth</span> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th> <span>Product Height</span> </th>
+                                                        <td> <span>@productSpecs.ProdHeight</span> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th> <span>Product Unit of Measure</span> </th>
+                                                        <td> <span>@productSpecs.UnitOfMeasure</span> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th> <span>Product Weight</span> </th>
+                                                        <td> <span>@productSpecs.ProdWeight</span> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th> <span>Product Weight Unit of Measure</span> </th>
+                                                        <td> <span>@productSpecs.WeightUntOfMeasure</span> </td>
+                                                    </tr>
+                                                }
                                             </tbody>
                                         </table>
                                     </div>
