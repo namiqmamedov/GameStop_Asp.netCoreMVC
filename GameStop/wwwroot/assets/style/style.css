@@ -1895,6 +1895,10 @@ footer #hr {
         height: 6.55rem !important;
     }
 
+    .main-header .m-menu__header {
+        height: 6.55rem !important;
+    }
+
     #hardwareAccess {
         overflow-x: hidden;
     }
@@ -17093,10 +17097,19 @@ Cart  stylling
             font-family: "Open Sans", sans-serif;
         }
 
-        .price-main .base-product .product-box .text-box .store__name {
-            -webkit-text-decoration-line: underline;
-            text-decoration-line: underline;
+
+        .price-main .base-product .product-box .text-box .outOfStockInstore {
+            color: #eb7100;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 0.03rem;
         }
+
+
+            .price-main .base-product .product-box .text-box .store__name {
+                -webkit-text-decoration-line: underline;
+                text-decoration-line: underline;
+            }
 
     .price-main .base-product .sub-text {
         font-family: "Open-Sans", sans-serif;
@@ -17231,6 +17244,14 @@ Cart  stylling
 
         .price-main .product-cart .cartButton {
             position: static;
+        }
+
+        .price-main .product-cart .nonStockBtn {
+            background: white;
+            border-color: black;
+            color: black;
+            border: 1px solid black;
+            padding-top: 3px;
         }
 
         .price-main .product-cart button {

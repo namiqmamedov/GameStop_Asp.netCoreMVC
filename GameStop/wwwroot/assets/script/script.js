@@ -35,3 +35,22 @@ var perfEntries = performance.getEntriesByType("navigation");
 if (perfEntries[0].type === "back_forward") {
     location.reload();
 }
+
+$("#mMenu").click(function () {
+    $(".search .fa-search").css({
+        display: "none"
+    })
+});
+
+
+$(".m-menu__toggle .close").click(function () {
+    $(".search .fa-search").css({
+        display: "block"
+    })
+});
+
+$(".m-menu__overlay").click(function () {
+    $(".search .fa-search").css({
+        display: "block"
+    })
+});
