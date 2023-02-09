@@ -69,6 +69,10 @@
     <Compile Remove="Migrations\20230207212427_UpdatedSubCategoryTable.Designer.cs" />
     <Compile Remove="Migrations\20230207212634_UpdatedSubCategoryTable.cs" />
     <Compile Remove="Migrations\20230207212634_UpdatedSubCategoryTable.Designer.cs" />
+    <Compile Remove="Migrations\20230209103038_UpdatedProductSpecsTable.cs" />
+    <Compile Remove="Migrations\20230209103038_UpdatedProductSpecsTable.Designer.cs" />
+    <Compile Remove="Migrations\20230209103108_UpdatedProductSpecsTable.cs" />
+    <Compile Remove="Migrations\20230209103108_UpdatedProductSpecsTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

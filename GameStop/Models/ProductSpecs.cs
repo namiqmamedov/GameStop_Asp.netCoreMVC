@@ -9,8 +9,7 @@ namespace GameStop.Models
 {
     public class ProductSpecs : BaseEntity
     {
-        [MaxLength(12)]
-        public byte UPC { get; set; }
+        public string UPC { get; set; }
 
         [MaxLength(255)]
         [DisplayName("Brand Name")]

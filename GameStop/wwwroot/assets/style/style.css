@@ -17992,6 +17992,9 @@ Media Queries
         margin-bottom: 43px;
         margin-top: 13.5px;
     }
+    .product-description .specifications .trackingText2{
+       font-weight: bold;
+    }
 
     .product-description .specifications .product-table {
         margin: 17.5px 0;

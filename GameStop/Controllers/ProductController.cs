@@ -33,7 +33,7 @@ namespace GameStop.Controllers
         {
             ProductDetailVM productDetailVM  = new ProductDetailVM
             {
-                Product = _context.Products.Include(p=>p.ProductImages).Include(p=>p.ProductFeatures).FirstOrDefault(p => p.IsDeleted == false && p.Id == id),
+                Product = _context.Products.Include(p=>p.ProductImages).Include(p=>p.ProductFeatures).Include(p=>p.ProductSpecs).FirstOrDefault(p => p.IsDeleted == false && p.Id == id),
             };
 
 

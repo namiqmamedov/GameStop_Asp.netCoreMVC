@@ -4,14 +4,16 @@ using GameStop.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GameStop.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230209102723_UpdatedProductSpecsTableChangeIntToByteForUPC")]
+    partial class UpdatedProductSpecsTableChangeIntToByteForUPC
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -284,8 +286,9 @@ namespace GameStop.Migrations
                     b.Property<string>("PublisherName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UPC")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("UPC")
+                        .HasColumnType("int")
+                        .HasMaxLength(12);
 
                     b.Property<string>("UnitOfMeasure")
                         .HasColumnType("nvarchar(max)");
