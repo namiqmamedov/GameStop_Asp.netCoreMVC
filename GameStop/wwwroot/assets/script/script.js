@@ -56,5 +56,20 @@ $(".m-menu__overlay").click(function () {
 });
 
 
+// add basket 
+
+$('.addToCart').click(function (e) {
+    e.preventDefault();
+
+    let cart = $(this).attr('href');
+
+    fetch(cart).then(res => res.text()).then(data =>
+    {
+
+    })
+
+});
+
+
 
 

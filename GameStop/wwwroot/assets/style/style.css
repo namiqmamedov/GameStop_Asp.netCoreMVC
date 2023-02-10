@@ -666,6 +666,7 @@ html {
             left: 70.6%;
             top: 43%;
             cursor: pointer;
+            opacity: 0;
         }
 
 
@@ -14651,7 +14652,7 @@ footer #hr {
         display: none;
         max-height: 357px;
         max-width: 100%;
-        width: 58.5%;
+        width: 57.1%;
         background-color: white;
         box-shadow: 0 12px 12px 0 rgb(0 0 0 / 10%);
         border-top: 1px solid #e0e0e0;
@@ -17315,6 +17316,11 @@ Cart  stylling
 
         .price-main .product-cart .cartButton {
             position: static;
+        }
+
+        .price-main .product-cart .cartButton a {
+            color: white;
+            text-decoration: none;
         }
 
         .price-main .product-cart .nonStockBtn {

@@ -25,11 +25,8 @@ $(document).ready(function () {
         else
         {
             $('.search-brand .search-item').html('');
-
-        }
-          
+        }        
     })
-
 
 
     $(".close_button").click(function () {
@@ -38,6 +35,20 @@ $(document).ready(function () {
         });
 
     });
+
+    $('#inputSearch').bind('focus', function () {
+        $(".close_button").css({
+            opacity: "1"
+        });
+    });
+
+
+    $('#inputSearch').bind('blur', function () {
+        $(".close_button").css({
+            opacity: "0"
+        });
+    });
+
 
 });
 
