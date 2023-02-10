@@ -54,6 +54,13 @@ namespace GameStop.Controllers
             return View(productDetailVM);
         }
 
+        public async Task<IActionResult> Search(string search)
+        {
+            List<Product> products = await _context.Products.Where(p => p.Title.ToLower().Contains(search.ToLower().Trim())).ToListAsync();
+
+            return PartialView("_ProductSearchPartial",products);
+        }
+
 
     }
 }

@@ -73,7 +73,7 @@ html {
     visibility: visible !important;
 }
 
-.pd .header-main{
+.pd .header-main {
     position: static !important;
 }
 
@@ -589,11 +589,43 @@ html {
         box-shadow: 0 0 5px rgba(57, 63, 72, 0.3);
     }
 
-    .main-header .header-search body {
-        background-color: #eee;
-        font-family: "Poppins", sans-serif;
-        font-weight: 300;
+    .main-header .header-search .search-wrapper {
+        margin-right: -23px;
+        margin-left: 13px;
     }
+
+        .main-header .header-search .search-wrapper .search-brand {
+            position: absolute;
+            z-index: 3000;
+            width: 56.8%;
+            max-width: 100%;
+            background-color: white;
+            box-shadow: 0 12px 12px 0 rgb(0 0 0 / 10%);
+            border-top: 1px solid #e0e0e0;
+        }
+
+            .main-header .header-search .search-wrapper .search-brand .search__text {
+                padding: 2px 0;
+                display: block;
+                font-weight: 700;
+                font-size: 16px;
+                font-family: 'Open Sans',sans-serif;
+            }
+
+        .main-header .header-search .search-wrapper .search-brand a{
+            padding: 8px 16px;
+            display: block;
+            font-size: 14px;
+            font-family: 'Open Sans',sans-serif;
+        }
+
+
+
+.main-header .header-search body {
+    background-color: #eee;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+}
 
     .main-header .header-search .height {
         height: 100vh;
@@ -17106,10 +17138,10 @@ Cart  stylling
         }
 
 
-            .price-main .base-product .product-box .text-box .store__name {
-                -webkit-text-decoration-line: underline;
-                text-decoration-line: underline;
-            }
+        .price-main .base-product .product-box .text-box .store__name {
+            -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+        }
 
     .price-main .base-product .sub-text {
         font-family: "Open-Sans", sans-serif;
@@ -18013,8 +18045,9 @@ Media Queries
         margin-bottom: 29.5px;
         margin-top: 13.5px;
     }
-    .product-description .specifications .trackingText2{
-       font-weight: bold;
+
+    .product-description .specifications .trackingText2 {
+        font-weight: bold;
     }
 
     .product-description .specifications .product-table {

@@ -54,3 +54,34 @@ $(".m-menu__overlay").click(function () {
         display: "block"
     })
 });
+
+
+
+
+// product search
+$(document).ready(function () {
+
+    $('.form-control').keyup(function () {
+
+        let inputValue = $(this).val();
+
+        let inputUrl = $(this).data('url')
+
+        inputUrl = inputUrl + '?search=' + inputValue;
+
+        if (inputValue) {
+            fetch(url)
+                .then(res => res.text())
+                .then(data => {
+                    $('.search-brand .search-item').html(data);
+                })
+        }
+        else {
+            $('.search-brand .search-item').html('');
+        }
+
+
+
+    })
+
+});
