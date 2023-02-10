@@ -2,10 +2,15 @@
 // product search
 $(document).ready(function () {
 
-    $('#inputSearch').keyup(function () {
+    $('#inputSearch').keyup(function (e) {
 
-        let inputValue = $(this).val();
+        e.preventDefault();
+
+
+        let inputValue = $(this).val().trim();
         let url = $(this).data('url')
+
+        let searchBrand = $(".search-brand").attr("class");
 
 
         url = url + '?search=' + inputValue;
@@ -27,3 +32,9 @@ $(document).ready(function () {
 });
 
 
+
+let inputBox = document.querySelector('#inputSearch')
+
+inputBox.addEventListener('input', function () {
+    document.querySelector('.search-brand').style.display = "block";
+});

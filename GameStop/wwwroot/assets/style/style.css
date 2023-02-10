@@ -597,6 +597,7 @@ html {
         .main-header .header-search .search-wrapper .search-brand {
             position: absolute;
             z-index: 3000;
+            display: none;
             width: 56.8%;
             max-height: 357px;
             max-width: 100%;

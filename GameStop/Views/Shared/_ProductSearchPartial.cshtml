@@ -3,12 +3,11 @@
 
 @foreach (Product product in Model.Take(10))
 {
-    <div class="search-item">
+
         <a href="#">
             <span class="search__text">
                 <span>@product.Title</span>
             </span>
         </a>
-    </div>
 }
 
