@@ -22,15 +22,24 @@ $(document).ready(function () {
                     $('.search-brand .search-item').html(data);
                 })
         }
-        else {
+        else
+        {
             $('.search-brand .search-item').html('');
 
         }
           
     })
 
-});
+    $("#btn").click(function () {
+        $("p").hide();
+    });
 
+
+    $('#inputSearch').on('input', function (e) {
+       
+    });
+
+});
 
 
 let inputBox = document.querySelector('#inputSearch')

@@ -150,9 +150,12 @@
                             <div class="row d-flex justify-content-center align-items-center">
                                 <form role="search" action="#" method="GET">
                                     <div class="search">
+
                                         <i class="fa fa-search"></i>
-                                        <input oninput="showElem()"  type="search" id="inputSearch" data-url="http://localhost:42389/product/search" class="form-control" placeholder="Search games,consoles & more" autocomplete="off">
+                                        <input type="search" id="inputSearch" data-url="http://localhost:42389/product/search" class="form-control" placeholder="Search games,consoles & more" autocomplete="off">
                                     </div>
+
+                                   
                                     <div class="search-wrapper">
                                         <div class="search-redisign">
                                             <div class="container">
@@ -161,7 +164,7 @@
                                                         <div class="search-item">
                                                             @await Html.PartialAsync("_ProductSearchPartial", Model.Products)
                                                         </div>
-                                                    </div> 
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

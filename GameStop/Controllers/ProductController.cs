@@ -56,7 +56,9 @@ namespace GameStop.Controllers
 
         public async Task<IActionResult> Search(string search)
         {
-            List<Product> products = await _context.Products.Where(p => p.Title.ToLower().Contains(search.ToLower().Trim())).ToListAsync();
+            List<Product> products = await _context.Products.Where(p => p.Title.ToLower()
+            .Contains(search.ToLower()) || p.SubCategory.Name.ToLower()
+            .Contains(search.ToLower())).ToListAsync();
 
             return PartialView("_ProductSearchPartial",products);
         }
