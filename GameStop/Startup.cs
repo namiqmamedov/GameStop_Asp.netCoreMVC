@@ -30,6 +30,7 @@ namespace GameStop
         public void ConfigureServices(IServiceCollection services)
         {
 
+
             services.AddControllersWithViews();
 
             services.AddDbContext<AppDbContext>(options =>

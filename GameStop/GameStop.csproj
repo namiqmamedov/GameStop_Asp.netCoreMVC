@@ -87,7 +87,6 @@
 
   <ItemGroup>
     <Folder Include="ViewModels\Category\" />
-    <Folder Include="wwwroot\assets\" />
   </ItemGroup>
 
 </Project>

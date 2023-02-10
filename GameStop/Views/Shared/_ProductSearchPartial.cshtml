@@ -1,7 +1,7 @@
-﻿@model IEnumerable<Product>
+﻿@model List<Product>
 
 
-@foreach (Product product in Model)
+@foreach (Product product in Model.Take(10))
 {
     <div class="search-item">
         <a href="#">

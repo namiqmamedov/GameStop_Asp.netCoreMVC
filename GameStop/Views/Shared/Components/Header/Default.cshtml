@@ -151,7 +151,7 @@
                                 <form role="search" action="#" method="GET">
                                     <div class="search">
                                         <i class="fa fa-search"></i>
-                                        <input type="search" class="form-control" placeholder="Search games,consoles & more">
+                                        <input type="search" id="inputSearch" data-url="http://localhost:42389/product/search" class="form-control" placeholder="Search games,consoles & more">
                                     </div>
                                     <div class="search-wrapper">
                                         <div class="search-redisign">
@@ -159,7 +159,7 @@
                                                 <div class="row">
                                                     <div class="search-brand">
 
-                                                        @await Html.PartialAsync("_ProductSearchPartial", Model.Product)
+                                                        @await Html.PartialAsync("_ProductSearchPartial", Model.Products)
 
                                                     </div>
                                                 </div>

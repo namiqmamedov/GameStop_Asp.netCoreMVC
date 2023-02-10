@@ -58,30 +58,30 @@ $(".m-menu__overlay").click(function () {
 
 
 
-// product search
-$(document).ready(function () {
+//// product search
+//$(document).ready(function () {
 
-    $('.form-control').keyup(function () {
+//    $('.form-control').keyup(function () {
 
-        let inputValue = $(this).val();
+//        let inputValue = $(this).val();
 
-        let inputUrl = $(this).data('url')
+//        let inputUrl = $(this).data('url')
 
-        inputUrl = inputUrl + '?search=' + inputValue;
+//        inputUrl = inputUrl + '?search=' + inputValue;
 
-        if (inputValue) {
-            fetch(url)
-                .then(res => res.text())
-                .then(data => {
-                    $('.search-brand .search-item').html(data);
-                })
-        }
-        else {
-            $('.search-brand .search-item').html('');
-        }
+//        if (inputValue) {
+//            fetch(url)
+//                .then(res => res.text())
+//                .then(data => {
+//                    $('.search-brand .search-item').html(data);
+//                })
+//        }
+//        else {
+//            $('.search-brand .search-item').html('');
+//        }
 
 
 
-    })
+//    })
 
-});
+//});
