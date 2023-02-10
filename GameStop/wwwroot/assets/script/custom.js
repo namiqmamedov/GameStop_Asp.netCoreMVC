@@ -30,13 +30,13 @@ $(document).ready(function () {
           
     })
 
-    $("#btn").click(function () {
-        $("p").hide();
-    });
 
 
-    $('#inputSearch').on('input', function (e) {
-       
+    $(".close_button").click(function () {
+        $(".search-brand").css({
+            display: "none"
+        });
+
     });
 
 });
