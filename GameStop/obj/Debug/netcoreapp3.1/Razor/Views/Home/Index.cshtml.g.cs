@@ -47,8 +47,15 @@ using GameStop.ViewModels.Products;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 7 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Views\_ViewImports.cshtml"
+using GameStop.ViewModels.Basket;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8a9ff61f077bc7d49f8bed4e723c270603fe0dc8", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0a0a8d9da227eb5c357e7d9f840843b229615d21", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9b0afde71a3da77e3a524c1af222316d18c29508", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("rel", new global::Microsoft.AspNetCore.Html.HtmlString("stylesheet"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -98,14 +105,14 @@ using GameStop.ViewModels.Products;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc88352", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc88541", async() => {
                 WriteLiteral(@"
     <meta charset=""UTF-8"">
     <meta http-equiv=""X-UA-Compatible"" content=""IE=edge"">
     <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
     <title>Consoles, Collectibles, Video Games, and More – Buy, Sell or Trade | GameStop</title>
     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc88884", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc89073", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -158,7 +165,7 @@ using GameStop.ViewModels.Products;
                     <div class=""card-box"">
                         <div class=""home-img"">
                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc812719", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc812908", async() => {
                 WriteLiteral("\r\n                                <img src=\"https://media.gamestop.com/i/gamestop/PostHolidaySale_WK49_2_Column_696x468_D.webp\" alt=\"img\">\r\n                            ");
             }
             );
@@ -173,7 +180,7 @@ using GameStop.ViewModels.Products;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        </div>\r\n                        <div class=\"card-title\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc814081", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc814270", async() => {
                 WriteLiteral(@"
                                 <p class=""h-title"">
                                     Put Your Gift Cards To Good Use
@@ -195,7 +202,7 @@ using GameStop.ViewModels.Products;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"card-box\">\r\n                        <div class=\"home-img\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc815678", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc815867", async() => {
                 WriteLiteral("\r\n                                <img src=\"https://media.gamestop.com/i/gamestop/TreatYourself_2_Column_696x365_D.webp\" alt=\"img\">\r\n                            ");
             }
             );
@@ -210,7 +217,7 @@ using GameStop.ViewModels.Products;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        </div>\r\n                        <div>\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc817012", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc817201", async() => {
                 WriteLiteral(@"
                                 <p class=""h-title"">
                                     End Of Year Sale
@@ -250,7 +257,7 @@ using GameStop.ViewModels.Products;
                     <div class=""card-box"">
                         <div class=""home-img"">
                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc818886", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc819075", async() => {
                 WriteLiteral("\r\n                                <img src=\"https://media.gamestop.com/i/gamestop/TreatYourself__Any_Column_455x455_D.jpeg\" alt=\"img\">\r\n                            ");
             }
             );
@@ -265,7 +272,7 @@ using GameStop.ViewModels.Products;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        </div>\r\n                        <div class=\"card-title\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc820244", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc820433", async() => {
                 WriteLiteral(@"
                                 <p class=""h-title"">
                                     Put Your Gift Cards To Good Use
@@ -287,7 +294,7 @@ using GameStop.ViewModels.Products;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"card-box\">\r\n                        <div class=\"home-img\">\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc821841", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc822030", async() => {
                 WriteLiteral("\r\n                                <img src=\"https://media.gamestop.com/i/gamestop/PostHolidaySale_WK48_Any_Column_455x455_D.jpeg\"\r\n                                     alt=\"img\">\r\n                            ");
             }
             );
@@ -302,7 +309,7 @@ using GameStop.ViewModels.Products;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        </div>\r\n                        <div>\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc823224", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc823413", async() => {
                 WriteLiteral(@"
                                 <p class=""h-title"">
                                     End Of Year Sale
@@ -583,7 +590,7 @@ using GameStop.ViewModels.Products;
 
                     <div class=""amp-card"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc837625", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc837814", async() => {
                 WriteLiteral("\r\n                            <img src=\"https://media.gamestop.com/i/gamestop/Homepage_5_Column_BrandLogo_Xbox_264x150_D.jpeg\"\r\n                                 alt=\"Xbox\">\r\n                        ");
             }
             );
@@ -598,7 +605,7 @@ using GameStop.ViewModels.Products;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    </div>\r\n                    <div class=\"amp-card\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc839005", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc839194", async() => {
                 WriteLiteral("\r\n                            <img src=\"https://media.gamestop.com/i/gamestop/Homepage_5_Column_BrandLogo_Nintendo_264x150_D.jpeg\"\r\n                                 alt=\"Nintendo\">\r\n                        ");
             }
             );
@@ -613,7 +620,7 @@ using GameStop.ViewModels.Products;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    </div>\r\n\r\n                    <div class=\"amp-card\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc840397", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc840586", async() => {
                 WriteLiteral("\r\n                            <img src=\"https://media.gamestop.com/i/gamestop/Homepage_5_Column_BrandLogo_PlayStation_264x150_D.jpeg\"\r\n                                 alt=\"Playstation\">\r\n                        ");
             }
             );
@@ -628,7 +635,7 @@ using GameStop.ViewModels.Products;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    </div>\r\n                    <div class=\"amp-card\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc841791", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc841980", async() => {
                 WriteLiteral("\r\n                            <img src=\"https://media.gamestop.com/i/gamestop/Homepage_5_Column_BrandLogo_Funko_264x150_D.jpeg\"\r\n                                 alt=\"Funko\">\r\n                        ");
             }
             );
@@ -643,7 +650,7 @@ using GameStop.ViewModels.Products;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    </div>\r\n                    <div class=\"amp-card\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc843173", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc843362", async() => {
                 WriteLiteral("\r\n                            <img src=\"https://media.gamestop.com/i/gamestop/HP_Meta_264x150_Logo5Up_D.jpeg\" alt=\"Meta\">\r\n                        ");
             }
             );
@@ -658,7 +665,7 @@ using GameStop.ViewModels.Products;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    </div>\r\n                    <div class=\"amp-card\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc844500", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc844689", async() => {
                 WriteLiteral("\r\n                            <img src=\"https://media.gamestop.com/i/gamestop/Homepage_5_Column_BrandLogo_Hasbro_264x150_D.jpeg\"\r\n                                 alt=\"Hashbro\">\r\n                        ");
             }
             );
@@ -673,7 +680,7 @@ using GameStop.ViewModels.Products;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                    </div>\r\n                    <div class=\"amp-card\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc845885", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc846074", async() => {
                 WriteLiteral("\r\n                            <img src=\"https://media.gamestop.com/i/gamestop/Homepage_5_Column_BrandLogo_Pokemon_264x150_D.jpeg\"\r\n                                 alt=\"Pokemon\">\r\n                        ");
             }
             );
@@ -765,7 +772,7 @@ using GameStop.ViewModels.Products;
                 </div>
                 <div class=""center-content"">
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc850904", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc851093", async() => {
                 WriteLiteral("\r\n                        <img class=\"h-img\"\r\n                             src=\"https://media.gamestop.com/i/gamestop/HP_XBForzaBundle_1440x200_FullBlade_D.webp\"");
                 BeginWriteAttribute("alt", " alt=\"", 23776, "\"", 23782, 0);
                 EndWriteAttribute();
@@ -909,7 +916,7 @@ using GameStop.ViewModels.Products;
                 <div id=""slider1"" class=""card-box "">
                     <div class=""card"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc858797", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a9ff61f077bc7d49f8bed4e723c270603fe0dc858986", async() => {
                 WriteLiteral("\r\n                            <img src=\"https://media.gamestop.com/i/gamestop/HP_ShopAllDeals_455x455_5Up.webp\" class=\"card-img-top\"\r\n                                 alt=\"...\">\r\n                        ");
             }
             );

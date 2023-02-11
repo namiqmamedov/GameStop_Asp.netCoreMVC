@@ -17318,10 +17318,13 @@ Cart  stylling
             position: static;
         }
 
-        .price-main .product-cart .cartButton a {
-            color: white;
-            text-decoration: none;
-        }
+            .price-main .product-cart .cartButton a {
+                color: white;
+                text-decoration: none;
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
 
         .price-main .product-cart .nonStockBtn {
             background: white;

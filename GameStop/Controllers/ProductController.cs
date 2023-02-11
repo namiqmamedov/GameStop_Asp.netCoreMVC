@@ -1,8 +1,10 @@
 ﻿using GameStop.DAL;
 using GameStop.Models;
+using GameStop.ViewModels.Basket;
 using GameStop.ViewModels.Products;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,6 +63,57 @@ namespace GameStop.Controllers
             .Contains(search.ToLower())).ToListAsync();
 
             return PartialView("_ProductSearchPartial",products);
+        }
+
+        public async Task<IActionResult> addToCart(int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
+            Product product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            string basket = HttpContext.Request.Cookies["basket"];
+
+
+            List<BasketVM> basketVMs = null;
+
+
+            if (basket != null)
+            {
+                basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
+
+            }
+
+            else
+            {
+                basketVMs = new List<BasketVM>();
+            } 
+
+            BasketVM basketVM = new BasketVM
+                {
+                    ProductID = product.Id,
+                    Count = 0,
+                    Image = product.Image,
+                    Title = product.Title
+                };
+
+                basketVMs.Add(basketVM);
+
+                basket = JsonConvert.SerializeObject(basketVMs);
+
+                HttpContext.Response.Cookies.Append("basket", basket);
+
+                return View(basketVMs);
+
+            
+
         }
 
 
