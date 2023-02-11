@@ -56,18 +56,17 @@ $(".m-menu__overlay").click(function () {
 });
 
 
-// add basket 
 
-//$('#ModalCart').click(function () {
+$('.add-to-cart-menu').click(function () {
 
-//    let cart = $(this).data();
+    let cart = $(this).data();
 
-//    fetch(cart).then(res => res.text()).then(data =>
-//    {
-//        $('.product-cart .add-cart').html(data);
-//    })
+    fetch(cart).then(res => res.text()).then(data =>
+    {
+        $('.section-last .cart').html(data);
+    })
 
-//});
+});
 
 
 

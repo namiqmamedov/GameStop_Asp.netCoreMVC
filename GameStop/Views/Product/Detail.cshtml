@@ -1252,54 +1252,56 @@
                                                 {
 
                                                     <button id="ModalCart" class="bt-1 w-100 cartButton" @*onclick="location.href='@Url.Action("addToCart", "product",new {id=Model.Product.Id })'"*@>
-                                                        Add to Cart
-                                                        <div class="add-to-cart-menu"></div>
-                                                        <label class="overlay-back2">
-                                                            <div class="notificationMsg2">
-                                                                <div class="notfMsg"> </div>
-                                                                <div class="notify"><span id="notifyType" class=""></span> </div>
-                                                            </div>
-                                                        </label>
-                                                        <div class="navMenu2">
-                                                            <div class="nav-section2">
-                                                                <div class="content-top2">
-                                                                    <div class="bar2">
-                                                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="closeReview" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path fill="none" d="M0 0h24v24H0z"> </path>
-                                                                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"> </path>
-                                                                        </svg>
+                                                        <a href="#">
+                                                            Add to Cart
+                                                            <div class="add-to-cart-menu"></div>
+                                                            <label class="overlay-back2">
+                                                                <div class="notificationMsg2">
+                                                                    <div class="notfMsg"> </div>
+                                                                    <div class="notify"><span id="notifyType" class=""></span> </div>
+                                                                </div>
+                                                            </label>
+                                                            <div class="navMenu2">
+                                                                <div class="nav-section2">
+                                                                    <div class="content-top2">
+                                                                        <div class="bar2">
+                                                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="closeReview" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                                                <path fill="none" d="M0 0h24v24H0z"> </path>
+                                                                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"> </path>
+                                                                            </svg>
+                                                                        </div>
+                                                                        <div class="backImg" style="background: url('~/assets/img/@Model.Product.Image');"> </div>
+                                                                        <div class="topContext">
+                                                                            <h5 class="cart-content">Added to Cart</h5>
+                                                                            <div class="imgTop">
+                                                                                <img src="~/assets/img/@Model.Product.Image" alt="">
+                                                                                <div class="item-attributes">
+                                                                                    <div class="line-item-name">
+                                                                                        <span>Nice! Your <span class="font-bold">@Model.Product.Title</span> has been added to cart.</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="backImg" style="background: url('~/assets/img/@Model.Product.Image');"> </div>
-                                                                    <div class="topContext">
-                                                                        <h5 class="cart-content">Added to Cart</h5>
-                                                                        <div class="imgTop">
-                                                                            <img src="~/assets/img/@Model.Product.Image" alt="">
-                                                                            <div class="item-attributes">
-                                                                                <div class="line-item-name">
-                                                                                    <span>Nice! Your <span class="font-bold">@Model.Product.Title</span> has been added to cart.</span>
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-body">
+                                                                            <div class="btn-wrapper">
+                                                                                <div class="checkoutBtn">
+                                                                                    <a href="./checkout.html">
+                                                                                        View Cart & Checkout
+                                                                                    </a>
+                                                                                </div>
+                                                                                <div class="shoppingBtn">
+                                                                                    <a class="keep-shop" href="#">
+                                                                                        Keep Shopping
+                                                                                    </a>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="modal-content">
-                                                                    <div class="modal-body">
-                                                                        <div class="btn-wrapper">
-                                                                            <div class="checkoutBtn">
-                                                                                <a href="./checkout.html">
-                                                                                    View Cart & Checkout
-                                                                                </a>
-                                                                            </div>
-                                                                            <div class="shoppingBtn">
-                                                                                <a class="keep-shop" href="#">
-                                                                                    Keep Shopping
-                                                                                </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
                                                             </div>
-                                                        </div>
+                                                        </a>
                                                     </button>
                                                 }
                                             </div>
