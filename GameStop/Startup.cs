@@ -55,7 +55,6 @@ namespace GameStop
 
             app.UseStaticFiles();
 
-
             app.UseEndpoints(endpoints =>
             {
 
@@ -63,7 +62,9 @@ namespace GameStop
                      name: "default",
                      pattern: "{controller=Home}/{action=Index}/{id?}"
                     );
+
             });
+        
         }
     }
 }
