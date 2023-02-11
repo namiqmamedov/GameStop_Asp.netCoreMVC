@@ -17372,6 +17372,7 @@ Cart  stylling
 
                 .price-main .product-cart .nav-section2 .content-top2 .topContext .item-attributes {
                     padding-left: 20.5px;
+                    max-width: 390px;
                 }
 
                     .price-main .product-cart .nav-section2 .content-top2 .topContext .item-attributes .line-item-name {

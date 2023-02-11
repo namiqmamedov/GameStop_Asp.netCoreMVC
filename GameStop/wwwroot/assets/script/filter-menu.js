@@ -43,6 +43,14 @@ $(".bar2").click(function () {
 });
 
 
+$(".keep-shop").click(function () {
+    $(".header-main").css({
+        position: "static"
+    });
+
+});
+
+
 
 
 
@@ -132,6 +140,15 @@ $(".bar2").click(function () {
 
   });
 
+    $(".keep-shop").on('click', function () {
+        $(".overlay-back2").css({
+            width: "0%"
+        });
+
+
+    });
+
+
 
 
 
@@ -171,6 +188,23 @@ const posStat22ic2 = $(".bar2").click(function () {
   if ($('.navMenu2').removeClass("filterRemove")) {}
 
 })
+
+const askRemove22 = $(".keep-shop").click(function () {
+    if ($('.navMenu2').removeClass("active")) { }
+
+
+
+    if ($('.overlay-back2').removeClass("active")) { }
+
+
+})
+
+
+const posStat22i2c2 = $(".keep-shop").click(function () {
+    if ($('.navMenu2').removeClass("filterRemove")) { }
+
+})
+
 
 
 const ratingActive = $(".write-menu").click(function () {
@@ -215,6 +249,12 @@ const posStatic3 = $(".bar2").click(function () {
   if ($('.all-table').removeClass("filterRemove")) {}
 
 })
+
+const posStatic33 = $(".keep-shop").click(function () {
+    if ($('.all-table').removeClass("filterRemove")) { }
+
+})
+
 
 
 const owHidden = $(".write-menu").click(function () {
@@ -270,6 +310,17 @@ const owStaticBar2 = $(".bar2").click(function () {
 
 
 })
+
+const owStaticBar22 = $(".keep-shop").click(function () {
+    if ($('body').removeClass("overflow-hidden")) { }
+
+    if ($('.scroll-up').removeClass("filterRemove")) { }
+
+    if ($('.navMenu2').removeClass("filterRemove")) { }
+
+
+})
+
 
 
 

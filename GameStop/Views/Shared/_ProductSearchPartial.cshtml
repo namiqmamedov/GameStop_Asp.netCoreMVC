@@ -4,7 +4,7 @@
 @foreach (Product product in Model.Take(10))
 {
     <div class="item-pr">
-        <a href="#">
+        <a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">
             <span class="search__text">
                 <span>@product.Title</span>
             </span>
