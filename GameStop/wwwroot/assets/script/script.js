@@ -58,17 +58,16 @@ $(".m-menu__overlay").click(function () {
 
 // add basket 
 
-$('.add-cart').click(function (e) {
-    e.preventDefault();
+//$('#ModalCart').click(function () {
 
-    let cart = $(this).attr('href');
+//    let cart = $(this).data();
 
-    fetch(cart).then(res => res.text()).then(data =>
-    {
-        $('.product-cart .add-cart').html(data);
-    })
+//    fetch(cart).then(res => res.text()).then(data =>
+//    {
+//        $('.product-cart .add-cart').html(data);
+//    })
 
-});
+//});
 
 
 

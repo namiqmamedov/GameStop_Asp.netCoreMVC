@@ -27,8 +27,8 @@ namespace GameStop.Controllers
             {
                 Products = await _context.Products.Where(p => p.IsDeleted == false).ToListAsync()
             };
-           return View(productVM);
-            
+            return View(productVM);
+
         }
 
         public IActionResult Detail(int? id)
@@ -39,12 +39,12 @@ namespace GameStop.Controllers
                 return BadRequest();
             }
 
-            ProductDetailVM productDetailVM  = new ProductDetailVM
+            ProductDetailVM productDetailVM = new ProductDetailVM
             {
-                Product = _context.Products.Include(p=>p.ProductImages).Include(p=>p.ProductFeatures).Include(p=>p.ProductSpecs).FirstOrDefault(p => p.IsDeleted == false && p.Id == id),
+                Product = _context.Products.Include(p => p.ProductImages).Include(p => p.ProductFeatures).Include(p => p.ProductSpecs).FirstOrDefault(p => p.IsDeleted == false && p.Id == id),
             };
 
-            
+
 
             if (productDetailVM == null)
             {
@@ -62,7 +62,7 @@ namespace GameStop.Controllers
             .Contains(search.ToLower()) || p.SubCategory.Name.ToLower()
             .Contains(search.ToLower())).ToListAsync();
 
-            return PartialView("_ProductSearchPartial",products);
+            return PartialView("_ProductSearchPartial", products);
         }
 
         public async Task<IActionResult> addToCart(int? id)
@@ -94,26 +94,30 @@ namespace GameStop.Controllers
             else
             {
                 basketVMs = new List<BasketVM>();
-            } 
+            }
 
-            BasketVM basketVM = new BasketVM
+            if (basketVMs.Exists(p => p.ProductID == id))
+            {
+                basketVMs.Find(p => p.ProductID == id).Count++;
+            }
+            else
+            {
+                BasketVM basketVM = new BasketVM
                 {
                     ProductID = product.Id,
-                    Count = 0,
+                    Count = 1,
                     Image = product.Image,
                     Title = product.Title
                 };
 
                 basketVMs.Add(basketVM);
+            }
 
-                basket = JsonConvert.SerializeObject(basketVMs);
+            basket = JsonConvert.SerializeObject(basketVMs);
 
-                HttpContext.Response.Cookies.Append("basket", basket);
+            HttpContext.Response.Cookies.Append("basket", basket);
 
-                return View(basketVMs);
-
-            
-
+            return View(basketVMs);
         }
 
 
