@@ -49,6 +49,17 @@ $(document).ready(function () {
         });
     });
 
+    // input count 
+
+    $('.qtyOrder select').on('change', function (e) {
+        e.preventDefault();
+
+        let inputCount = $(this).val();
+
+        let url = $(this).attr('class') + '/?count=' + inputCount;
+
+        console.log(url);
+    });
 
 });
 
