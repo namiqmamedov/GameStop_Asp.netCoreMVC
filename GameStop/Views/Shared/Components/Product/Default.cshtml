@@ -14,14 +14,16 @@
 
                         <div class="card-body">
                             <div class="card-price d-flex">
-                                @if (product.Price > 0)
-                                {
-                                    <span class="price">$@product.Price</span>
-                                }
-                                else
+                                @if (product.DiscountedPrice > 0)
                                 {
                                     <span class="price"></span>
                                 }
+
+                                else
+                                {
+                                    <span class="price">$@product.Price</span>
+                                }
+
 
                                 @if (product.DiscountedPrice > 0)
                                 {
@@ -55,16 +57,16 @@
 
             @*<nav class="pagination-container">
 
-                <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
-                </button>
-                <div id="pagination-numbers">
+                    <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+                    </button>
+                    <div id="pagination-numbers">
 
-                </div>
+                    </div>
 
 
-                <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
-                </button>
-            </nav>*@
+                    <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+                    </button>
+                </nav>*@
         </div>
     </div>
 </div>

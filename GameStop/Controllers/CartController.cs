@@ -21,9 +21,22 @@ namespace GameStop.Controllers
         }
 
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(int? id)
         {
-            return View();
+            string basket = HttpContext.Request.Cookies["basket"];
+            
+            List<BasketVM> basketVms = null;
+
+            if (!string.IsNullOrWhiteSpace(basket))
+            {
+                basketVms = JsonConvert.DeserializeObject<List<BasketVM>>(basket);  
+            }
+            else
+            {
+                basketVms = new List<BasketVM>();
+            }
+
+            return View(await _getBasketItemAsync(basketVms));
         }
 
         public async Task<IActionResult> addToCart(int? id)
@@ -125,6 +138,8 @@ namespace GameStop.Controllers
 
                 item.Image = dbProduct.Image;
                 item.Title = dbProduct.Title;
+                item.Price = dbProduct.DiscountedPrice > 0 ? dbProduct.DiscountedPrice : dbProduct.Price ;
+                item.OldPrice = dbProduct.OldPrice;
             }
 
             return basketVMs;

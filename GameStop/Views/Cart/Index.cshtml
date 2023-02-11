@@ -1,4 +1,4 @@
-﻿
+﻿@model List<BasketVM>
 @{
     ViewData["Title"] = "Index";
 }
@@ -34,6 +34,7 @@
     <div class="cart-container">
         <div class="container-fluid">
             <div class="row">
+
                 <div class="cart-text">
                     <h1 class="name-cart">Your cart</h1>
                     <span class="countProduct">(2 products)</span>
@@ -41,92 +42,52 @@
                 <div class="cart-items">
 
                     <div class="cartBox">
-                        <div class="all-details d-flex">
-                            <div class="leftDetail">
-                                <div class="product-img">
-                                    <a href="./productDetails.html"><img src="https://media.gamestop.com/i/gamestop/11179571/UNCHARTED-Legacy-of-Thieves-Collection----PlayStation-5?$thumb$" alt="img"></a>
-                                </div>
-                                <div class="product-details">
-                                    <div class="item-attributes">
-                                        <div class="product-name">
-                                            <a href="./productDetails.html"><h3 class="product-title">UNCHARTED: Legacy of Thieves Collection - PlayStation 5</h3></a>
-                                        </div>
-                                        <div class="product-condition">
-                                            <span class="condition">Condition</span>
-                                            <span class="condition-name">Pre-Owned</span>
+                        @foreach (BasketVM cart in Model)
+                        {
+                            <div class="all-details d-flex">
+                                <div class="leftDetail">
+                                    <div class="product-img">
+                                        <a href="./productDetails.html"><img src="~/assets/img/@cart.Image" alt="img"></a>
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="item-attributes">
+                                            <div class="product-name">
+                                                <a href="./productDetails.html"><h3 class="product-title">@cart.Title</h3></a>
+                                            </div>
+                                            <div class="product-condition">
+                                                <span class="condition">Condition</span>
+                                                <span class="condition-name">Pre-Owned</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="rightDetail">
-                                <div class="qtyOrder">
-                                    <select class="selectpicker">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                                <div class="remove-item">
-                                    <div class="item-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" fill="none" stroke-miterlimit="10"><path d="M20 9v12a2 2 0 01-2 2H6a2 2 0 01-2-2V9M1 5h22M12 12v6M8 12v6M16 12v6M8 5V1h8v4"></path></g></svg>
+                                <div class="rightDetail">
+                                    <div class="qtyOrder">
+                                        <select class="selectpicker">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
                                     </div>
-                                </div>
-                                <div class="price-section">
-                                    <div class="currentPrice">
-                                        <span class="price-current-main">$ 37.99</span>
-                                    </div>
-                                    <div class="oldPrice">
-                                        <span class="price-old-main">$ 65.12</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="all-details d-flex">
-                            <div class="leftDetail">
-                                <div class="product-img">
-                                    <a href="./productDetails.html"><img src="https://media.gamestop.com/i/gamestop/11097389/The-Last-of-Us-Part-II---PlayStation-4?$thumb$"></a>
-                                </div>
-                                <div class="product-details">
-                                    <div class="item-attributes">
-                                        <div class="product-name">
-                                            <a href="./productDetails.html"><h3 class="product-title">The Last of Us Part II - PlayStation 4</h3></a>
+                                    <div class="remove-item">
+                                        <div class="item-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" fill="none" stroke-miterlimit="10"><path d="M20 9v12a2 2 0 01-2 2H6a2 2 0 01-2-2V9M1 5h22M12 12v6M8 12v6M16 12v6M8 5V1h8v4"></path></g></svg>
                                         </div>
-                                        <div class="product-condition">
-                                            <span class="condition">Condition</span>
-                                            <span class="condition-name">New</span>
+                                    </div>
+                                    <div class="price-section">
+                                        <div class="currentPrice">
+                                            <span class="price-current-main">$@cart.Price</span>
+                                        </div>
+                                        <div class="oldPrice">
+                                            <span class="price-old-main">$ @cart.OldPrice @*@cart.Count * @cart.Price*@</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="rightDetail">
-                                <div class="qtyOrder">
-                                    <select class="selectpicker">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                                <div class="remove-item">
-                                    <div class="item-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" fill="none" stroke-miterlimit="10"><path d="M20 9v12a2 2 0 01-2 2H6a2 2 0 01-2-2V9M1 5h22M12 12v6M8 12v6M16 12v6M8 5V1h8v4"></path></g></svg>
-                                    </div>
-                                </div>
-                                <div class="price-section">
-                                    <div class="currentPrice">
-                                        <span class="price-current-main">$ 56.30</span>
-                                    </div>
-                                    <div class="oldPrice">
-                                        <span class="price-old-main">$ 70.39</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        }
                     </div>
 
                     <div class="priceBox">
