@@ -57,16 +57,16 @@ $(".m-menu__overlay").click(function () {
 
 
 
-$('.add-to-cart-menu').click(function () {
+//$('.add-to-cart-menu').click(function () {
 
-    let cart = $(this).data();
+//    let cart = $(this).data();
 
-    fetch(cart).then(res => res.text()).then(data =>
-    {
-        $('.section-last .cart').html(data);
-    })
+//    fetch(cart).then(res => res.text()).then(data =>
+//    {
+//        $('.section-last .cart').html(data);
+//    })
 
-});
+//});
 
 
 

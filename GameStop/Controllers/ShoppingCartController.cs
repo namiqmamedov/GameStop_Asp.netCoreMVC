@@ -68,8 +68,6 @@ namespace GameStop.Controllers
                 {
                     ProductID = product.Id,
                     Count = 1,
-                    Image = product.Image,
-                    Title = product.Title
                 };
 
                 basketVMs.Add(basketVM);
@@ -79,10 +77,18 @@ namespace GameStop.Controllers
 
             HttpContext.Response.Cookies.Append("basket", basket);
 
+            foreach (BasketVM item in basketVMs)
+            {
+                Product dbProduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == item.ProductID);
+
+                item.Image = dbProduct.Image;
+                item.Title = dbProduct.Title;
+            }
+
             return PartialView("_BasketPartial", basketVMs);
         }
 
-        public async Task<IActionResult> DeleteFromBasket(int? id)
+        public async Task<IActionResult> RemoveCart(int? id)
         {
             if (id == null)
             {
@@ -96,26 +102,48 @@ namespace GameStop.Controllers
 
             string basket = HttpContext.Request.Cookies["basket"];
 
-            List<BasketVM> basketVMs = null;
-            if (basket != null)
+            if (string.IsNullOrWhiteSpace(basket)) 
             {
                 return BadRequest();
             }
 
-            if (basket != null)
-            {
-                basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
-            }
-            else
-            {
-                basketVMs = new List<BasketVM>();
-            }
+            List<BasketVM> basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
+  
+            BasketVM basketVM = basketVMs.Find(p => p.ProductID == id);
 
-            return PartialView("_BasketPartial");
+            if (basketVM == null)
+            {
+                return NotFound();
+            }
+            basketVMs.Remove(basketVM);
+
+            basket = JsonConvert.SerializeObject(basketVMs);
+
+            HttpContext.Response.Cookies.Append("basket", basket);
+
+
+           
+
+
+            return PartialView("_BasketPartial", await _getBasketItem(basketVMs));
 
         }
 
+        private async Task<List<BasketVM>> _getBasketItemAsync(List<BasketVM> basketVMs)
+        {
+            foreach (BasketVM item in basketVMs)
+            {
+                Product dbProduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == item.ProductID);
 
+                item.Image = dbProduct.Image;
+                item.Title = dbProduct.Title;
+            }
+
+
+
+
+            return basketVMs;
+        }
 
     }
 }
