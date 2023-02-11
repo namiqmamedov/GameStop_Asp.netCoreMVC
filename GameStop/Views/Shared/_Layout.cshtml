@@ -5,6 +5,7 @@
     IEnumerable<Category> categories = await layoutservices.GetCategoriesAsync();
     IEnumerable<SubCategory> subcategories = await layoutservices.GetSubCategoriesAsync();
     IEnumerable<Product> products = await layoutservices.GetProductsAsync();
+    List<BasketVM> basketVMs = await layoutservices.GetBasket();
 
     HeaderVM headerVM = new HeaderVM
     {

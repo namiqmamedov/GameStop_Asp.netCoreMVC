@@ -77,15 +77,8 @@ namespace GameStop.Controllers
 
             HttpContext.Response.Cookies.Append("basket", basket);
 
-            foreach (BasketVM item in basketVMs)
-            {
-                Product dbProduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == item.ProductID);
+            return PartialView("_BasketPartial", await _getBasketItemAsync(basketVMs));
 
-                item.Image = dbProduct.Image;
-                item.Title = dbProduct.Title;
-            }
-
-            return PartialView("_BasketPartial", basketVMs);
         }
 
         public async Task<IActionResult> RemoveCart(int? id)
@@ -102,13 +95,13 @@ namespace GameStop.Controllers
 
             string basket = HttpContext.Request.Cookies["basket"];
 
-            if (string.IsNullOrWhiteSpace(basket)) 
+            if (string.IsNullOrWhiteSpace(basket))
             {
                 return BadRequest();
             }
 
             List<BasketVM> basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
-  
+
             BasketVM basketVM = basketVMs.Find(p => p.ProductID == id);
 
             if (basketVM == null)
@@ -121,11 +114,7 @@ namespace GameStop.Controllers
 
             HttpContext.Response.Cookies.Append("basket", basket);
 
-
-           
-
-
-            return PartialView("_BasketPartial", await _getBasketItem(basketVMs));
+            return PartialView("_BasketPartial", await _getBasketItemAsync(basketVMs));
 
         }
 
@@ -138,9 +127,6 @@ namespace GameStop.Controllers
                 item.Image = dbProduct.Image;
                 item.Title = dbProduct.Title;
             }
-
-
-
 
             return basketVMs;
         }
