@@ -59,7 +59,7 @@ namespace GameStop.Controllers
             List<BasketVM> basketVMs = null;
 
 
-            if (basket != null)
+            if (!string.IsNullOrWhiteSpace(basket))
             {
                 basketVMs = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
 
@@ -126,7 +126,7 @@ namespace GameStop.Controllers
 
             HttpContext.Response.Cookies.Append("basket", basket);
 
-            return PartialView("_BasketPartial", await _getBasketItemAsync(basketVMs));
+            return PartialView("_BasketIndexPartial", await _getBasketItemAsync(basketVMs));
 
         }
 

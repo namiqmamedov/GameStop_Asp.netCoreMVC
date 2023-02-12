@@ -133,6 +133,19 @@ $(document).ready(function () {
         var b = $('body').find('#pum-344').find('input[name="count"]').val(a);
     });
 
+
+    $(document).on('click', '.remove-item', function (e) {
+        e.preventDefault();
+
+        let url = $(this).attr('href');
+
+        fetch(url)
+            .then(res => res.text())
+            .then(data => {
+                $('.cartSection').html(data);
+            })
+    })
+
 });
 
 
