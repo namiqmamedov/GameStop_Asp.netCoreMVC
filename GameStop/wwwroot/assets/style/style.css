@@ -21617,8 +21617,19 @@ Media Queries
     }
 }
 
+.cartSection .shopping-empty {
+    height: auto !important;
+}
+
+.shopping-empty .text-center h1 {
+    font-size: 36px;
+    font-family: 'Poppins','Open Sans',sans-serif;
+    font-weight: bold;
+    margin-top: 35px;
+}
+
 .empty-cart svg {
-    max-width: 60%;
+    max-width: 40%;
     padding: 5rem 3rem;
 }
 
