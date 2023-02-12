@@ -21306,8 +21306,8 @@ Media Queries
         .cartSection .inputs-block .plus {
             margin-left: 10px;
         }
-        .cartSection .inputs-block i 
-        {
+
+        .cartSection .inputs-block i {
             color: black;
         }
 
@@ -21377,6 +21377,10 @@ Media Queries
             cursor: pointer;
         }
 
+            .cartSection .cartBox .rightDetail .remove-item .item-icon svg {
+                color: black;
+            }
+
         .cartSection .cartBox .rightDetail .price-section {
             text-align: end;
             width: 100%;
@@ -21443,21 +21447,21 @@ Media Queries
     }
 
 
-        .cartSection .product-name h3 {
-            font-size: 14px;
-            font-family: "Open Sans", sans-serif;
-            color: black;
-            font-weight: bold;
-            margin-top: 19px;
+    .cartSection .product-name h3 {
+        font-size: 14px;
+        font-family: "Open Sans", sans-serif;
+        color: black;
+        font-weight: bold;
+        margin-top: 19px;
+    }
+
+        .cartSection .product-name h3:hover {
+            color: #DA362C;
         }
 
-            .cartSection .product-name h3:hover {
-                color: #DA362C;
-            }
-
-        .cartSection .product-name a {
-            text-decoration: none;
-        }
+    .cartSection .product-name a {
+        text-decoration: none;
+    }
 
     .cartSection .product-condition .condition {
         color: #696969;
@@ -21471,6 +21475,7 @@ Media Queries
         font-size: 12px;
         font-family: 'Open Sans',sans-serif
     }
+
     .cartSection .product-platform .platform {
         color: #696969;
         font-size: 12px;
@@ -21555,6 +21560,365 @@ Media Queries
             text-align: center;
             margin-top: 14px;
         }
+
+.empty-cart {
+    width: 50vw;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Maison Neue';
+    font-weight: 300;
+}
+
+@-moz-keyframes plopp {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, -10px);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes plopp {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, -10px);
+        opacity: 0;
+    }
+}
+
+@-o-keyframes plopp {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, -10px);
+        opacity: 0;
+    }
+}
+
+@keyframes plopp {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, -10px);
+        opacity: 0;
+    }
+}
+
+.empty-cart svg {
+    max-width: 60%;
+    padding: 5rem 3rem;
+}
+
+    .empty-cart svg #oval {
+        animation: plopp 4s ease-out infinite;
+    }
+
+        .empty-cart svg #oval:nth-child(1) {
+            animation-delay: -240ms;
+        }
+
+        .empty-cart svg #oval:nth-child(2) {
+            animation-delay: -480ms;
+        }
+
+        .empty-cart svg #oval:nth-child(3) {
+            animation-delay: -720ms;
+        }
+
+        .empty-cart svg #oval:nth-child(4) {
+            animation-delay: -960ms;
+        }
+
+        .empty-cart svg #oval:nth-child(5) {
+            animation-delay: -1200ms;
+        }
+
+        .empty-cart svg #oval:nth-child(6) {
+            animation-delay: -1440ms;
+        }
+
+        .empty-cart svg #oval:nth-child(7) {
+            animation-delay: -1680ms;
+        }
+
+        .empty-cart svg #oval:nth-child(8) {
+            animation-delay: -1920ms;
+        }
+
+        .empty-cart svg #oval:nth-child(9) {
+            animation-delay: -2160ms;
+        }
+
+        .empty-cart svg #oval:nth-child(10) {
+            animation-delay: -2400ms;
+        }
+
+        .empty-cart svg #oval:nth-child(11) {
+            animation-delay: -2640ms;
+        }
+
+        .empty-cart svg #oval:nth-child(12) {
+            animation-delay: -2880ms;
+        }
+
+        .empty-cart svg #oval:nth-child(13) {
+            animation-delay: -3120ms;
+        }
+
+        .empty-cart svg #oval:nth-child(14) {
+            animation-delay: -3360ms;
+        }
+
+        .empty-cart svg #oval:nth-child(15) {
+            animation-delay: -3600ms;
+        }
+
+        .empty-cart svg #oval:nth-child(16) {
+            animation-delay: -3840ms;
+        }
+
+    .empty-cart svg #plus {
+        animation: plopp 4s ease-out infinite;
+    }
+
+        .empty-cart svg #plus:nth-child(1) {
+            animation-delay: -240ms;
+        }
+
+        .empty-cart svg #plus:nth-child(2) {
+            animation-delay: -480ms;
+        }
+
+        .empty-cart svg #plus:nth-child(3) {
+            animation-delay: -720ms;
+        }
+
+        .empty-cart svg #plus:nth-child(4) {
+            animation-delay: -960ms;
+        }
+
+        .empty-cart svg #plus:nth-child(5) {
+            animation-delay: -1200ms;
+        }
+
+        .empty-cart svg #plus:nth-child(6) {
+            animation-delay: -1440ms;
+        }
+
+        .empty-cart svg #plus:nth-child(7) {
+            animation-delay: -1680ms;
+        }
+
+        .empty-cart svg #plus:nth-child(8) {
+            animation-delay: -1920ms;
+        }
+
+        .empty-cart svg #plus:nth-child(9) {
+            animation-delay: -2160ms;
+        }
+
+        .empty-cart svg #plus:nth-child(10) {
+            animation-delay: -2400ms;
+        }
+
+        .empty-cart svg #plus:nth-child(11) {
+            animation-delay: -2640ms;
+        }
+
+        .empty-cart svg #plus:nth-child(12) {
+            animation-delay: -2880ms;
+        }
+
+        .empty-cart svg #plus:nth-child(13) {
+            animation-delay: -3120ms;
+        }
+
+        .empty-cart svg #plus:nth-child(14) {
+            animation-delay: -3360ms;
+        }
+
+        .empty-cart svg #plus:nth-child(15) {
+            animation-delay: -3600ms;
+        }
+
+        .empty-cart svg #plus:nth-child(16) {
+            animation-delay: -3840ms;
+        }
+
+    .empty-cart svg #diamond {
+        animation: plopp 4s ease-out infinite;
+    }
+
+        .empty-cart svg #diamond:nth-child(1) {
+            animation-delay: -240ms;
+        }
+
+        .empty-cart svg #diamond:nth-child(2) {
+            animation-delay: -480ms;
+        }
+
+        .empty-cart svg #diamond:nth-child(3) {
+            animation-delay: -720ms;
+        }
+
+        .empty-cart svg #diamond:nth-child(4) {
+            animation-delay: -960ms;
+        }
+
+        .empty-cart svg #diamond:nth-child(5) {
+            animation-delay: -1200ms;
+        }
+
+        .empty-cart svg #diamond:nth-child(6) {
+            animation-delay: -1440ms;
+        }
+
+        .empty-cart svg #diamond:nth-child(7) {
+            animation-delay: -1680ms;
+        }
+
+        .empty-cart svg #diamond:nth-child(8) {
+            animation-delay: -1920ms;
+        }
+
+        .empty-cart svg #diamond:nth-child(9) {
+            animation-delay: -2160ms;
+        }
+
+        .empty-cart svg #diamond:nth-child(10) {
+            animation-delay: -2400ms;
+        }
+
+        .empty-cart svg #diamond:nth-child(11) {
+            animation-delay: -2640ms;
+        }
+
+        .empty-cart svg #diamond:nth-child(12) {
+            animation-delay: -2880ms;
+        }
+
+        .empty-cart svg #diamond:nth-child(13) {
+            animation-delay: -3120ms;
+        }
+
+        .empty-cart svg #diamond:nth-child(14) {
+            animation-delay: -3360ms;
+        }
+
+        .empty-cart svg #diamond:nth-child(15) {
+            animation-delay: -3600ms;
+        }
+
+        .empty-cart svg #diamond:nth-child(16) {
+            animation-delay: -3840ms;
+        }
+
+    .empty-cart svg #bubble-rounded {
+        animation: plopp 4s ease-out infinite;
+    }
+
+        .empty-cart svg #bubble-rounded:nth-child(1) {
+            animation-delay: -240ms;
+        }
+
+        .empty-cart svg #bubble-rounded:nth-child(2) {
+            animation-delay: -480ms;
+        }
+
+        .empty-cart svg #bubble-rounded:nth-child(3) {
+            animation-delay: -720ms;
+        }
+
+        .empty-cart svg #bubble-rounded:nth-child(4) {
+            animation-delay: -960ms;
+        }
+
+        .empty-cart svg #bubble-rounded:nth-child(5) {
+            animation-delay: -1200ms;
+        }
+
+        .empty-cart svg #bubble-rounded:nth-child(6) {
+            animation-delay: -1440ms;
+        }
+
+        .empty-cart svg #bubble-rounded:nth-child(7) {
+            animation-delay: -1680ms;
+        }
+
+        .empty-cart svg #bubble-rounded:nth-child(8) {
+            animation-delay: -1920ms;
+        }
+
+        .empty-cart svg #bubble-rounded:nth-child(9) {
+            animation-delay: -2160ms;
+        }
+
+        .empty-cart svg #bubble-rounded:nth-child(10) {
+            animation-delay: -2400ms;
+        }
+
+        .empty-cart svg #bubble-rounded:nth-child(11) {
+            animation-delay: -2640ms;
+        }
+
+        .empty-cart svg #bubble-rounded:nth-child(12) {
+            animation-delay: -2880ms;
+        }
+
+        .empty-cart svg #bubble-rounded:nth-child(13) {
+            animation-delay: -3120ms;
+        }
+
+        .empty-cart svg #bubble-rounded:nth-child(14) {
+            animation-delay: -3360ms;
+        }
+
+        .empty-cart svg #bubble-rounded:nth-child(15) {
+            animation-delay: -3600ms;
+        }
+
+        .empty-cart svg #bubble-rounded:nth-child(16) {
+            animation-delay: -3840ms;
+        }
+
+    .empty-cart svg #bg-line:nth-child(2) {
+        fill-opacity: 0.3;
+    }
+
+    .empty-cart svg #bg-line:nth-child(3) {
+        fill-opacity: 0.4;
+    }
+
+.empty-cart h3 {
+    font-size: 2rem;
+    line-height: 2rem;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
+
+.empty-cart p {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    line-height: 24px;
+    max-width: 80%;
+    margin: 1.25rem auto 0 auto;
+}
+ 
+
 
 .checkoutForm {
     margin-top: 21.5px;
