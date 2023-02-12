@@ -142,7 +142,7 @@ $(document).ready(function () {
         fetch(url)
             .then(res => res.text())
             .then(data => {
-                $('.cartSection').html(data);
+                $('.basketindexcontainer').html(data);
             })
     })
 

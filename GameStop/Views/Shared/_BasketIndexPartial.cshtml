@@ -60,7 +60,7 @@
                         }
                         @if (cart.DiscountedPrice > 0)
                         {
-                            <div class="currentPrice">
+                            <div class="discountedPrice">
                                 <span class="price-current-main">$@cart.DiscountedPrice</span>
                             </div>
                         }
@@ -89,18 +89,14 @@
                     <div class="row">
                         <div class="col order-summary">
                             <h2 class="mb-2 order-summary">Order Summary</h2>
-                            @if (Model.Select(x => x.DiscountedPrice > 0).Any())
+
+                            @if (Model.Select(x => x.Price <= 0).Any())
                             {
                                 <div class="save-price">
                                     You Save:
-                                    <span class="save-price-main">@(Model.Sum(b=>b.Count * b.OldPrice - b.Price).ToString("0.##"))USD</span>
+                                    <span class="save-price-main">@((Model.Sum(b => b.Count * b.OldPrice) - Model.Sum(b=>b.Count * b.DiscountedPrice)).ToString("0.##")) USD</span>
                                 </div>
                             }
-
-
-
-                            <div class="save-price">
-                            </div>
 
                             <div class="row">
                                 <div class="col-8">

@@ -179,7 +179,8 @@ namespace GameStop.Controllers
 
                 item.Image = dbProduct.Image;
                 item.Title = dbProduct.Title;
-                item.Price = dbProduct.DiscountedPrice > 0 ? dbProduct.DiscountedPrice : dbProduct.Price;
+                item.Price = dbProduct.Price/* > 0 ? dbProduct.DiscountedPrice : dbProduct.Price*/;
+                item.DiscountedPrice = dbProduct.DiscountedPrice;
                 item.OldPrice = dbProduct.OldPrice;
             }
 
