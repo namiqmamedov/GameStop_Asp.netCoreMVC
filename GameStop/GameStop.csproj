@@ -81,6 +81,20 @@
     <Compile Remove="Migrations\20230212112807_UpdatedProductTableRemoveNullablePropForAllPrice.Designer.cs" />
     <Compile Remove="Migrations\20230212144317_UpdatedProductTableRemoveNullablePropForAllPrice.cs" />
     <Compile Remove="Migrations\20230212144317_UpdatedProductTableRemoveNullablePropForAllPrice.Designer.cs" />
+    <Compile Remove="Migrations\20230212144619_UpdatedProductTableRemoveNullablePropForAllPrice.cs" />
+    <Compile Remove="Migrations\20230212144619_UpdatedProductTableRemoveNullablePropForAllPrice.Designer.cs" />
+    <Compile Remove="Migrations\20230212145156_UpdatedProductTableRemoveNullablePropForAllPrice.cs" />
+    <Compile Remove="Migrations\20230212145156_UpdatedProductTableRemoveNullablePropForAllPrice.Designer.cs" />
+    <Compile Remove="Migrations\20230212150026_UpdatedProductTableRemoveNullablePropForAllPrice.cs" />
+    <Compile Remove="Migrations\20230212150026_UpdatedProductTableRemoveNullablePropForAllPrice.Designer.cs" />
+    <Compile Remove="Migrations\20230212150434_UpdatedProductTableRemoveNullablePropForAllPrice.cs" />
+    <Compile Remove="Migrations\20230212150434_UpdatedProductTableRemoveNullablePropForAllPrice.Designer.cs" />
+    <Compile Remove="Migrations\20230212150658_UpdatedProductTableRemoveNullablePropForAllPrice.cs" />
+    <Compile Remove="Migrations\20230212150658_UpdatedProductTableRemoveNullablePropForAllPrice.Designer.cs" />
+    <Compile Remove="Migrations\20230212155552_UpdatedProductTableRemoveNullablePropForAllPrice.cs" />
+    <Compile Remove="Migrations\20230212155552_UpdatedProductTableRemoveNullablePropForAllPrice.Designer.cs" />
+    <Compile Remove="Migrations\20230212160012_UpdatedProductTableRemoveNullablePropForAllPrice.cs" />
+    <Compile Remove="Migrations\20230212160012_UpdatedProductTableRemoveNullablePropForAllPrice.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

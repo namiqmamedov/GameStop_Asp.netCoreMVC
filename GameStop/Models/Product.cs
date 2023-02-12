@@ -15,15 +15,12 @@ namespace GameStop.Models
         public string Title { get; set; }
 
         [Column("Money")]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public double Price { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [DisplayName("Discounted Price")]
         public double DiscountedPrice { get; set; }
 
         [DisplayName("Old Price")]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public double OldPrice { get; set; }
 
         [StringLength(255)]

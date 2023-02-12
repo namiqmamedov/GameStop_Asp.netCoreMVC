@@ -1112,7 +1112,7 @@
                                 <div class="rating-count"> 413 ratings </div>
                             </div>
                             <div class="card-price d-flex">
-                                @if (Model.Product.DiscountedPrice < 0)
+                                @if (Model.Product.Price > 0)
                                 {
                                     <span class="price">$@Model.Product.Price</span>
                                 }

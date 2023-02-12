@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameStop.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230212144619_UpdatedProductTableRemoveNullablePropForAllPrice")]
-    partial class UpdatedProductTableRemoveNullablePropForAllPrice
+    [Migration("20230212161039_CreatedAllPricePropForProductTable")]
+    partial class CreatedAllPricePropForProductTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

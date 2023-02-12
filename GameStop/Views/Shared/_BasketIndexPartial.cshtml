@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="price-section">
-                        @if (cart.Price != null)
+                        @*@if (cart.Price != null)
                         {
                             <div class="currentPrice">
                                 <span class="price-current-main">$@(cart.Count * cart.Price)</span>
@@ -69,7 +69,7 @@
                             <div class="oldPrice">
                                 <span class="price-old-main"></span>
                             </div>
-                        }
+                        }*@
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                             <div class="save-price">
                                 You Save:
 
-                                <span class="save-price-main">@(Model.Sum(b=>b.OldPrice - b.Price)) USD</span>
+                                <span class="save-price-main">@*@(Model.Sum(b=>b.OldPrice - b.Price)) USD*@</span>
 
                             </div>
                             <div class="row">
@@ -101,7 +101,9 @@
                                 </div>
                                 <div class="col-4">
                                     @*<p class="cart-total-price"> $@(Model.Sum(b=>b.Price) + Model.Sum(b => b.DiscountedPrice))</p>*@
-                                    <p class="cart-total-price"> $@(Model.Sum(b=>b.Count * b.Price))</p>
+
+                                        <p class="cart-total-price"> @*$@((Model.Sum(b=>b.Count * b.Price)))*@</p>
+
                                 </div>
                             </div>
 
