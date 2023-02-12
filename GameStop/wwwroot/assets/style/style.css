@@ -4005,6 +4005,7 @@ footer #hr {
                 height: 300px;
             }
 
+
             #cart-section-product .cartBox .rightDetail {
                 width: 49%;
                 margin-top: auto;
@@ -21267,58 +21268,129 @@ Media Queries
             display: flex;
         }
 
-        .cartSection .cartBox .rightDetail {
-            display: flex;
-            width: 49%;
-            margin-top: auto;
-            margin-bottom: auto;
+
+
+    .cartSection .inputs-block {
+        display: flex;
+        align-items: center;
+    }
+
+        .cartSection .inputs-block .minus {
+            margin-right: 10px;
         }
 
-            .cartSection .cartBox .rightDetail .selectpicker {
-                width: 59px;
-                height: 39px;
-                border-radius: 4px;
-                padding-left: 4px;
+        .cartSection .inputs-block .minus, .inputs-block .plus {
+            border-radius: 4px;
+            width: 26px;
+            height: 26px;
+            background-color: #ffde00;
+            color: transparent;
+            font-family: FontAwesome;
+            font-size: 30px;
+            position: relative;
+        }
+
+        .cartSection .inputs-block .plus {
+            margin-left: 10px;
+        }
+
+
+        .cartSection .inputs-block input {
+            width: 58px;
+            height: 58px;
+            background-color: #fff;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .cartSection .inputs-block .minus:before {
+            position: absolute;
+            content: '';
+            width: 20px;
+            height: 5px;
+            top: 11px;
+            left: 3px;
+            background: #A6CE39;
+            border-radius: 4px;
+        }
+
+        .cartSection .inputs-block .plus:before {
+            position: absolute;
+            content: '';
+            width: 20px;
+            height: 5px;
+            top: 11px;
+            left: 3px;
+            background: #A6CE39;
+            border-radius: 4px;
+        }
+
+        .cartSection .inputs-block .plus:after {
+            position: absolute;
+            content: '';
+            width: 5px;
+            height: 20px;
+            left: 11px;
+            top: 3px;
+            background: #A6CE39;
+            border-radius: 4px;
+        }
+
+
+    .cartSection .cartBox .rightDetail {
+        display: flex;
+        width: 49%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+        .cartSection .cartBox .rightDetail .selectpicker {
+            width: 59px;
+            height: 39px;
+            border-radius: 4px;
+            padding-left: 4px;
+        }
+
+        .cartSection .cartBox .rightDetail .remove-item {
+            margin-top: 6px;
+            margin-left: 13px;
+            cursor: pointer;
+        }
+
+        .cartSection .cartBox .rightDetail .price-section {
+            text-align: end;
+            width: 100%;
+            margin-top: -12px;
+            margin-right: 15px;
+        }
+
+            .cartSection .cartBox .rightDetail .price-section .currentPrice span {
+                font-size: 18px;
+                font-family: "Open Sans", sans-serif;
+                font-weight: bold;
             }
 
-            .cartSection .cartBox .rightDetail .remove-item {
-                margin-top: 6px;
-                margin-left: 13px;
-                cursor: pointer;
+            .cartSection .cartBox .rightDetail .price-section .oldPrice {
+                text-decoration: line-through;
+                font-size: 15px;
             }
 
-            .cartSection .cartBox .rightDetail .price-section {
-                text-align: end;
-                width: 100%;
-                margin-top: -12px;
-                margin-right: 15px;
-            }
-
-                .cartSection .cartBox .rightDetail .price-section .currentPrice span {
-                    font-size: 18px;
+                .cartSection .cartBox .rightDetail .price-section .oldPrice span {
+                    font-size: 13px;
                     font-family: "Open Sans", sans-serif;
-                    font-weight: bold;
                 }
 
-                .cartSection .cartBox .rightDetail .price-section .oldPrice {
-                    text-decoration: line-through;
-                    font-size: 15px;
-                }
+    .cartSection .cartBox .product-img {
+        width: 25%;
+    }
 
-                    .cartSection .cartBox .rightDetail .price-section .oldPrice span {
-                        font-size: 13px;
-                        font-family: "Open Sans", sans-serif;
-                    }
-
-        .cartSection .cartBox .product-img {
-            width: 25%;
+        .cartSection .cartBox .product-img img {
+            width: 100%;
+            margin-top: 11px;
+            margin-bottom: 11px;
         }
-
-            .cartSection .cartBox .product-img img {
-                width: 100%;
-                margin-top: 11px;
-                margin-bottom: 11px;
-            }
 
     .cartSection .cart-text {
         display: flex;

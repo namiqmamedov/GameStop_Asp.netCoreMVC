@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameStop.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,5 +15,6 @@ namespace GameStop.ViewModels.Basket
         public double? Price { get; set; }
         public double? OldPrice { get; set; }
         public double? DiscountedPrice { get; set; }
+
     }
 }
