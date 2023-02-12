@@ -56,16 +56,20 @@ $(document).ready(function () {
 
         let inputCount = $(this).val();
 
-        let url = $(this).attr('href') + '/?count=' + inputCount;
+        if (inputCount >= 2) {
+            let url = $(this).attr('href') + '/?count=' + inputCount;
 
-        console.log(url);
+            console.log(url);
 
 
-        fetch(url)
-            .then(res => res.text())
-            .then(date => {
-                $('.basketindexcontainer').html(date);
-            });
+            fetch(url)
+                .then(res => res.text())
+                .then(date => {
+                    $('.basketindexcontainer').html(date);
+                });
+        }
+
+        
     });
 
 });
