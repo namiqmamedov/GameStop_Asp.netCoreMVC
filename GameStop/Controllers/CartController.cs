@@ -137,7 +137,7 @@ namespace GameStop.Controllers
                 return BadRequest();
             }
 
-            if (await _context.Products.AnyAsync(p=>p.Id == id))
+            if (!await _context.Products.AnyAsync(p => p.Id == id))
             {
                 return NotFound();
             }

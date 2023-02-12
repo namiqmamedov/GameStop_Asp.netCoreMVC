@@ -22,10 +22,9 @@ $(document).ready(function () {
                     $('.search-brand .search-item').html(data);
                 })
         }
-        else
-        {
+        else {
             $('.search-brand .search-item').html('');
-        }        
+        }
     })
 
 
@@ -51,12 +50,71 @@ $(document).ready(function () {
 
     // input count 
 
+    $(document).on('click', '.minusCount', function (e) {
+        e.preventDefault();
+
+        let inputCount = $(this).next().val();
+
+        if (inputCount >= 2) {
+            inputCount--;
+            $(this).next().val(inputCount);
+            let url = $(this).attr('href' ) + '/?count=' + inputCount;
+
+            fetch(url)
+                .then(res => res.text())
+                .then(data => {
+                    $('.basketindexcontainer').html(data);
+                });
+
+        }
+    })
+
+    $(document).on('click', '.plusCount', function (e) {
+        e.preventDefault();
+
+        let inputCount = $(this).prev().val();
+
+        if (inputCount > 0) {
+            inputCount++;
+        }
+        else {
+            inputCount = 1;
+        }
+
+        $(this).prev().val(inputCount);
+
+        let url = $(this).attr('href') + '/?count=' + inputCount;
+
+
+        fetch(url)
+            .then(res => res.text())
+            .then(data => {
+                $('.basketindexcontainer').html(data);
+            });
+
+    })
+
+
+    $(document).on('click', '.plus', function (e) {
+        e.preventDefault();
+
+        let inputCount = $(this).next().val();
+
+        let url = $(this).attr('href') + '/?count=' + inputCount;
+
+        fetch(url)
+            .then(res => res.text())
+            .then(data => {
+                $('.basketindexcontainer').html(data);
+            });
+    })
+
 
     $(document).on('click', '.inputs-block .minus', function () {
         var $_inp = $(this).parent().find('input');
         $_inp.val(parseInt($_inp.val()) - 1);
         $_inp.trigger('propertychange');
-        return false;
+        return true;
     });
 
     $(document).on('click', '.inputs-block .plus', function () {
@@ -74,8 +132,6 @@ $(document).ready(function () {
         var a = $('.inputs-block input').val();
         var b = $('body').find('#pum-344').find('input[name="count"]').val(a);
     });
-
-  
 
 });
 

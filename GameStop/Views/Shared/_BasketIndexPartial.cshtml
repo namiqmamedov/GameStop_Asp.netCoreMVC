@@ -32,9 +32,11 @@
                     <div class="qtyOrder">
                         <div class="INPUTS-BLOCK__WRAP">
                             <div class="inputs-block">
-                                <a asp-controller="cart" asp-action="UpdateCount" asp-route-id="@cart.ProductID" class="minus">-</a>
-                                <input id="inputCount" type="text" value="1">
-                                <a asp-controller="cart" asp-action="UpdateCount" asp-route-id="@cart.ProductID" class="plus">+</a>
+                                <a class="minusCount" asp-controller="cart" asp-action="UpdateCount" asp-route-id="@cart.ProductID" >
+                                <i class="fa-solid fa-minus"></i></a>
+                                <input id="inputCount" type="text" value="@cart.Count">
+                                <a class="plusCount" asp-controller="cart" asp-action="UpdateCount" asp-route-id="@cart.ProductID">
+                                <i class="fa-solid fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -47,7 +49,7 @@
                         @if (cart.Price != null)
                         {
                             <div class="currentPrice">
-                                <span class="price-current-main">$@cart.Price</span>
+                                <span class="price-current-main">$@(cart.Count * cart.Price)</span>
                             </div>
                         }
                         @if (cart.DiscountedPrice > 0)
@@ -82,12 +84,12 @@
                         <div class="col order-summary">
                             <h2 class="mb-2 order-summary">Order Summary</h2>
 
-                            @*<div class="save-price">
+                            <div class="save-price">
                                 You Save:
 
-                                <span class="save-price-main">@(Model.Sum(b => b.Price) - Model.Sum(b => b.DiscountedPrice)) USD</span>
+                                <span class="save-price-main">@(Model.Sum(b=>b.OldPrice - b.Price)) USD</span>
 
-                            </div>*@
+                            </div>
                             <div class="row">
                                 <div class="col-8">
 
@@ -98,7 +100,8 @@
                                     </div>
                                 </div>
                                 <div class="col-4">
-                                    <p class="cart-total-price"> $@(Model.Sum(b=>b.Price) + Model.Sum(b => b.DiscountedPrice))</p>
+                                    @*<p class="cart-total-price"> $@(Model.Sum(b=>b.Price) + Model.Sum(b => b.DiscountedPrice))</p>*@
+                                    <p class="cart-total-price"> $@(Model.Sum(b=>b.Count * b.Price))</p>
                                 </div>
                             </div>
 

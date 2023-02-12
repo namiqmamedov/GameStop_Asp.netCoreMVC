@@ -79,6 +79,8 @@
     <Compile Remove="Migrations\20230212112629_UpdatedProductTableRemoveNullablePropForDiscountedPriceAndOldPrice.Designer.cs" />
     <Compile Remove="Migrations\20230212112807_UpdatedProductTableRemoveNullablePropForAllPrice.cs" />
     <Compile Remove="Migrations\20230212112807_UpdatedProductTableRemoveNullablePropForAllPrice.Designer.cs" />
+    <Compile Remove="Migrations\20230212144317_UpdatedProductTableRemoveNullablePropForAllPrice.cs" />
+    <Compile Remove="Migrations\20230212144317_UpdatedProductTableRemoveNullablePropForAllPrice.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
