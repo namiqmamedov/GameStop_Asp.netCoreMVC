@@ -21273,6 +21273,18 @@ Media Queries
     .cartSection .inputs-block {
         display: flex;
         align-items: center;
+        height: 3rem;
+        padding: 0 1.2rem;
+        border-radius: 2rem;
+        border: 0;
+        background: #fff;
+        color: #222;
+        box-shadow: 0 0px 15px -10px rgb(0 0 0 / 25%);
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        font-weight: lighter;
+        border: 0.3px solid black;
     }
 
         .cartSection .inputs-block .minus {
@@ -21293,12 +21305,17 @@ Media Queries
         .cartSection .inputs-block .plus {
             margin-left: 10px;
         }
+        .cartSection .inputs-block i 
+        {
+            color: black;
+        }
+
 
 
         .cartSection .inputs-block input {
             width: 58px;
-            height: 58px;
-            background-color: #fff;
+            height: 25px;
+            border: transparent;
             text-align: center;
             font-family: 'Roboto', sans-serif;
             font-weight: bold;
@@ -21383,7 +21400,7 @@ Media Queries
                 }
 
     .cartSection .cartBox .product-img {
-        width: 25%;
+        width: 15%;
     }
 
         .cartSection .cartBox .product-img img {
@@ -21421,6 +21438,11 @@ Media Queries
         margin-bottom: -8px;
     }
 
+    .cartSection .product-details {
+        padding-left: 15px;
+    }
+
+
         .cartSection .product-name h3 {
             font-size: 14px;
             font-family: "Open Sans", sans-serif;
@@ -21443,6 +21465,22 @@ Media Queries
 
     .cartSection .product-condition .condition-name {
         color: #000000;
+    }
+
+    .cartSection .product-platfrom {
+        font-size: 12px;
+        font-family: 'Open Sans',sans-serif
+    }
+    .cartSection .product-platform .platform {
+        color: #696969;
+        font-size: 12px;
+        font-family: 'Open Sans',sans-serif;
+    }
+
+    .cartSection .product-platform .platform-name {
+        color: #000000;
+        font-size: 12px;
+        font-family: 'Open Sans',sans-serif;
     }
 
     .cartSection .product-condition span {
