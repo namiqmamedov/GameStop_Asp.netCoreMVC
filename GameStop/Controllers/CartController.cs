@@ -130,8 +130,40 @@ namespace GameStop.Controllers
 
         }
 
-        public async Task<IActionResult> Update(int? id, int count)
+        public async Task<IActionResult> UpdateCount(int? id, int count)
         {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
+            if (await _context.Products.AnyAsync(p=>p.Id == id))
+            {
+                return NotFound();
+            }
+
+            string basket = HttpContext.Request.Cookies["basket"];
+
+            List<BasketVM> basketVms = null;
+
+            if (!string.IsNullOrWhiteSpace(basket))
+            {
+                basketVms = JsonConvert.DeserializeObject<List<BasketVM>>(basket);
+
+                BasketVM basketVM = basketVms.FirstOrDefault(p => p.ProductID == id);
+
+                if (basketVM == null)
+                {
+                    return NotFound();
+                }
+
+            }
+            else
+            {
+                return BadRequest();
+
+            }
+
             return Content("Ok");
         }
 
