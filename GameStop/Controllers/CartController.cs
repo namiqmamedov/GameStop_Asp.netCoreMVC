@@ -130,6 +130,11 @@ namespace GameStop.Controllers
 
         }
 
+        public async Task<IActionResult> Update(int? id, int count)
+        {
+            return Content("Ok");
+        }
+
         private async Task<List<BasketVM>> _getBasketItemAsync(List<BasketVM> basketVMs)
         {
             foreach (BasketVM item in basketVMs)

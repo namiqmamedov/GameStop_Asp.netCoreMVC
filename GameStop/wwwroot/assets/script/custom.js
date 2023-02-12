@@ -56,9 +56,16 @@ $(document).ready(function () {
 
         let inputCount = $(this).val();
 
-        let url = $(this).attr('class') + '/?count=' + inputCount;
+        let url = $(this).attr('href') + '/?count=' + inputCount;
 
         console.log(url);
+
+
+        fetch(url)
+            .then(res => res.text())
+            .then(date => {
+                $('.basketindexcontainer').html(date);
+            });
     });
 
 });
