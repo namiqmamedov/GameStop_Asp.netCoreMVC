@@ -154,17 +154,21 @@ namespace GameStop.Controllers
 
                 if (basketVM == null)
                 {
-                    return NotFound();
+                    return NotFound();  
                 }
 
+                basketVM.Count = count <= 0 ? 1 : count;
+
+                basket = JsonConvert.SerializeObject(basketVms);
+
+                HttpContext.Response.Cookies.Append("basket", basket);
             }
             else
             {
                 return BadRequest();
-
             }
 
-            return Content("Ok");
+            return PartialView("_BasketIndexPartial",await _getBasketItemAsync(basketVms));
         }
 
         private async Task<List<BasketVM>> _getBasketItemAsync(List<BasketVM> basketVMs)
