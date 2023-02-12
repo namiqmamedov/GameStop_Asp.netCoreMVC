@@ -48,7 +48,7 @@
                             <span class="price-current-main">$@cart.Price</span>
                         </div>
                         <div class="oldPrice">
-                            <span class="price-old-main">$ @cart.OldPrice @*@cart.Count * @cart.Price*@</span>
+                            <span class="price-old-main">$ @cart.OldPrice</span>
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                                     </div>
                                 </div>
                                 <div class="col-4">
-                                    <p class="cart-total-price"> $94.29</p>
+                                    <p class="cart-total-price"> $@(Model.Sum(p=>p.Count * p.Price)) </p>
                                 </div>
                             </div>
 
