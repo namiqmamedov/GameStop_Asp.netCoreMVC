@@ -44,12 +44,24 @@
                         </div>
                     </div>
                     <div class="price-section">
-                        <div class="currentPrice">
-                            <span class="price-current-main">$@cart.Price</span>
-                        </div>
-                        <div class="oldPrice">
-                            <span class="price-old-main">$ @cart.OldPrice</span>
-                        </div>
+                        @if (cart.Price != null)
+                        {
+                            <div class="currentPrice">
+                                <span class="price-current-main">$@cart.Price</span>
+                            </div>
+                        }
+                        @if (cart.DiscountedPrice > 0)
+                        {
+                            <div class="currentPrice">
+                                <span class="price-current-main">$@cart.DiscountedPrice</span>
+                            </div>
+                        }
+                        @if (cart.OldPrice > 0)
+                        {
+                            <div class="oldPrice">
+                                <span class="price-old-main">$ @cart.OldPrice</span>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -66,8 +78,11 @@
 
                             <div class="save-price">
                                 You Save:
-                                <span class="save-price-main">42.22 USD</span>
-                            </div>
+                                @foreach (BasketVM cart in Model)
+                                {
+                                    @*<span class="save-price-main">@cart.Price - @cart.DiscountedPrice USD</span>*@
+                                }
+                                </div>
                             <div class="row">
                                 <div class="col-8">
 
@@ -78,7 +93,7 @@
                                     </div>
                                 </div>
                                 <div class="col-4">
-                                    <p class="cart-total-price"> $@(Model.Sum(p=>p.Count * p.Price)) </p>
+                                    <p class="cart-total-price"> $@(Model.Sum(b=>b.Price) - Model.Sum(b => b.DiscountedPrice))</p>
                                 </div>
                             </div>
 
