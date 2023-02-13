@@ -55,7 +55,7 @@ namespace GameStop.Controllers
 
             ViewBag.Status = id;
 
-            return ViewComponent("Product",await products.ToListAsync());
+            return PartialView("_ProductIndex", await products.ToListAsync());
         }
 
         public IActionResult Detail(int? id)
