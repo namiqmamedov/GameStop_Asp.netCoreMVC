@@ -181,7 +181,7 @@ $(document).ready(function () {
     $(document).on('click', '.selected-label', function (e) {
         e.preventDefault();
 
-        alert("hello");
+       
 
        /* let url1 = $(this).val();*/
 

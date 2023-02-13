@@ -1160,10 +1160,12 @@
                                 <div class="platform-box">
                                     <div class="type type01">
                                         <ul>
-                                            <li> <input type="checkbox" name="check" id="check1"> <label class="unselected-label" for="check1">PlayStation 5</label> </li>
-                                            <li> <input type="checkbox" name="check" id="check2"> <label class="selected-label" for="check2">PlayStation 4</label> </li>
-                                            <li> <input type="checkbox" name="check" id="check3"> <label class="unselected-label" for="check3">Xbox Series X</label> </li>
-                                            <li> <input type="checkbox" name="check" id="check4"> <label class="unselected-label" for="check4">Xbox One</label> </li>
+
+                                            @foreach (ProductLabel item in Model.Product.ProductLabels)
+                                            {
+                                                <li> <input type="checkbox" name="check" id="check2"> <label class="selected-label" for="check2">@item.Label.Name</label> </li>
+
+                                            }
                                         </ul>
                                     </div>
                                 </div>
