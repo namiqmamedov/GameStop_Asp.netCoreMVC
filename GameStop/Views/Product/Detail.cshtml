@@ -1156,17 +1156,17 @@
                                 </div>
                             </div>
                             <div class="label-check">
-                                <span class="label-platform">Platform: <span class="platform-name">Xbox One</span> </span>
+                                <span class="label-platform">Platform: <span class="platform-name">@Model.Product.ProductLabels.Select(x=>x.Label.Name).FirstOrDefault()</span> </span>
                                 <div class="platform-box">
                                     <div class="type type01">
                                         <ul>
                                             @*<li> <input type="checkbox" name="check" id="check1"> <label class="unselected-label" for="check1">PlayStation 5</label> </li>
-        <li> <input type="checkbox" name="check" id="check2"> <label id="selected-label" for="check2">PlayStation 4</label> </li>
-        <li> <input type="checkbox" name="check" id="check3"> <label class="unselected-label" for="check3">Xbox Series X</label> </li>
-        <li> <input type="checkbox" name="check" id="check4"> <label class="unselected-label" for="check4">Xbox One</label> </li>*@
+                                            <li> <input type="checkbox" name="check" id="check2"> <label id="selected-label" for="check2">PlayStation 4</label> </li>
+                                            <li> <input type="checkbox" name="check" id="check3"> <label class="unselected-label" for="check3">Xbox Series X</label> </li>
+                                            <li> <input type="checkbox" name="check" id="check4"> <label class="unselected-label" for="check4">Xbox One</label> </li>*@
                                             @foreach (ProductLabel item in Model.Product.ProductLabels)
                                             {
-                                                <li> <input type="checkbox" name="check" id="check2"> <label id="selected-label" for="check2">@item.Label.Name</label> </li>
+                                                <li> <input type="checkbox" name="check" id="check-@item.Label.Id"> <label id="selected-label" for="check-@item.Label.Id">@item.Label.Name</label> </li>
 
                                             }
                                         </ul>
@@ -1253,62 +1253,62 @@
                                         </div>
                                         <div class="product-cart">
                                             <div class="add-cart">
-                                                @if (Model.Product.Count > 0)
+                                                @if (Model.Product.Count > 0)  
                                                 {
 
-                                                    <button id="ModalCart" class="bt-1 w-100 cartButton">
-                                                        <a class="add-to-cart-menu" asp-controller="cart" asp-action="addToCart" asp-route-id="@Model.Product.Id">
-                                                            Add to Cart
-                                                        </a>
-                                                        <label class="overlay-back2">
-                                                            <div class="notificationMsg2">
-                                                                <div class="notfMsg"> </div>
-                                                                <div class="notify"><span id="notifyType" class=""></span> </div>
-                                                            </div>
-                                                        </label>
-                                                        <div class="navMenu2">
-                                                            <div class="nav-section2">
-                                                                <div class="content-top2">
-                                                                    <div class="bar2">
-                                                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="closeReview" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path fill="none" d="M0 0h24v24H0z"> </path>
-                                                                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"> </path>
-                                                                        </svg>
-                                                                    </div>
-                                                                    <div class="backImg" style="background-image: url('/assets/img/@Model.Product.Image')">
+                                                <button id="ModalCart" class="bt-1 w-100 cartButton">
+                                                    <a class="add-to-cart-menu" asp-controller="cart" asp-action="addToCart" asp-route-id="@Model.Product.Id" asp-route-labelId="@Model.Product.ProductLabels.Select(x=>x.LabelId).FirstOrDefault()">
+                                                        Add to Cart 
+                                                    </a>
+                                                    <label class="overlay-back2">
+                                                        <div class="notificationMsg2">
+                                                            <div class="notfMsg"> </div>
+                                                            <div class="notify"><span id="notifyType" class=""></span> </div>
+                                                        </div>
+                                                    </label>
+                                                    <div class="navMenu2">
+                                                        <div class="nav-section2">
+                                                            <div class="content-top2">
+                                                                <div class="bar2">
+                                                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="closeReview" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path fill="none" d="M0 0h24v24H0z"> </path>
+                                                                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"> </path>
+                                                                    </svg>
+                                                                </div>
+                                                                <div class="backImg" style="background-image: url('/assets/img/@Model.Product.Image')">
 
-                                                                    </div>
-                                                                    <div class="topContext">
-                                                                        <h5 class="cart-content">Added to Cart</h5>
-                                                                        <div class="imgTop">
-                                                                            <img src="~/assets/img/@Model.Product.Image" alt="">
-                                                                            <div class="item-attributes">
-                                                                                <div class="line-item-name">
-                                                                                    <span>Nice! Your <span class="font-bold">@Model.Product.Title</span> has been added to cart.</span>
-                                                                                </div>
+                                                                </div>
+                                                                <div class="topContext">
+                                                                    <h5 class="cart-content">Added to Cart</h5>
+                                                                    <div class="imgTop">
+                                                                        <img src="~/assets/img/@Model.Product.Image" alt="">
+                                                                        <div class="item-attributes">
+                                                                            <div class="line-item-name">
+                                                                                <span>Nice! Your <span class="font-bold">@Model.Product.Title</span> has been added to cart.</span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="modal-content">
-                                                                    <div class="modal-body">
-                                                                        <div class="btn-wrapper">
-                                                                            <div class="checkoutBtn">
-                                                                                <a asp-controller="cart" asp-action="index">
-                                                                                    View Cart & Checkout
-                                                                                </a>
-                                                                            </div>
-                                                                            <div class="shoppingBtn">
-                                                                                <a class="keep-shop">
-                                                                                    Keep Shopping
-                                                                                </a>
-                                                                            </div>
+                                                            </div>
+                                                            <div class="modal-content">
+                                                                <div class="modal-body">
+                                                                    <div class="btn-wrapper">
+                                                                        <div class="checkoutBtn">
+                                                                            <a asp-controller="cart" asp-action="index">
+                                                                                View Cart & Checkout
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="shoppingBtn">
+                                                                            <a class="keep-shop">
+                                                                                Keep Shopping
+                                                                            </a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </button>
+                                                    </div>
+                                                </button>
                                                 }
                                             </div>
                                         </div>

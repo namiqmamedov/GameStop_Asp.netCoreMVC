@@ -61,6 +61,10 @@ $('.add-to-cart-menu').click(function (e) {
     e.preventDefault();
 
     let cartBtn = $(this).attr('href');
+    let labelId = $(".labelId").val();
+
+
+  /*  cartBtn = cartBtn + "?labelId=" + labelId*/
 
     fetch(cartBtn)
         .then(res => res.text())

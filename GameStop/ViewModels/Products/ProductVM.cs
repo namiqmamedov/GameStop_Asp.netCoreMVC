@@ -9,5 +9,6 @@ namespace GameStop.ViewModels.Products
     public class ProductVM
     {
         public IEnumerable<Product> Products { get; set; }
+        public IEnumerable<ProductLabel> ProductLabels { get; set; }
     }
 }

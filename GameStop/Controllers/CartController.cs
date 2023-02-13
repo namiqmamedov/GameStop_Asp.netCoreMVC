@@ -21,7 +21,7 @@ namespace GameStop.Controllers
         }
 
 
-        public async Task<IActionResult> Index(int? id)
+        public async Task<IActionResult> Index(int? id, int? labelId)
         {
             string basket = HttpContext.Request.Cookies["basket"];
             
@@ -195,6 +195,7 @@ namespace GameStop.Controllers
                 item.Price = dbProduct.Price/* > 0 ? dbProduct.DiscountedPrice : dbProduct.Price*/;
                 item.DiscountedPrice = dbProduct.DiscountedPrice;
                 item.OldPrice = dbProduct.OldPrice;
+                item.Label = dbLabel.Name;
             }
 
             return basketVMs;

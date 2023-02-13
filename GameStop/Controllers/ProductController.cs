@@ -25,7 +25,8 @@ namespace GameStop.Controllers
         {
             ProductVM productVM = new ProductVM
             {
-                Products = await _context.Products.Where(p => p.IsDeleted == false).ToListAsync()
+                Products = await _context.Products.Where(p => p.IsDeleted == false).ToListAsync(),
+                ProductLabels = await _context.ProductLabels.Where(p => p.IsDeleted == false).ToListAsync(),
             };
 
     
@@ -68,7 +69,13 @@ namespace GameStop.Controllers
 
             ProductDetailVM productDetailVM = new ProductDetailVM
             {
-                Product = _context.Products.Include(p => p.ProductImages).Include(p => p.ProductFeatures).Include(p => p.ProductSpecs).Include(p=>p.ProductLabels).ThenInclude(p=>p.Label).Where(p => p.ProductLabels.Any(p => p.Count > 0)).FirstOrDefault(p => p.IsDeleted == false && p.Id == id),
+                Product = _context.Products.Include(p => p.ProductImages)
+                .Include(p => p.ProductFeatures).
+                Include(p => p.ProductSpecs).
+                Include(p=>p.ProductLabels).
+                ThenInclude(p=>p.Label)
+                .Where(p => p.ProductLabels.Any(p => p.Count > 0))
+                .FirstOrDefault(p => p.IsDeleted == false && p.Id == id),
             };
 
 
