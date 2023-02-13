@@ -23,5 +23,7 @@ namespace GameStop.DAL
         public DbSet<ProductSpecs> ProductSpecs { get; set; }
         public DbSet<ProductLabel> ProductLabels { get; set; }
         public DbSet<Label> Labels { get; set; }
+        public DbSet<Condition> Conditions { get; set; }
+        public DbSet<ProductCondition> ProductConditions { get; set; }
     }
 }
