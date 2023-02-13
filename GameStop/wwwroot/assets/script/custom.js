@@ -1,6 +1,7 @@
 ﻿
-// product search
 $(document).ready(function () {
+
+// product search
 
     $('#inputSearch').keyup(function (e) {
 
@@ -133,6 +134,9 @@ $(document).ready(function () {
         var b = $('body').find('#pum-344').find('input[name="count"]').val(a);
     });
 
+    // end input count
+
+    // remove cart 
 
     $(document).on('click', '.remove-item', function (e) {
         e.preventDefault();
@@ -143,6 +147,25 @@ $(document).ready(function () {
             .then(res => res.text())
             .then(data => {
                 $('.basketindexcontainer').html(data);
+            })
+    })
+
+
+    $(document).on('click', '.dropdown-menu li a', function (e) {
+        e.preventDefault();
+
+        let url1 = $(this).val();
+
+        let url = $(this).attr('href');
+
+
+        console.log(url1);
+        console.log(url);
+
+        fetch(url)
+            .then(res => res.text())
+            .then(data => {
+                $('.product-main .cardBoxes').html(data);
             })
     })
 

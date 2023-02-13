@@ -27,8 +27,35 @@ namespace GameStop.Controllers
             {
                 Products = await _context.Products.Where(p => p.IsDeleted == false).ToListAsync()
             };
-            return View(productVM);
 
+    
+            return View(productVM);
+        }
+
+        public async Task<IActionResult> FilterSelect(int? id)
+        {
+            IQueryable<Product> products = _context.Products;
+
+            if (id != null && id > 0)
+            {
+                
+                if (id == 2)
+                {
+                    products = products.Where(p=>p.Price < 20);
+                }
+                else if (id == 2)
+                {
+                      products = products.Where(p=>p.Price < 20);
+                }
+                else if (id == 3)
+                {
+                    products = products.Where(p => p.Price < 20);
+                }
+            }
+
+            ViewBag.Status = id;
+
+            return ViewComponent("Product",await products.ToListAsync());
         }
 
         public IActionResult Detail(int? id)
