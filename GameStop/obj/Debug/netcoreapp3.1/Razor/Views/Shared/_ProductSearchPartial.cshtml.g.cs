@@ -54,8 +54,15 @@ using GameStop.ViewModels.Basket;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 8 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Views\_ViewImports.cshtml"
+using GameStop.ViewModels.CategoryMain;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6ec72471bc6d677838cd22d6104844379af71270", @"/Views/Shared/_ProductSearchPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9b0afde71a3da77e3a524c1af222316d18c29508", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"24206e29f676ee0ab0c1c366a48ee4aff5fa04b1", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__ProductSearchPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Product>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "product", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -94,7 +101,7 @@ using GameStop.ViewModels.Basket;
 #line hidden
 #nullable disable
             WriteLiteral("    <div class=\"item-pr\">\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6ec72471bc6d677838cd22d6104844379af712704803", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6ec72471bc6d677838cd22d6104844379af712704998", async() => {
                 WriteLiteral("\r\n            <span class=\"search__text\">\r\n                <span>");
 #nullable restore
 #line 9 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Views\Shared\_ProductSearchPartial.cshtml"

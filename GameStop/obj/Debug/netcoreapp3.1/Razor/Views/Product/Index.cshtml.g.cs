@@ -54,8 +54,15 @@ using GameStop.ViewModels.Basket;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 8 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Views\_ViewImports.cshtml"
+using GameStop.ViewModels.CategoryMain;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d8ee277bce771c94e13ba618bcce93c5efa10efa", @"/Views/Product/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9b0afde71a3da77e3a524c1af222316d18c29508", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"24206e29f676ee0ab0c1c366a48ee4aff5fa04b1", @"/Views/_ViewImports.cshtml")]
     public class Views_Product_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ProductVM>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("rel", new global::Microsoft.AspNetCore.Html.HtmlString("stylesheet"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -102,9 +109,9 @@ using GameStop.ViewModels.Basket;
         {
             WriteLiteral("\r\n");
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa8833", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa9028", async() => {
                 WriteLiteral("\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Conditions of Use | GameStop</title>\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8ee277bce771c94e13ba618bcce93c5efa10efa9325", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d8ee277bce771c94e13ba618bcce93c5efa10efa9520", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -4690,7 +4697,7 @@ using GameStop.ViewModels.Basket;
                                         <select>
 
                                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa350297", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa350492", async() => {
                 WriteLiteral("\r\n                                                <li>\r\n                                                <a class=\"dropdown-item\" href=\"#\">Best Matches</a>\r\n                                                </li>\r\n                                            ");
             }
             );
@@ -4706,7 +4713,7 @@ using GameStop.ViewModels.Basket;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa351763", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa351958", async() => {
                 WriteLiteral("\r\n                                                <li><a class=\"dropdown-item\" href=\"#\">Price Low To High</a></li>\r\n                                            ");
             }
             );
@@ -4722,7 +4729,7 @@ using GameStop.ViewModels.Basket;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa353130", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa353325", async() => {
                 WriteLiteral("\r\n                                                <li><a class=\"dropdown-item\" href=\"#\">Product Name A - Z</a></li>\r\n                                            ");
             }
             );
@@ -4738,7 +4745,7 @@ using GameStop.ViewModels.Basket;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa354498", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa354693", async() => {
                 WriteLiteral("\r\n                                                <li><a class=\"dropdown-item\" href=\"#\">Product Name Z - A</a></li>\r\n                                            ");
             }
             );
@@ -4754,7 +4761,7 @@ using GameStop.ViewModels.Basket;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa355866", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa356061", async() => {
                 WriteLiteral("\r\n                                                <li><a class=\"dropdown-item\" href=\"#\">Most Popular</a></li>\r\n                                            ");
             }
             );
@@ -4770,7 +4777,7 @@ using GameStop.ViewModels.Basket;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa357228", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa357423", async() => {
                 WriteLiteral("\r\n                                                <li><a class=\"dropdown-item\" href=\"#\">Top Sellers</a></li>\r\n                                            ");
             }
             );
@@ -4786,7 +4793,7 @@ using GameStop.ViewModels.Basket;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa358589", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa358784", async() => {
                 WriteLiteral("\r\n                                                <li><a class=\"dropdown-item\" href=\"#\">Release Date Oldest to Newest</a></li>\r\n                                            ");
             }
             );
@@ -4802,7 +4809,7 @@ using GameStop.ViewModels.Basket;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa359968", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa360163", async() => {
                 WriteLiteral("\r\n                                                <li><a class=\"dropdown-item\" href=\"#\">Release Date Newest to Oldest</a></li>\r\n                                            ");
             }
             );
@@ -4818,7 +4825,7 @@ using GameStop.ViewModels.Basket;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa361347", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa361542", async() => {
                 WriteLiteral("\r\n                                                <li><a class=\"dropdown-item\" href=\"#\">Most Relevant</a></li>\r\n                                            ");
             }
             );
@@ -4834,7 +4841,7 @@ using GameStop.ViewModels.Basket;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                        </select>\r\n                                    </div>\r\n\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa362805", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa363000", async() => {
                 WriteLiteral(@"
                                         <div class=""dropdown"">
                                             <button class=""btn btn-secondary dropdown-toggle"" type=""button"" data-bs-toggle=""dropdown""
@@ -4844,7 +4851,7 @@ using GameStop.ViewModels.Basket;
                                             <ul name=""status"" class=""dropdown-menu"">
                                                 <span class=""up-arrow""></span>
                                                 <li>");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa363770", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa363965", async() => {
                     WriteLiteral("Best Matches");
                 }
                 );
@@ -4881,7 +4888,7 @@ using GameStop.ViewModels.Basket;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("</li>\r\n                                                <li>");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa366743", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa366938", async() => {
                     WriteLiteral("Price Low To High");
                 }
                 );
@@ -4918,7 +4925,7 @@ using GameStop.ViewModels.Basket;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("</li>\r\n                                                <li>");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa369715", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa369910", async() => {
                     WriteLiteral("Price Low To High");
                 }
                 );
@@ -4955,7 +4962,7 @@ using GameStop.ViewModels.Basket;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("</li>\r\n                                                <li>");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa372687", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8ee277bce771c94e13ba618bcce93c5efa10efa372882", async() => {
                     WriteLiteral("Price Low To High");
                 }
                 );

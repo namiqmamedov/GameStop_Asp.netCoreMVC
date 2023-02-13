@@ -96,17 +96,18 @@
                                 Shop By Category
                             </div>
 
-                            <ul id="menuUl" class="menu-ul" onclick="topNav">
+                            <ul id="menuUl" class="menu-ul">
                                 @foreach (Category category in Model.Categories)
                                 {
                                     <li @*asp-route-id="@Model.Subcategories.Select(s => s.Id).ToList()"*@>
+
                                         <label class="a-label__chevron" for="item-@category.For">@category.Name</label>
 
                                         <input type="checkbox" id="item-@category.For" name="item-@category.For" class="m-menu__checkbox">
                                         <div id="m-menu2" class="m-menu">
                                             <div class="m-menu__header">
                                                 <div class="back-label">
-                                                    <label onclick="backNav()" class="m-menu__toggle" for="item-@category.For">
+                                                    <label onclick="backNav()" asp-for="@category.For" class="m-menu__toggle" for="item-@category.For">
                                                         <i id="backNav" class="fa-solid fa-chevron-left"></i>
                                                         <span class="prev">Back</span>
                                                     </label>
@@ -123,8 +124,9 @@
 
                                                 @foreach (SubCategory item in Model.SubCategories)
                                                 {
-                                                    <li><label><a asp-controller="product" asp-action="index" asp-route-id="@item.Id">@item.Name</a></label></li>
+                                                    <li><label for="item-@item.For"><a asp-controller="product" asp-action="index" asp-route-id="@item.Id">@item.Name</a></label></li>
                                                 }
+                                            </ul>
 
 
                                         </div>
@@ -191,7 +193,7 @@
                             <div class="trade-ins">
                                 <a asp-controller="trade" asp-action="index">
                                     <div class="icon">
-                                        <svg  height="28" viewBox="0 0 24 24" width="28"><path d="M7 7H17V10L21 6L17 2V5H5V11H7V7ZM17 17H7V14L3 18L7 22V19H19V13H17V17Z" fill="black" data-darkreader-inline-fill="" style="--darkreader-inline-fill:#f9f7f4;"></path></svg>
+                                        <svg height="28" viewBox="0 0 24 24" width="28"><path d="M7 7H17V10L21 6L17 2V5H5V11H7V7ZM17 17H7V14L3 18L7 22V19H19V13H17V17Z" fill="black" data-darkreader-inline-fill="" style="--darkreader-inline-fill:#f9f7f4;"></path></svg>
                                     </div>
                                     <div class="text">
                                         <span>Trade Ins</span>
@@ -222,7 +224,7 @@
                             </div>
 
                             <div id="mini-cart" class="cart">
-                                @await Html.PartialAsync("_BasketPartial",basketVMs) 
+                                @await Html.PartialAsync("_BasketPartial", basketVMs)
                             </div>
                         </div>
                     </div>

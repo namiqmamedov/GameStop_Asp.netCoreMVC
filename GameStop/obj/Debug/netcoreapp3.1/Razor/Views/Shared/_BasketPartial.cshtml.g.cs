@@ -54,8 +54,15 @@ using GameStop.ViewModels.Basket;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 8 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Views\_ViewImports.cshtml"
+using GameStop.ViewModels.CategoryMain;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2f2ec698687feacf604ea335eff1d241fc403646", @"/Views/Shared/_BasketPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9b0afde71a3da77e3a524c1af222316d18c29508", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"24206e29f676ee0ab0c1c366a48ee4aff5fa04b1", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__BasketPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<BasketVM>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "cart", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -86,7 +93,7 @@ using GameStop.ViewModels.Basket;
         {
             WriteLiteral("\r\n");
             WriteLiteral("\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2f2ec698687feacf604ea335eff1d241fc4036464511", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2f2ec698687feacf604ea335eff1d241fc4036464706", async() => {
                 WriteLiteral(@"
     <div class=""icon"">
         <svg width=""27"" height=""27"" viewBox=""0 0 30 30"" fill=""none"" xmlns=""http://www.w3.org/2000/svg""> <path d=""M9.375 27.1875C10.4105 27.1875 11.25 26.348 11.25 25.3125C11.25 24.277 10.4105 23.4375 9.375 23.4375C8.33947 23.4375 7.5 24.277 7.5 25.3125C7.5 26.348 8.33947 27.1875 9.375 27.1875Z"" fill=""black""></path> <path d=""M21.5625 27.1875C22.598 27.1875 23.4375 26.348 23.4375 25.3125C23.4375 24.277 22.598 23.4375 21.5625 23.4375C20.527 23.4375 19.6875 24.277 19.6875 25.3125C19.6875 26.348 20.527 27.1875 21.5625 27.1875Z"" fill=""black""></path> <path d=""M4.95536 8.4375H25.9821L22.8885 19.2651C22.7766 19.6569 22.5401 20.0015 22.2148 20.2469C21.8895 20.4923 21.4931 20.625 21.0857 20.625H9.85181C9.44436 20.625 9.04799 20.4923 8.7227 20.2469C8.39741 20.0015 8.16089 19.6569 8.04896 19.2651L3.81034 4.42995C3.75437 4.23406 3.63612 4.06173 3.47347 3.93905C3.31083 3.81636 3.11264 3.75 2.90891 3.75H0.9375"" stroke=""black"" stroke-width=""1.875"" stroke-linecap=""round"" stroke-linejoin=""round""></path");
