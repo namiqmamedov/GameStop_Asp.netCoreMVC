@@ -14,9 +14,7 @@ namespace GameStop.DAL
 
         }
 
-
         public DbSet<Setting> Settings { get; set; }
-
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -24,5 +22,6 @@ namespace GameStop.DAL
         public DbSet<ProductFeatures> ProductFeatures { get; set; }
         public DbSet<ProductSpecs> ProductSpecs { get; set; }
         public DbSet<ProductLabel> ProductLabels { get; set; }
+        public DbSet<Label> Labels { get; set; }
     }
 }

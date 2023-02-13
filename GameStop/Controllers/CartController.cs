@@ -39,16 +39,27 @@ namespace GameStop.Controllers
             return View(await _getBasketItemAsync(basketVms));
         }
 
-        public async Task<IActionResult> addToCart(int? id)
+        public async Task<IActionResult> addToCart(int? id,int? labelId, int count = 1)
         {
             if (id == null)
             {
                 return BadRequest();
             }
 
+            if (labelId == null)
+            {
+                return BadRequest();
+            }
+
             Product product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
+            Label label = await _context.Labels.FirstOrDefaultAsync(l => l.Id == labelId);
 
             if (product == null)
+            {
+                return NotFound();
+            }
+
+            if (label == null)
             {
                 return NotFound();
             }
@@ -80,6 +91,7 @@ namespace GameStop.Controllers
                 {
                     ProductID = product.Id,
                     Count = 1,
+                    LabelId = label.Id,
                 };
 
                 basketVMs.Add(basketVM);
@@ -176,6 +188,7 @@ namespace GameStop.Controllers
             foreach (BasketVM item in basketVMs)
             {
                 Product dbProduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == item.ProductID);
+                Label dbLabel = await _context.Labels.FirstOrDefaultAsync(c => c.Id == item.LabelId);
 
                 item.Image = dbProduct.Image;
                 item.Title = dbProduct.Title;
