@@ -605,7 +605,7 @@ html {
             border-top: 1px solid #e0e0e0;
         }
 
-            .main-header .header-search .search-wrapper .search-brand .search-item .item-pr:hover {
+            .main-header .header-search .search-wrapper .search-brand .search-item .item-pr a:hover {
                 border-radius: 5px;
                 background-color: #e5e5e5;
             }
@@ -14650,7 +14650,7 @@ footer #hr {
         position: absolute;
         z-index: 3000;
         display: none;
-        max-height: 357px;
+        max-height: 460px;
         max-width: 100%;
         width: 57.1%;
         background-color: white;
