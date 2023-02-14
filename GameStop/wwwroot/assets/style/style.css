@@ -604,7 +604,10 @@ html {
             box-shadow: 0 12px 12px 0 rgb(0 0 0 / 10%);
             border-top: 1px solid #e0e0e0;
         }
-
+            .main-header .header-search .search-wrapper .search-brand .search-item .item-pr {
+                padding-top: 10px;
+            }
+       
             .main-header .header-search .search-wrapper .search-brand .search-item .item-pr a:hover {
                 border-radius: 5px;
                 background-color: #e5e5e5;
