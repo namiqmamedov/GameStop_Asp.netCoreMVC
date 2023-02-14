@@ -3703,17 +3703,28 @@
                                                     
                                                     <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="LowToHigh" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Low To High</a></li>
                                                     <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="HighToLow" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">High To Low</a></li>
+                                                    <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="AtoZ" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Product Name A-Z</a></li>
+                                                    <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="ZtoA" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Product Name Z-A</a></li>
+                                                    <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="OldToNew" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Release Date Oldest to Newest</a></li>
+                                                    <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="NewToOld" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Release Date Oldest to Oldest</a></li>
+
+
+
+
+
+
+
+
                                                     @*<li><a class="dropdown-item" asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).ToList()">Price Low To High</a></li>
                                                     <li><a class="dropdown-item" asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).ToList()">Price Low To High</a></li>
                                                     <li><a class="dropdown-item" asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).ToList()">Price Low To High</a></li>*@
-                                                }
+                                               
                                                 @*<li><a class="dropdown-item" href="#">Price High To Low</a></li>
                                                 <li><a class="dropdown-item" href="#">Product Name A - Z</a></li>
                                                 <li><a class="dropdown-item" href="#">Product Name Z - A</a></li>
                                                 <li><a class="dropdown-item" href="#">Most Popular</a></li>
                                                 <li><a class="dropdown-item" href="#">Top Sellers</a></li>
-                                                <li><a class="dropdown-item" href="#">Release Date Oldest to Newest</a></li>
-                                                <li><a class="dropdown-item" href="#">Release Date Newest to Oldest</a></li>
+                                           
                                                 <li><a class="dropdown-item" href="#">Most Relevant</a></li>*@
 
                                             </ul>

@@ -38,7 +38,7 @@ namespace GameStop.Controllers
         {
             if (id == null) return NotFound();
             IEnumerable<Product> products = await _context.Products
-                  .OrderBy(m => (m.Price + m.DiscountedPrice))
+                 .OrderBy(m => (m.Price + m.DiscountedPrice))
                  .ToListAsync();
 
             if (products == null) return NotFound();
@@ -52,6 +52,42 @@ namespace GameStop.Controllers
             IEnumerable<Product> products = await _context.Products
                 .OrderByDescending(m => (m.Price + m.DiscountedPrice))
                 .ToListAsync();
+
+            if (products == null) return NotFound();
+
+            return ViewComponent("PriceSort", products);
+        }
+
+        public async Task<IActionResult> AtoZ(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Product> products = await _context.Products
+                 .OrderBy(p => p.Title)
+                 .ToListAsync();
+
+            if (products == null) return NotFound();
+
+            return ViewComponent("PriceSort", products);
+        }
+
+        public async Task<IActionResult> ZtoA(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Product> products = await _context.Products
+                 .OrderByDescending(p => p.Title)
+                 .ToListAsync();
+
+            if (products == null) return NotFound();
+
+            return ViewComponent("PriceSort", products);
+        }
+
+        public async Task<IActionResult> OldToNew(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Product> products = await _context.Products
+                 .OrderBy(p => p.CreatedAt)
+                 .ToListAsync();
 
             if (products == null) return NotFound();
 

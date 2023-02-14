@@ -95,6 +95,8 @@
     <Compile Remove="Migrations\20230212155552_UpdatedProductTableRemoveNullablePropForAllPrice.Designer.cs" />
     <Compile Remove="Migrations\20230212160012_UpdatedProductTableRemoveNullablePropForAllPrice.cs" />
     <Compile Remove="Migrations\20230212160012_UpdatedProductTableRemoveNullablePropForAllPrice.Designer.cs" />
+    <Compile Remove="Migrations\20230214164228_UpdatedBaseEntity.cs" />
+    <Compile Remove="Migrations\20230214164228_UpdatedBaseEntity.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
