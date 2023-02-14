@@ -28,34 +28,6 @@ $(document).ready(function () {
         }
     })
 
-    $('.form-check-input').click(function (e) {
-
-        e.preventDefault();
-
-
-        let inputValue = $(this).val().trim();
-
-        console.log(inputValue)
-        //let url = $(this).data('url')
-
-        //let searchBrand = $(".search-brand").attr("class");
-
-
-        //url = url + '?search=' + inputValue;
-
-        //if (inputValue) {
-        //    fetch(url)
-        //        .then(res => res.text())
-        //        .then(data => {
-        //            $('.search-brand .search-item').html(data);
-        //        })
-        //}
-        //else {
-        //    $('.search-brand .search-item').html('');
-        //}
-    })
-
-
     $(".close_button").click(function () {
         $(".search-brand").css({
             display: "none"
@@ -228,6 +200,18 @@ $(document).ready(function () {
                 $('#card-boxing').html(data);
             })
     })
+
+    //$(document).on("click", ".nonPrice", function (e) {
+    //    e.preventDefault()
+
+    //    let url = $(this).attr("href")
+
+    //    fetch(url)
+    //        .then(res => res.text())
+    //        .then(data => {
+    //            $('.card-boxes').html(data);
+    //        })
+    //})
 
 
 });

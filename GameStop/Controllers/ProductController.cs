@@ -34,6 +34,17 @@ namespace GameStop.Controllers
             return View(productVM);
         }
 
+        public async Task<IActionResult> Matched(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Product> products = await _context.Products
+                 .Where(p => !p.IsDeleted)
+                 .ToListAsync();
+
+            if (products == null) return NotFound();
+
+            return ViewComponent("PriceSort", products);
+        }
         public async Task<IActionResult> LowToHigh(int? id)
         {
             if (id == null) return NotFound();
@@ -87,6 +98,18 @@ namespace GameStop.Controllers
             if (id == null) return NotFound();
             IEnumerable<Product> products = await _context.Products
                  .OrderBy(p => p.CreatedAt)
+                 .ToListAsync();
+
+            if (products == null) return NotFound();
+
+            return ViewComponent("PriceSort", products);
+        }
+
+        public async Task<IActionResult> NewToOld(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Product> products = await _context.Products
+                 .OrderByDescending(p => p.CreatedAt)
                  .ToListAsync();
 
             if (products == null) return NotFound();
