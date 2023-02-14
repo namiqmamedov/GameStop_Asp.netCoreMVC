@@ -21,7 +21,7 @@ namespace GameStop.Controllers
         }
 
 
-        public async Task<IActionResult> Index(int? id, int? labelId)
+        public async Task<IActionResult> Index(int? id, int? labelId,int? conditionId)
         {
             string basket = HttpContext.Request.Cookies["basket"];
             
@@ -39,7 +39,7 @@ namespace GameStop.Controllers
             return View(await _getBasketItemAsync(basketVms));
         }
 
-        public async Task<IActionResult> addToCart(int? id,int? labelId, int count = 1)
+        public async Task<IActionResult> addToCart(int? id,int? labelId, int? conditionId, int count = 1)
         {
             if (id == null)
             {
@@ -51,8 +51,14 @@ namespace GameStop.Controllers
                 return BadRequest();
             }
 
+            if (conditionId == null)
+            {
+                return BadRequest();
+            }
+
             Product product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
             Label label = await _context.Labels.FirstOrDefaultAsync(l => l.Id == labelId);
+            Condition condition = await _context.Conditions.FirstOrDefaultAsync(c => c.Id == conditionId);
 
             if (product == null)
             {
@@ -60,6 +66,11 @@ namespace GameStop.Controllers
             }
 
             if (label == null)
+            {
+                return NotFound();
+            }
+
+            if (condition == null)
             {
                 return NotFound();
             }
@@ -92,6 +103,7 @@ namespace GameStop.Controllers
                     ProductID = product.Id,
                     Count = 1,
                     LabelId = label.Id,
+                    ConditionId = condition.Id,
                 };
 
                 basketVMs.Add(basketVM);
@@ -189,6 +201,7 @@ namespace GameStop.Controllers
             {
                 Product dbProduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == item.ProductID);
                 Label dbLabel = await _context.Labels.FirstOrDefaultAsync(c => c.Id == item.LabelId);
+                Condition dbCondition = await _context.Conditions.FirstOrDefaultAsync(c => c.Id == item.ConditionId);
 
                 item.Image = dbProduct.Image;
                 item.Title = dbProduct.Title;
@@ -196,6 +209,7 @@ namespace GameStop.Controllers
                 item.DiscountedPrice = dbProduct.DiscountedPrice;
                 item.OldPrice = dbProduct.OldPrice;
                 item.Label = dbLabel.Name;
+                item.Condition = dbCondition.Name;
             }
 
             return basketVMs;

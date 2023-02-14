@@ -1176,8 +1176,11 @@
                                 <div class="condition-box">
                                     <div class="type type01">
                                         <ul>
-                                            <li> <input type="checkbox" name="check" id="check5"> <label class="labelfora" for="check5">New</label> </li>
-                                            <li> <input type="checkbox" name="check" id="check6"> <label for="check6">Pre-Owned</label> </li>
+                                            @foreach (ProductCondition item in Model.Product.ProductConditions)
+                                            {
+                                                <li> <input type="checkbox" name="check" id="check-@item.Condition.Id"> <label class="labelfora" for="check-@item.Condition.Id">@item.Condition.Name</label> </li>
+                                            }
+
                                         </ul>
                                     </div>
                                 </div>
@@ -1257,7 +1260,7 @@
                                                 {
 
                                                 <button id="ModalCart" class="bt-1 w-100 cartButton">
-                                                    <a class="add-to-cart-menu" asp-controller="cart" asp-action="addToCart" asp-route-id="@Model.Product.Id" asp-route-labelId="@Model.Product.ProductLabels.Select(x=>x.LabelId).FirstOrDefault()">
+                                                    <a class="add-to-cart-menu" asp-controller="cart" asp-action="addToCart" asp-route-id="@Model.Product.Id" asp-route-labelId="@Model.Product.ProductLabels.Select(x=>x.LabelId).FirstOrDefault()" asp-route-conditionId="@Model.Product.ProductConditions.Select(x=>x.ConditionId).FirstOrDefault()">
                                                         Add to Cart 
                                                     </a>
                                                     <label class="overlay-back2">

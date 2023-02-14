@@ -17,6 +17,8 @@ namespace GameStop.ViewModels.Basket
         public double DiscountedPrice { get; set; }
         public string Label { get; set; }
         public int LabelId { get; set; }
+        public string Condition { get; set; }
+        public int ConditionId { get; set; }
 
     }
 }

@@ -27,9 +27,10 @@ namespace GameStop.Controllers
             {
                 Products = await _context.Products.Where(p => p.IsDeleted == false).ToListAsync(),
                 ProductLabels = await _context.ProductLabels.Where(p => p.IsDeleted == false).ToListAsync(),
+                ProductConditions = await _context.ProductConditions.Where(p => p.IsDeleted == false).ToListAsync(),
             };
 
-    
+
             return View(productVM);
         }
 
@@ -39,14 +40,14 @@ namespace GameStop.Controllers
 
             if (id != null && id > 0)
             {
-                
+
                 if (id == 2)
                 {
-                    products = products.Where(p=>p.Price < 20);
+                    products = products.Where(p => p.Price < 20);
                 }
                 else if (id == 2)
                 {
-                      products = products.Where(p=>p.Price < 20);
+                    products = products.Where(p => p.Price < 20);
                 }
                 else if (id == 3)
                 {
@@ -72,9 +73,12 @@ namespace GameStop.Controllers
                 Product = _context.Products.Include(p => p.ProductImages)
                 .Include(p => p.ProductFeatures).
                 Include(p => p.ProductSpecs).
-                Include(p=>p.ProductLabels).
-                ThenInclude(p=>p.Label)
+                Include(p => p.ProductLabels).
+                ThenInclude(p => p.Label)
+                .Include(p => p.ProductConditions).
+                ThenInclude(p => p.Condition)
                 .Where(p => p.ProductLabels.Any(p => p.Count > 0))
+                .Where(p => p.ProductConditions.Any(p => p.Count > 0))
                 .FirstOrDefault(p => p.IsDeleted == false && p.Id == id),
             };
 
