@@ -37,10 +37,9 @@ namespace GameStop.Controllers
         public async Task<IActionResult> LowToHigh(int? id)
         {
             if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products.Include(p => p.ProductImages)
-                .OrderBy(p => p.Price)
-                .ThenBy(p=>p.DiscountedPrice)
-                .ToListAsync();
+            IEnumerable<Product> products = await _context.Products
+                  .OrderBy(m => (m.Price + m.DiscountedPrice))
+                 .ToListAsync();
 
             if (products == null) return NotFound();
 
@@ -50,11 +49,8 @@ namespace GameStop.Controllers
         public async Task<IActionResult> HighToLow(int? id)
         {
             if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products.Include(p => p.ProductImages)
-                //.Where(p => p.DiscountedPrice < 10000 && p.DiscountedPrice > 0 ||
-                // p.Price < 10000 && p.Price > 0)
-                .OrderByDescending(p=>p.Price)
-                .OrderByDescending(p=> p.DiscountedPrice)
+            IEnumerable<Product> products = await _context.Products
+                .OrderByDescending(m => (m.Price + m.DiscountedPrice))
                 .ToListAsync();
 
             if (products == null) return NotFound();
