@@ -34,14 +34,29 @@ namespace GameStop.Controllers
             return View(productVM);
         }
 
-        public async Task<IActionResult> Orderby(int? id)
+        public async Task<IActionResult> LowToHigh(int? id)
         {
             if (id == null) return NotFound();
             IEnumerable<Product> products = await _context.Products.Include(p => p.ProductImages)
-                .Where(p => p.DiscountedPrice > 10 && p.DiscountedPrice < 40 || p.Price > 10 && p.Price < 40)
+                .Where(p => p.DiscountedPrice > 0 && p.DiscountedPrice < 10000 || p.Price > 0 && p.Price < 1000)
+                .OrderBy(p => p.Price)
                 .OrderBy(p => p.DiscountedPrice)
                 .OrderBy(p => p.OldPrice)
-                .OrderBy(p => p.Price)
+                .ToListAsync();
+
+            if (products == null) return NotFound();
+
+            return ViewComponent("PriceSort", products);
+        }
+
+        public async Task<IActionResult> HighToLow(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Product> products = await _context.Products.Include(p => p.ProductImages)
+                .Where(p => p.DiscountedPrice < 46 && p.DiscountedPrice > 0 || p.Price < 10000 && p.Price > 0)
+                .OrderByDescending(p => p.Price)
+                .OrderByDescending(p => p.OldPrice)
+                .OrderByDescending(p => p.DiscountedPrice)
                 .ToListAsync();
 
             if (products == null) return NotFound();

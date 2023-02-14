@@ -3700,9 +3700,9 @@
                                             </button>
                                             <ul name="status" class="dropdown-menu">
                                                 <span class="up-arrow"></span>
-                                                @foreach (Product product in Model.Products)
-                                                {
-                                                    <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="OrderBy" asp-route-id="@product.Id">Best Matches</a></li>
+                                                    
+                                                    <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="LowToHigh" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Low To High</a></li>
+                                                    <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="HighToLow" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">High To Low</a></li>
                                                     @*<li><a class="dropdown-item" asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).ToList()">Price Low To High</a></li>
                                                     <li><a class="dropdown-item" asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).ToList()">Price Low To High</a></li>
                                                     <li><a class="dropdown-item" asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).ToList()">Price Low To High</a></li>*@
