@@ -63,7 +63,6 @@ $('.add-to-cart-menu').click(function (e) {
     let cartBtn = $(this).attr('href');
 
     let labelId = $(".labelId").val();
-
     let conditionId = $(".conditionId").val();
 
 
@@ -76,6 +75,8 @@ $('.add-to-cart-menu').click(function (e) {
         });
 
 });
+
+
 
 
 

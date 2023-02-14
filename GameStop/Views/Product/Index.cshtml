@@ -3700,10 +3700,13 @@
                                             </button>
                                             <ul name="status" class="dropdown-menu">
                                                 <span class="up-arrow"></span>
-                                                <li><a class="dropdown-item" name="status" value="0" asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault())">Best Matches</a></li>
-                                                <li><a class="dropdown-item" name="status" value="1"  asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).ToList())">Price Low To High</a></li>
-                                                <li><a class="dropdown-item" name="status" value="2"  asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).ToList())">Price Low To High</a></li>
-                                                <li><a class="dropdown-item" name="status" value="3"  asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).ToList())">Price Low To High</a></li>
+                                                @foreach (Product product in Model.Products)
+                                                {
+                                                    <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="OrderBy" asp-route-id="@product.Id">Best Matches</a></li>
+                                                    @*<li><a class="dropdown-item" asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).ToList()">Price Low To High</a></li>
+                                                    <li><a class="dropdown-item" asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).ToList()">Price Low To High</a></li>
+                                                    <li><a class="dropdown-item" asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).ToList()">Price Low To High</a></li>*@
+                                                }
                                                 @*<li><a class="dropdown-item" href="#">Price High To Low</a></li>
                                                 <li><a class="dropdown-item" href="#">Product Name A - Z</a></li>
                                                 <li><a class="dropdown-item" href="#">Product Name Z - A</a></li>
@@ -3721,7 +3724,10 @@
                                 </div>
                             </div>
 
-                            @await Component.InvokeAsync("Product", Model)
+                            <div id="card-boxing">
+                            @await Component.InvokeAsync("PriceSort", Model)
+
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -23,6 +23,7 @@ namespace GameStop.Controllers
 
         public async Task<IActionResult> Index(int? id, int? labelId,int? conditionId)
         {
+
             string basket = HttpContext.Request.Cookies["basket"];
             
             List<BasketVM> basketVms = null;

@@ -1,7 +1,7 @@
 ﻿
 $(document).ready(function () {
 
-// product search
+    // product search
 
     $('#inputSearch').keyup(function (e) {
 
@@ -86,7 +86,7 @@ $(document).ready(function () {
         if (inputCount >= 2) {
             inputCount--;
             $(this).next().val(inputCount);
-            let url = $(this).attr('href' ) + '/?count=' + inputCount;
+            let url = $(this).attr('href') + '/?count=' + inputCount;
 
             fetch(url)
                 .then(res => res.text())
@@ -181,9 +181,9 @@ $(document).ready(function () {
     $(document).on('click', '.selected-label', function (e) {
         e.preventDefault();
 
-       
 
-       /* let url1 = $(this).val();*/
+
+        /* let url1 = $(this).val();*/
 
         //let url = $(this).attr('href');
 
@@ -215,6 +215,20 @@ $(document).ready(function () {
                 $('.product-main .cardBoxes').html(data);
             })
     })
+
+    // filter sort
+    $(document).on("click", ".priceSort", function (e) {
+        e.preventDefault()
+
+        let url = $(this).attr("href")
+
+        fetch(url)
+            .then(res => res.text())
+            .then(data => {
+                $('#card-boxing').html(data);
+            })
+    })
+
 
 });
 

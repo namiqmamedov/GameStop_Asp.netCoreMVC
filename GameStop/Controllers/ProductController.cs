@@ -34,6 +34,21 @@ namespace GameStop.Controllers
             return View(productVM);
         }
 
+        public async Task<IActionResult> Orderby(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Product> products = await _context.Products.Include(p => p.ProductImages)
+                .Where(p => p.DiscountedPrice > 10 && p.DiscountedPrice < 40 || p.Price > 10 && p.Price < 40)
+                .OrderBy(p => p.DiscountedPrice)
+                .OrderBy(p => p.OldPrice)
+                .OrderBy(p => p.Price)
+                .ToListAsync();
+
+            if (products == null) return NotFound();
+
+            return ViewComponent("PriceSort", products);
+        }
+
         public async Task<IActionResult> FilterSelect(int? id)
         {
             IQueryable<Product> products = _context.Products;
@@ -78,7 +93,6 @@ namespace GameStop.Controllers
                 .Include(p => p.ProductConditions).
                 ThenInclude(p => p.Condition)
                 .Where(p => p.ProductLabels.Any(p => p.Count > 0))
-                .Where(p => p.ProductConditions.Any(p => p.Count > 0))
                 .FirstOrDefault(p => p.IsDeleted == false && p.Id == id),
             };
 
