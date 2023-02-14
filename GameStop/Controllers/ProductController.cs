@@ -38,10 +38,8 @@ namespace GameStop.Controllers
         {
             if (id == null) return NotFound();
             IEnumerable<Product> products = await _context.Products.Include(p => p.ProductImages)
-                .Where(p => p.DiscountedPrice > 0 && p.DiscountedPrice < 10000 || p.Price > 0 && p.Price < 1000)
                 .OrderBy(p => p.Price)
-                .OrderBy(p => p.DiscountedPrice)
-                .OrderBy(p => p.OldPrice)
+                .ThenBy(p=>p.DiscountedPrice)
                 .ToListAsync();
 
             if (products == null) return NotFound();
@@ -53,10 +51,10 @@ namespace GameStop.Controllers
         {
             if (id == null) return NotFound();
             IEnumerable<Product> products = await _context.Products.Include(p => p.ProductImages)
-                .Where(p => p.DiscountedPrice < 46 && p.DiscountedPrice > 0 || p.Price < 10000 && p.Price > 0)
-                .OrderByDescending(p => p.Price)
-                .OrderByDescending(p => p.OldPrice)
-                .OrderByDescending(p => p.DiscountedPrice)
+                //.Where(p => p.DiscountedPrice < 10000 && p.DiscountedPrice > 0 ||
+                // p.Price < 10000 && p.Price > 0)
+                .OrderByDescending(p=>p.Price)
+                .OrderByDescending(p=> p.DiscountedPrice)
                 .ToListAsync();
 
             if (products == null) return NotFound();
