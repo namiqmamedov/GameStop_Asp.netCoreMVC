@@ -35,6 +35,7 @@ $(document).ready(function () {
 
     });
 
+
     $('#inputSearch').bind('focus', function () {
         $(".close_button").css({
             opacity: "1"

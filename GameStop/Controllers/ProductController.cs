@@ -117,6 +117,19 @@ namespace GameStop.Controllers
             return ViewComponent("PriceSort", products);
         }
 
+        public async Task<IActionResult> PriceFilterOne(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Product> products = await _context.Products
+                 .Where(p=>p.Price > 10 && p.Price < 20)
+                 .OrderBy(p => p.Price)
+                 .ToListAsync();
+
+            if (products == null) return NotFound();
+
+            return ViewComponent("PriceSort", products);
+        }
+
         public async Task<IActionResult> FilterSelect(int? id)
         {
             IQueryable<Product> products = _context.Products;

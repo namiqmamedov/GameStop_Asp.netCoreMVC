@@ -1900,12 +1900,9 @@
 
                                     <li>
                                         <div class="form-check">
-                                            <a href="#">
-                                                <a class="sort-section priceSort" asp-controller="product" asp-action="LowToHigh" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">
-                                                   <input class="form-check-input" type="radio" value="option1" name="inlineRadioOptions"
+                                            <a rel="nofollow" class="filter-main sort-section priceSort" asp-controller="product" asp-action="PriceFilterOne" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                                        id="defaultCheck1">
-                                                   </a>
-                                                
                                                 <label class="custom-control-label" value="defaultCheck1">
                                                     $0 - $10
                                                 </label>
@@ -3665,10 +3662,10 @@
 
                                             <option>
                                                 <li>
-                                                <a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="Matched" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Best Matches</a>
+                                                    <a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="Matched" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Best Matches</a>
                                                 </li>
                                             </option>
-                                            <option >
+                                            <option>
                                                 <li>
                                                     <a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="LowToHigh" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Price Low To High</a>
                                                 </li>
@@ -3705,14 +3702,14 @@
                                             </button>
                                             <ul name="status" class="dropdown-menu">
                                                 <span class="up-arrow"></span>
-                                                    
-                                                    <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="Matched" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Best Matches</a></li>
-                                                    <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="LowToHigh" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Low To High</a></li>
-                                                    <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="HighToLow" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">High To Low</a></li>
-                                                    <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="AtoZ" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Product Name A-Z</a></li>
-                                                    <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="ZtoA" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Product Name Z-A</a></li>
-                                                    <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="OldToNew" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Product Date Oldest to Newest</a></li>
-                                                    <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="NewToOld" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Product Date Newest to Oldest</a></li>
+
+                                                <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="Matched" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Best Matches</a></li>
+                                                <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="LowToHigh" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Low To High</a></li>
+                                                <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="HighToLow" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">High To Low</a></li>
+                                                <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="AtoZ" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Product Name A-Z</a></li>
+                                                <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="ZtoA" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Product Name Z-A</a></li>
+                                                <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="OldToNew" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Product Date Oldest to Newest</a></li>
+                                                <li><a class="dropdown-item sort-item priceSort" asp-controller="product" asp-action="NewToOld" asp-route-id="@Model.Products.Select(x=>x.Id).FirstOrDefault()">Product Date Newest to Oldest</a></li>
 
 
 
@@ -3721,17 +3718,17 @@
 
 
 
-                                                    @*<li><a class="dropdown-item" asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).ToList()">Price Low To High</a></li>
+                                                @*<li><a class="dropdown-item" asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).ToList()">Price Low To High</a></li>
                                                     <li><a class="dropdown-item" asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).ToList()">Price Low To High</a></li>
                                                     <li><a class="dropdown-item" asp-controller="product" asp-action="filterselect" asp-route-id="@Model.Products.Select(x=>x.Id).ToList()">Price Low To High</a></li>*@
-                                               
+
                                                 @*<li><a class="dropdown-item" href="#">Price High To Low</a></li>
-                                                <li><a class="dropdown-item" href="#">Product Name A - Z</a></li>
-                                                <li><a class="dropdown-item" href="#">Product Name Z - A</a></li>
-                                                <li><a class="dropdown-item" href="#">Most Popular</a></li>
-                                                <li><a class="dropdown-item" href="#">Top Sellers</a></li>
-                                           
-                                                <li><a class="dropdown-item" href="#">Most Relevant</a></li>*@
+                                                    <li><a class="dropdown-item" href="#">Product Name A - Z</a></li>
+                                                    <li><a class="dropdown-item" href="#">Product Name Z - A</a></li>
+                                                    <li><a class="dropdown-item" href="#">Most Popular</a></li>
+                                                    <li><a class="dropdown-item" href="#">Top Sellers</a></li>
+
+                                                    <li><a class="dropdown-item" href="#">Most Relevant</a></li>*@
 
                                             </ul>
                                         </div>
@@ -3743,7 +3740,7 @@
 
                             <div id="card-boxing">
 
-                            @await Component.InvokeAsync("PriceSort", Model)
+                                @await Component.InvokeAsync("PriceSort", Model)
 
                             </div>
                         </div>
@@ -3752,20 +3749,20 @@
             </div>
         </div>
         @*<div class="row paginationRes">
-            <div class="col-12 text-center pagaga">
-                <nav class="pagination-mobile">
-                    <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
-                    </button>
+                <div class="col-12 text-center pagaga">
+                    <nav class="pagination-mobile">
+                        <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+                        </button>
 
-                    <div id="pagination-numbers1">
+                        <div id="pagination-numbers1">
 
-                    </div>
+                        </div>
 
-                    <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
-                    </button>
-                </nav>
-            </div>
-        </div>*@
+                        <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+                        </button>
+                    </nav>
+                </div>
+            </div>*@
     </div>
 </div>
 
