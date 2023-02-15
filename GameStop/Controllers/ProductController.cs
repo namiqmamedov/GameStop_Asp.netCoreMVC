@@ -121,8 +121,104 @@ namespace GameStop.Controllers
         {
             if (id == null) return NotFound();
             IEnumerable<Product> products = await _context.Products
-                 .Where(p=>p.Price > 10 && p.Price < 20)
-                 .OrderBy(p => p.Price)
+                 .Where(p=>p.Price > 0.1 && p.Price < 20)
+                 .OrderBy(p=>p.Price)
+                 .ToListAsync();
+
+            if (products == null) return NotFound();
+
+            return ViewComponent("PriceSort", products);
+        }
+
+        public async Task<IActionResult> PriceFilterTwo(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Product> products = await _context.Products
+                 .Where(p => p.Price > 10 && p.Price < 25)
+                 .ToListAsync();
+
+            if (products == null) return NotFound();
+
+            return ViewComponent("PriceSort", products);
+        }
+        public async Task<IActionResult> PriceFilterThree(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Product> products = await _context.Products
+                 .Where(p => p.Price > 25 && p.Price < 50)
+                 .ToListAsync();
+
+            if (products == null) return NotFound();
+
+            return ViewComponent("PriceSort", products);
+        }
+
+        public async Task<IActionResult> PriceFilterFour(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Product> products = await _context.Products
+                 .Where(p => p.Price > 50 && p.Price < 75)
+                 .ToListAsync();
+
+            if (products == null) return NotFound();
+
+            return ViewComponent("PriceSort", products);
+        }
+
+        public async Task<IActionResult> PriceFilterFive(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Product> products = await _context.Products
+                 .Where(p => p.Price > 75 && p.Price < 100)
+                 .ToListAsync();
+
+            if (products == null) return NotFound();
+
+            return ViewComponent("PriceSort", products);
+        }
+
+        public async Task<IActionResult> PriceFilterSix(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Product> products = await _context.Products
+                 .Where(p => p.Price > 100 && p.Price < 200)
+                 .ToListAsync();
+
+            if (products == null) return NotFound();
+
+            return ViewComponent("PriceSort", products);
+        }
+
+
+        public async Task<IActionResult> PriceFilterSeven(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Product> products = await _context.Products
+                 .Where(p => p.Price > 200 && p.Price < 300)
+                 .ToListAsync();
+
+            if (products == null) return NotFound();
+
+            return ViewComponent("PriceSort", products);
+        }
+
+        public async Task<IActionResult> PriceFilterEight(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Product> products = await _context.Products
+                 .Where(p => p.Price < 300)
+                 .ToListAsync();
+
+            if (products == null) return NotFound();
+
+            return ViewComponent("PriceSort", products);
+        }
+
+        public async Task<IActionResult> PriceFilterEighttt(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<ProductCondition> products = await _context.ProductConditions
+                 .Where(p=>p.Product.IsDeleted == false)
                  .ToListAsync();
 
             if (products == null) return NotFound();
