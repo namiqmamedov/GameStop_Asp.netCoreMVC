@@ -18,7 +18,7 @@ namespace GameStop.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index(int? id,int? subId)
+        public async Task<IActionResult> Index(int? id)
         {
             HeaderVM headerVM = new HeaderVM
             {

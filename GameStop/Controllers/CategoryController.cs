@@ -1,6 +1,5 @@
 ﻿using GameStop.DAL;
 using GameStop.Models;
-using GameStop.ViewModels.CategoryMain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -18,25 +17,18 @@ namespace GameStop.Controllers
         {
             _context = context;
         }
-
-        public IActionResult Index()
+        public async Task<IActionResult> CategoryMain(int? id, int? subId)
         {
-            return View();
+            IEnumerable<SubCategory> subCategories = await _context.SubCategories
+            .Include(c => c.Category)
+            .Include(c => c.CategoryId)
+            .Include(c => c.Id)
+            .Where(c => c.CategoryId == subId && !c.IsDeleted)
+            .Where(c => c.Category.Id == id && !c.IsDeleted)
+            .Where(c => c.CategoryId == id && !c.IsDeleted)
+            .ToListAsync();
+
+            return ViewComponent("SubCategory");
         }
-
-        //public async Task<IActionResult> CategoryMain(int? id, int? subId)
-        //{
-        //    if (id == null) return NotFound();
-
-        //    if (subId == null) return NotFound();
-
-        //    IEnumerable<Category> categories = await _context.Categories
-        //    .Include(c => c.SubCategories)
-        //    .Where(p => p.Id == id && !p.IsDeleted)
-        //    .Where(p => p.SubCategories.Select(x => x.Id).FirstOrDefault() == id && !p.IsDeleted)
-        //    .ToListAsync();
-
-        //    return View(categories);
-        //}
     }
 }
