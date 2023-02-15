@@ -38,7 +38,7 @@ namespace GameStop
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
-            services.AddScoped<ILayoutServices,LayoutServices>();
+            services.AddScoped<ILayoutServices, LayoutServices>();
 
             services.AddHttpContextAccessor();
         }
@@ -63,8 +63,15 @@ namespace GameStop
                      pattern: "{controller=Home}/{action=Index}/{id?}"
                     );
 
+                endpoints.MapControllerRoute(
+                     name: "areas",
+                     pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}"
+                     );
             });
-        
+
         }
+
     }
+        
+
 }

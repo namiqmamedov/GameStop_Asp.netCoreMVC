@@ -4,14 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GameStop.Areas.Manage.Controllers
+namespace GameStop.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    public class HomeController : Controller
+    public class DashboardController : Controller
     {
         public IActionResult Index()
         {
-            return Content("Admin Area");
+            return View();
         }
     }
 }

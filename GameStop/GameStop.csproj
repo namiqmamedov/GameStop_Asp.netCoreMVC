@@ -110,7 +110,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Views\" />
+    <None Include="wwwroot\admin\js\app.min.js" />
+    <None Include="wwwroot\admin\js\pages\calendar.js" />
+    <None Include="wwwroot\admin\js\pages\chart.js" />
+    <None Include="wwwroot\admin\js\pages\chat.js" />
+    <None Include="wwwroot\admin\js\pages\dashboard.js" />
+    <None Include="wwwroot\admin\js\pages\form-validation.js" />
+    <None Include="wwwroot\admin\js\pages\icon.js" />
+    <None Include="wwwroot\admin\js\pages\mail.js" />
+    <None Include="wwwroot\admin\js\pages\user-list.js" />
+    <None Include="wwwroot\admin\js\vendors.min.js" />
+    <None Include="wwwroot\admin\vendors\apexcharts\dist\apexcharts.min.js" />
+    <None Include="wwwroot\admin\vendors\datatables\dataTables.bootstrap.min.js" />
+    <None Include="wwwroot\admin\vendors\datatables\jquery.dataTables.min.js" />
+    <None Include="wwwroot\admin\vendors\fullcalendar\lib\main.min.js" />
+    <None Include="wwwroot\admin\vendors\jquery-validation\jquery.validate.min.js" />
+    <None Include="wwwroot\admin\vendors\quill\quill.min.js" />
   </ItemGroup>
 
 </Project>
