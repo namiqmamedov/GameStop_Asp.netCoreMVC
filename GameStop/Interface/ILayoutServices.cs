@@ -11,8 +11,6 @@ namespace GameStop.Interface
     public interface ILayoutServices
     {
         Task<Dictionary<string, string>> GetSettingsAsync();
-        Task<IEnumerable<Category>> GetCategoriesAsync();
-        Task<IEnumerable<SubCategory>> GetSubCategoriesAsync();
         Task<IEnumerable<Product>> GetProductsAsync();
         Task<List<BasketVM>> GetBasket();
     }

@@ -29,17 +29,6 @@ namespace GameStop.Services
                 ToDictionaryAsync(s =>s.Key,s => s.Value);
         }
 
-        public async Task<IEnumerable<Category>> GetCategoriesAsync()
-        {
-            return await _context.Categories
-                .ToListAsync();
-        }
-
-        public async Task<IEnumerable<SubCategory>> GetSubCategoriesAsync()
-        {
-            return await _context.SubCategories
-                .ToListAsync();
-        }
         public async Task<IEnumerable<Product>> GetProductsAsync()
         {
             return await _context.Products

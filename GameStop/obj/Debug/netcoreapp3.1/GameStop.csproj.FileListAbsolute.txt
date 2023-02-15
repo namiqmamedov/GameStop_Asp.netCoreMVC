@@ -173,5 +173,5 @@ C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Vi
 C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BasketPartial.cshtml.g.cs
 C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BasketIndexPartial.cshtml.g.cs
 C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\PriceSort\Default.cshtml.g.cs
-C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Views\Category\Index.cshtml.g.cs
-C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\SubCategory\Default.cshtml.g.cs
+C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Category\Default.cshtml.g.cs
+C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CategoryPartial.cshtml.g.cs
