@@ -96,16 +96,16 @@
                                 Shop By Category
                             </div>
 
-                            <ul id="menuUl" class="menu-ul">
+                            <ul id="menuUl" class="menu-ul" onclick="topNav()">
                                 @foreach (Category category in Model.Categories)
                                 {
-                                    <li @*asp-route-id="@Model.Subcategories.Select(s => s.Id).ToList()"*@>
+                                    <li>
 
-                                        <a asp-controller="product" asp-action="detail" asp-route-id="@category.Id" asp-route-subId="@Model.SubCategories.Select(x=>x.Id).Firs()">
 
-                                            <label class="a-label__chevron" for="item-@category.For">@category.Name</label>
+                                        <label class="a-label__chevron" for="item-@category.For">@category.Name</label>
 
-                                            <input type="checkbox" id="item-@category.For" name="item-@category.For" class="m-menu__checkbox">
+                                        @*<a asp-controller="category" asp-action="CategoryMain" asp-route-id="@category.Id" asp-route-subId="@category.SubCategories.Select(x=>x.Id).FirstOrDefault()">*@
+                                        <input type="checkbox" id="item-@category.For" name="item-@category.For" class="m-menu__checkbox">
                                             <div id="m-menu2" class="m-menu">
                                                 <div class="m-menu__header">
                                                     <div class="back-label">
@@ -132,8 +132,8 @@
 
 
                                             </div>
+                                           @*</a>*@
 
-                                        </a>
                                     </li>
                                 }
 

@@ -28,7 +28,7 @@ namespace GameStop.Controllers
             .Where(c => c.CategoryId == id && !c.IsDeleted)
             .ToListAsync();
 
-            return ViewComponent("SubCategory");
+            return ViewComponent("SubCategory",subCategories);
         }
     }
 }
