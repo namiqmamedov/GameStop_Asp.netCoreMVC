@@ -99,38 +99,12 @@
                             <ul id="menuUl" class="menu-ul">
                                 @foreach (Category category in Model.Categories)
                                 {
-                                    <li @*asp-route-id="@Model.Subcategories.Select(s => s.Id).ToList()"*@>
+                                <li>
 
-                                        <label class="a-label__chevron" for="item-@category.For">@category.Name</label>
+                                    <label class="a-label__chevron" for="item-@category.For">@category.Name</label>
 
-                                        <input type="checkbox" id="item-@category.For" name="item-@category.For" class="m-menu__checkbox">
-                                        <div id="m-menu2" class="m-menu">
-                                            <div class="m-menu__header">
-                                                <div class="back-label">
-                                                    <label onclick="backNav()" asp-for="@category.For" class="m-menu__toggle" for="item-@category.For">
-                                                        <i id="backNav" class="fa-solid fa-chevron-left"></i>
-                                                        <span class="prev">Back</span>
-                                                    </label>
-
-                                                </div>
-
-                                            </div>
-                                            <ul class="menu-ul-1">
-                                                <div class="category-games">
-                                                    <a asp-route-id="@category.Id">
-                                                        <span>@category.Name</span>
-                                                    </a>
-                                                </div>
-
-                                                @foreach (SubCategory item in Model.SubCategories)
-                                                {
-                                                    <li><label for="item-@item.For"><a asp-controller="product" asp-action="index" asp-route-id="@item.Id">@item.Name</a></label></li>
-                                                }
-                                            </ul>
-
-
-                                        </div>
-                                    </li>
+                                    @await Component.InvokeAsync("SubCategory")
+                                </li>
                                 }
 
                             </ul>

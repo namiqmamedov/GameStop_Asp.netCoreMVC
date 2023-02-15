@@ -9,5 +9,8 @@ namespace GameStop.ViewModels.CategoryMain
     public class CategoryVM
     {
         public IEnumerable<Category> Categories { get; set; }
+        public Category Category { get; set; }
+        public IEnumerable<SubCategory> SubCategories { get; set; }
+        public SubCategory SubCategory{ get; set; }
     }
 }

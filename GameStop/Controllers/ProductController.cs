@@ -219,6 +219,7 @@ namespace GameStop.Controllers
             if (id == null) return NotFound();
             IEnumerable<ProductCondition> products = await _context.ProductConditions
                  .Where(p=>p.Product.IsDeleted == false)
+                 .OrderBy(p=>p.Product)
                  .ToListAsync();
 
             if (products == null) return NotFound();
