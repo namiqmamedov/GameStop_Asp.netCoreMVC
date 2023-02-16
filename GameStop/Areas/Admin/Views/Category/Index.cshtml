@@ -1,0 +1,46 @@
+﻿@model List<Category>
+
+@{
+    ViewData["Title"] = "Index";
+    int counter = 1;
+}
+
+
+
+<div class="content">
+    <div class="main product-index">
+        <div class="row">
+            <div class="d-flex">
+                <div class="col-4">
+                    <h2>Product</h2>
+                </div>
+                <div class="col-8 d-flex justify-content-end">
+                    <a asp-area="admin" asp-controller="category" asp-action="create">
+                        <div class="btn btn-primary create-btn">Create</div>
+                    </a>
+                </div>
+            </div>
+            <div class="table-responsive mt-4">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr class="head__first">
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Category item in Model)
+                        {
+                            <tr>
+                                <th scope="row">@counter</th>
+                                <td>@item.Name</td>
+                            </tr>
+
+                            counter++;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

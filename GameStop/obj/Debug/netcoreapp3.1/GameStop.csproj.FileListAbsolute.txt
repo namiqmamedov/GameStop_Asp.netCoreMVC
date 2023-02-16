@@ -181,3 +181,5 @@ C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Ar
 C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
 C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Index.cshtml.g.cs
 C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Create.cshtml.g.cs
+C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
+C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Create.cshtml.g.cs
