@@ -81,6 +81,7 @@ namespace GameStop.Areas.Admin.Controllers
             }
 
             dbProduct.Title = product.Title;
+            dbProduct.UpdatedAt = DateTime.Now;
 
             await _context.SaveChangesAsync();
 
