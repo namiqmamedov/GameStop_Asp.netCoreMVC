@@ -21,5 +21,10 @@ namespace GameStop.Areas.Admin.Controllers
         {
             return View(await _context.Products.ToListAsync());
         }
+
+        public async Task<IActionResult> Create()
+        {
+            return View();
+        }
     }
 }
