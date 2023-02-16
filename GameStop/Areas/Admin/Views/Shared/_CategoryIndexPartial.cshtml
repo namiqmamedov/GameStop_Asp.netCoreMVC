@@ -7,22 +7,35 @@
         <tr class="head__first">
             <th scope="col">#</th>
             <th scope="col">Name</th>
+            <th scope="col">Status</th>
             <th scope="col">Setting</th>
         </tr>
     </thead>
     <tbody>
         @foreach (Category item in Model)   
         {
-            <tr>
-                <th scope="row">@counter</th>
-                <td>@item.Name</td>
-                <td>
-                        <a class="btn btn-danger removeBtn" asp-controller="category" asp-action="delete" asp-area="admin" asp-route-id="@item.Id">
-                        Remove
-                        </a>
-                </td>
-                
-            </tr>
+        <tr>
+            <th scope="row">@counter</th>
+            <td>@item.Name</td>
+            <td style="color:@(item.IsDeleted ? "red":"green")">@(item.IsDeleted ? "No-Active":"Active")</td>
+            <td>
+                @if (item.IsDeleted)
+                {
+                    <a class="btn btn-primary restoreBtn" asp-controller="category" asp-action="restore" asp-area="admin" asp-route-id="@item.Id">
+                        <i class="bi bi-bootstrap-reboot"></i>
+                    </a>
+                }
+                else
+                {
+                    <a class="btn btn-danger removeBtn" asp-controller="category" asp-action="delete" asp-area="admin" asp-route-id="@item.Id">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                }
+
+            </td>
+
+
+        </tr>
 
             counter++;
         }

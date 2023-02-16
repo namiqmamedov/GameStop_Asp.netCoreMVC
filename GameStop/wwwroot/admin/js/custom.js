@@ -32,4 +32,37 @@
 
 
     })
+
+    $(document).on('click', '.restoreBtn', function (e) {
+        e.preventDefault();
+
+        Swal.fire({
+            title: 'Are you sure you want to restore this category?',
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+
+                let url = $(this).attr('href');
+
+                fetch(url)
+                    .then(res => res.text())
+                    .then(data => {
+                        $('.tbl-content').html(data)
+                    });
+
+                Swal.fire(
+                    'Recovered!',
+                    'Your file has been recovered.',
+                    'success'
+                )
+            }
+        })
+
+
+    })
 })

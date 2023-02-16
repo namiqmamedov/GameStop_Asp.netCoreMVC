@@ -21,7 +21,6 @@ namespace GameStop.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             IEnumerable<Category> categories = await _context.Categories
-                .Where(p => p.IsDeleted == false)
                 .ToListAsync();
 
 
@@ -132,7 +131,30 @@ namespace GameStop.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
 
             return PartialView("_CategoryIndexPartial", await _context.Categories
-                .Where(p => p.IsDeleted == false)
+                .ToListAsync());
+
+        }
+
+        public async Task<IActionResult> Restore(int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
+            Category category = await _context.Categories.FirstOrDefaultAsync(p => p.Id == id);
+
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            category.IsDeleted = false;
+            category.DeletedAt = null;
+
+            await _context.SaveChangesAsync();
+
+            return PartialView("_CategoryIndexPartial", await _context.Categories
                 .ToListAsync());
 
         }

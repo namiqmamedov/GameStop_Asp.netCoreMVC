@@ -21,3 +21,12 @@
     border-color: transparent !important;
     background: #84be9a;
 }
+
+.product-index .removeBtn {
+    background-color: #b67272;
+    border-color: transparent;
+}
+
+.product-filter .sort-section .select{
+    display: none;
+}

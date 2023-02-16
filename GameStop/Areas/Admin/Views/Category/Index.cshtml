@@ -14,6 +14,72 @@
                     </a>
                 </div>
             </div>
+               <div class="product-filter">
+
+                    <div class="sort-section">
+
+
+                        <div class="select">
+                            <i class="fa-solid fa-filter"></i>
+                            <select>
+
+                                <option>
+
+                                    Best Matches
+
+                                </option>
+                                <option>
+
+                                    Price Low To High
+
+                                </option>
+                                <option>
+                                    Product Name A - Z
+                                </option>
+                                <option value="1">
+                                    Product Name Z - A
+                                </option>
+                                <option value="2">
+                                    Most Popular
+                                </option>
+                                <option value="3">
+                                    Top Sellers
+                                </option>
+                                <option value="1">
+                                    Release Date Oldest to Newest
+                                </option>
+                                <option value="2">
+                                    Release Date Newest to Oldest
+                                </option>
+                                <option value="3">
+                                    Most Relevant
+                                </option>
+                            </select>
+                        </div>
+
+                        <form>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="sortBold">Sort by:</span><span class="selected-option"> Best Matches</span>
+                                </button>
+                                <ul name="status" class="dropdown-menu">
+                                    <span class="up-arrow"></span>
+
+                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/Matched/2">Best Matches</a></li>
+                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/LowToHigh/2">Low To High</a></li>
+                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/HighToLow/2">High To Low</a></li>
+                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/AtoZ/2">Product Name A-Z</a></li>
+                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/ZtoA/2">Product Name Z-A</a></li>
+                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/OldToNew/2">Product Date Oldest to Newest</a></li>
+                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/NewToOld/2">Product Date Newest to Oldest</a></li>
+
+                                </ul>
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
             <div class="table-responsive mt-4 tbl-content">
 
                 @await Html.PartialAsync("_CategoryIndexPartial", Model)
