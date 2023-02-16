@@ -1,11 +1,5 @@
 ﻿@model List<Category>
 
-@{
-    ViewData["Title"] = "Index";
-    int counter = 1;
-}
-
-
 
 <div class="content">
     <div class="main product-index">
@@ -20,26 +14,9 @@
                     </a>
                 </div>
             </div>
-            <div class="table-responsive mt-4">
-                <table class="table table-hover table-striped">
-                    <thead>
-                        <tr class="head__first">
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (Category item in Model)
-                        {
-                            <tr>
-                                <th scope="row">@counter</th>
-                                <td>@item.Name</td>
-                            </tr>
+            <div class="table-responsive mt-4 tbl-content">
 
-                            counter++;
-                        }
-                    </tbody>
-                </table>
+                @await Html.PartialAsync("_CategoryIndexPartial", Model)
             </div>
         </div>
     </div>

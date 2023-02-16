@@ -1,6 +1,7 @@
 ﻿using GameStop.DAL;
 using GameStop.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -29,10 +30,18 @@ namespace GameStop.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Product product)
         {
             if (!ModelState.IsValid)
             {
+                return View();
+            }
+
+            if (await _context.Products.AnyAsync(p=>p.Title .ToLower().Trim() == product.Title.ToLower().Trim() && !p.IsDeleted))
+            {
+                ModelState.AddModelError("Title", $"{product.Title} is already exists");
+
                 return View();
             }
 
@@ -43,6 +52,7 @@ namespace GameStop.Areas.Admin.Controllers
         }
 
         [HttpGet]
+
         public async Task<IActionResult> Update(int? id)
         {
             if (id == null)
@@ -61,6 +71,7 @@ namespace GameStop.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(int? id,Product product)
         {
             if (id == null)
@@ -69,8 +80,15 @@ namespace GameStop.Areas.Admin.Controllers
             }
 
             if (id != product.Id)
-            {
+            { 
                 return BadRequest();
+            }
+
+            if (await _context.Products.AnyAsync(p => p.Id != product.Id && !p.IsDeleted && p.Title.ToLower().Trim() == product.Title.ToLower().Trim()))
+            {
+                ModelState.AddModelError("Title", $"{product.Title} is already exists");
+
+                return View();
             }
 
             Product dbProduct = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
@@ -81,6 +99,7 @@ namespace GameStop.Areas.Admin.Controllers
             }
 
             dbProduct.Title = product.Title;
+            dbProduct.CreatedAt = DateTime.Now;
             dbProduct.UpdatedAt = DateTime.Now;
 
             await _context.SaveChangesAsync();
@@ -88,6 +107,28 @@ namespace GameStop.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
+            Product product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            product.IsDeleted = true;
+            product.DeletedAt = DateTime.Now;
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+
+        }
 
     }
 }

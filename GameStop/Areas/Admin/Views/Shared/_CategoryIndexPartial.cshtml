@@ -1,0 +1,32 @@
+﻿@{ 
+    int counter = 1;
+}
+
+<table class="table table-hover table-striped">
+    <thead>
+        <tr class="head__first">
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Setting</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Category item in Model)   
+        {
+            <tr>
+                <th scope="row">@counter</th>
+                <td>@item.Name</td>
+                <td>
+                        <a class="btn btn-danger removeBtn" asp-controller="category" asp-action="delete" asp-area="admin" asp-route-id="@item.Id">
+                        Remove
+                        </a>
+                </td>
+                
+            </tr>
+
+            counter++;
+        }
+    </tbody>
+</table>
+
+                    

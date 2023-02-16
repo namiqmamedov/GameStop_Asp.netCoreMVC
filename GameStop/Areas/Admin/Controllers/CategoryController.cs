@@ -20,7 +20,12 @@ namespace GameStop.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Categories.ToListAsync());
+            IEnumerable<Category> categories = await _context.Categories
+                .Where(p => p.IsDeleted == false)
+                .ToListAsync();
+
+
+            return View(categories);
         }
 
         public IActionResult Create()
@@ -29,6 +34,7 @@ namespace GameStop.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Category category)
         {
             if (!ModelState.IsValid)
@@ -36,10 +42,99 @@ namespace GameStop.Areas.Admin.Controllers
                 return View();
             }
 
+            if (await _context.Categories.AnyAsync(p => p.Name.ToLower().Trim() == category.Name.ToLower().Trim() && !p.IsDeleted))
+            {
+                ModelState.AddModelError("Title", $"{category.Name} is already exists");
+
+                return View();
+            }
+
             await _context.Categories.AddAsync(category);
             await _context.SaveChangesAsync();
 
             return RedirectToAction("Index");
+        }
+
+
+        [HttpGet]
+
+        public async Task<IActionResult> Update(int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
+            Category category = await _context.Categories.FirstOrDefaultAsync(p => p.Id == id);
+
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            return View(category);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int? id, Category category)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
+            if (id != category.Id)
+            {
+                return BadRequest();
+            }
+
+            if (await _context.Categories.AnyAsync(p => p.Id != category.Id && !p.IsDeleted && p.Name.ToLower().Trim() == category.Name.ToLower().Trim() && !p.IsDeleted))
+            {
+                ModelState.AddModelError("Name", $"{category.Name} is already exists");
+
+                return View();
+            }
+
+            Category dbCategory = await _context.Categories.FirstOrDefaultAsync(p => p.Id == id);
+
+            if (dbCategory == null)
+            {
+                return NotFound();
+            }
+
+            dbCategory.Name = category.Name;
+            dbCategory.CreatedAt = DateTime.Now;
+            dbCategory.UpdatedAt = DateTime.Now;
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
+            Category category = await _context.Categories.FirstOrDefaultAsync(p => p.Id == id);
+
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            category.IsDeleted = true;
+            category.DeletedAt = DateTime.Now;
+
+            await _context.SaveChangesAsync();
+
+            return PartialView("_CategoryIndexPartial", await _context.Categories
+                .Where(p => p.IsDeleted == false)
+                .ToListAsync());
+
         }
     }
 }

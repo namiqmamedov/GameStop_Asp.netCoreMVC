@@ -15,10 +15,12 @@
     <!-- Core css -->
     <link href="~/admin/css/app.min.css" rel="stylesheet">
     <link href="~/admin/css/style-for.css" rel="stylesheet">
+    <link href="~/admin/css/sweetalert2.min.css" rel="stylesheet">
 
 </head>
 
 <body>
+
     <div class="layout">
         <div class="vertical-layout">
             <!-- Header START -->
@@ -434,14 +436,16 @@
 
     <!-- Core Vendors JS -->
     <script src="~/admin/js/vendors.min.js"></script>
+    <script src="~/admin/js/sweetalert2.all.min.js"></script>
 
+    @RenderSection("Script", false)
     <!-- page js -->
     <script src="~/admin/vendors/apexcharts/dist/apexcharts.min.js"></script>
     <script src="~/admin/js/pages/dashboard.js"></script>
 
     <!-- Core JS -->
     <script src="~/admin/js/app.min.js"></script>
-
+    <script src="~/admin/js/custom.js" asp-append-version="true"></script>
 </body>
 
 </html>
