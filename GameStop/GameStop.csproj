@@ -110,6 +110,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\admin\fonts\feathere8ab.svg" />
+    <None Include="wwwroot\admin\fonts\la-brands-400.svg" />
+    <None Include="wwwroot\admin\fonts\la-brands-400.woff2" />
+    <None Include="wwwroot\admin\fonts\la-regular-400.svg" />
+    <None Include="wwwroot\admin\fonts\la-regular-400.woff2" />
+    <None Include="wwwroot\admin\fonts\la-solid-900.svg" />
+    <None Include="wwwroot\admin\fonts\la-solid-900.woff2" />
     <None Include="wwwroot\admin\js\app.min.js" />
     <None Include="wwwroot\admin\js\pages\calendar.js" />
     <None Include="wwwroot\admin\js\pages\chart.js" />
