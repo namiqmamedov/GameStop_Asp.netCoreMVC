@@ -185,3 +185,8 @@ C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Ar
 C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Create.cshtml.g.cs
 C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_ValidationPartial.cshtml.g.cs
 C:\Users\ACER\source\repos\C#\GameStop\GameStop\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_CategoryIndexPartial.cshtml.g.cs
+C:\Users\ACER\source\repos\C#\GameStop\GameStop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\ACER\source\repos\C#\GameStop\GameStop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\ACER\source\repos\C#\GameStop\GameStop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\ACER\source\repos\C#\GameStop\GameStop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\ACER\source\repos\C#\GameStop\GameStop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll

@@ -10,7 +10,7 @@ namespace GameStop.Extension
 {
     public static class FileManager
     {
-        public static string CreateImage(this IFormFile file,IWebHostEnvironment env,params string[] folders)
+        public static string CreateImage(this IFormFile file,IWebHostEnvironment env, params string[] folders)
         {
             string fileName = $"{Guid.NewGuid()}_{DateTime.Now.ToString("yyyyMMddHHmmssffff")}_{file.FileName}";
 

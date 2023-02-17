@@ -1,5 +1,7 @@
 ﻿using GameStop.DAL;
+using GameStop.Extension;
 using GameStop.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
@@ -14,14 +16,20 @@ namespace GameStop.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IWebHostEnvironment _env;
 
-        public ProductController(AppDbContext context)
+        public ProductController(AppDbContext context,IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Products.ToListAsync());
+            IEnumerable<Product> products = await _context.Products
+           .Where(e => e.IsDeleted == false)
+           .ToListAsync();
+
+            return View(products);
         }
 
         public IActionResult Create()
@@ -61,7 +69,8 @@ namespace GameStop.Areas.Admin.Controllers
                 return View(product);
             }
 
-            //product.Image = product.File.CreateImage(_env, "assets", "img");
+            product.Image = product.File.CreateImage(_env, "assets", "img");
+
 
 
             await _context.Products.AddAsync(product);

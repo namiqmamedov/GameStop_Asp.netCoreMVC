@@ -1,9 +1,11 @@
 using GameStop.DAL;
 using GameStop.Interface;
+using GameStop.Models;
 using GameStop.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -41,6 +43,21 @@ namespace GameStop
             services.AddScoped<ILayoutServices, LayoutServices>();
 
             services.AddHttpContextAccessor();
+
+            services.AddIdentity<AppUser, IdentityRole>(options =>
+            {
+                options.User.RequireUniqueEmail = true;
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 8;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequireUppercase = true;
+
+                options.Lockout.AllowedForNewUsers = true;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+                options.Lockout.MaxFailedAccessAttempts = 4;
+
+            }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,12 +83,12 @@ namespace GameStop
                      name: "default",
                      pattern: "{controller=Home}/{action=Index}/{id?}"
                     );
-            
+
             });
 
         }
 
     }
-        
+
 
 }
