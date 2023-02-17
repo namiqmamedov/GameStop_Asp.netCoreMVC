@@ -222,7 +222,14 @@
                                         <i class="fa-regular fa-user"></i>
                                     </div>
                                     <div class="text">
-                                        <span>Sign In</span>
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <span>@User.Identity.Name</span>
+                                        }
+                                        else
+                                        {
+                                            <span>Sign In</span>
+                                        }
                                     </div>
                                 </a>
                             </div>

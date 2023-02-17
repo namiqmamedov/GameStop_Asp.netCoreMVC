@@ -22,10 +22,10 @@ namespace GameStop.ViewModels.UserVM
         [EmailAddress]
         public string Email { get; set; }
         [Required]
-        [StringLength(255)]
+        [StringLength(72)]
         public string Password { get; set; }
         [Required]
-        [StringLength(255)]
+        [StringLength(72)]
         [Compare(nameof(Password))]
         public string ConfirmPassword { get; set; }
     }

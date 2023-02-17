@@ -1,12 +1,8 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@model LoginVM
 
 
-@{
-    ViewData["Title"] = "Login";
-}
+@{ Layout = null;
+                ViewData["Title"] = "Login"; }
 
 
 
@@ -38,14 +34,15 @@
             </h2>
         </div>
 
-        <form action="#" method="post" autocomplete="off">
+        <form method="post" autocomplete="off">
             <div class="loginPage">
+                <div class="text text-danger" style="color: red;display: flex; justify-content: center;" asp-validation-summary="ModelOnly"></div>
 
                 <div class="loginSection">
                     <div class="loginEmail">
                         <label for="sign_in_email" class="form-label">Email address</label>
                         <div class="login-email-field">
-                            <input type="email" name="email" id="sign_in_email" aria-required="true">
+                            <input asp-for="Email" id="sign_in_email" aria-required="true">
                         </div>
                     </div>
                     <div class="loginPass">
@@ -57,8 +54,8 @@
                     <div class="bottomInput">
                         <div class="top-text">
                             <div class="pull-left">
-                                <input class="remember-me" type="checkbox">
-                                <label for="remember-me">Remember me</label>
+                                <input asp-for="RememberMe">
+                                <label asp-for="RememberMe">Remember me</label>
                             </div>
 
                             <div class="pull-right">
@@ -77,8 +74,13 @@
                 </div>
             </div>
         </form>
+
     </div>
 
 </body>
 
 </html>
+
+@section Script{
+    <partial name="_ValidationPartial">
+}
