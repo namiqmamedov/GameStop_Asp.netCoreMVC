@@ -61,8 +61,22 @@ using GameStop.ViewModels.CategoryMain;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 9 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Views\_ViewImports.cshtml"
+using GameStop.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 10 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Views\_ViewImports.cshtml"
+using GameStop.Areas.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"da3b504a1db6aba31c643364a6487c6c775ee37d", @"/Views/Shared/Components/Header/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5513d283e348f351891d376a5c38fb0e39b676c3", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"924d72338adddea31488f3c0d97ae31c0a6756a5", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_Header_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<HeaderVM>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "user", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -138,7 +152,7 @@ using GameStop.ViewModels.CategoryMain;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                    </a>\r\n                </div>\r\n                <div class=\"check-order\">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d9847", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d10218", async() => {
                 WriteLiteral("\r\n                        <i style=\"font-size: 15.5px;\" class=\"fa-solid fa-clipboard-list\"></i>\r\n                        Check an Order\r\n                    ");
             }
             );
@@ -168,7 +182,7 @@ WriteAttributeValue(" ", 1488, Model.Settings.FirstOrDefault(p=>p.Key == "Promo 
             WriteAttributeValue("", 1563, ";", 1563, 1, true);
             EndWriteAttribute();
             WriteLiteral(" class=\"promo-header\">\r\n    <div class=\"promo\">\r\n        <div class=\"text\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d12167", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d12539", async() => {
                 WriteLiteral("\r\n                ");
 #nullable restore
 #line 41 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Views\Shared\Components\Header\Default.cshtml"
@@ -245,7 +259,7 @@ AddHtmlAttributeValue(" ", 1670, Model.Settings.FirstOrDefault(p=>p.Key == "Prom
                         <div class=""all-menu"">
                             <div class=""store-container"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d16597", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d16969", async() => {
                 WriteLiteral(@"
                                     <div class=""store d-flex"">
                                         <div class=""store-header"">
@@ -336,7 +350,7 @@ WriteAttributeValue("", 5424, category.For, 5424, 13, false);
                                                 <div class=""m-menu__header"">
                                                     <div class=""back-label"">
                                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d21467", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d21839", async() => {
                 WriteLiteral(@"
                                                             <i id=""backNav"" class=""fa-solid fa-chevron-left""></i>
                                                             <span class=""prev"">Back</span>
@@ -380,7 +394,7 @@ AddHtmlAttributeValue("", 5841, category.For, 5841, 13, false);
                                                 <ul class=""menu-ul-1"">
                                                     <div class=""category-games"">
                                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d24267", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d24639", async() => {
                 WriteLiteral("\r\n                                                            <span>");
 #nullable restore
 #line 123 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Views\Shared\Components\Header\Default.cshtml"
@@ -437,7 +451,7 @@ WriteAttributeValue("", 6943, item.For, 6943, 9, false);
 #nullable disable
             EndWriteAttribute();
             WriteLiteral(">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d27621", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d27993", async() => {
 #nullable restore
 #line 129 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Views\Shared\Components\Header\Default.cshtml"
                                                                                                                                                           Write(item.Name);
@@ -493,7 +507,7 @@ WriteAttributeValue("", 6943, item.For, 6943, 9, false);
 #line hidden
 #nullable disable
             WriteLiteral("\r\n                            </ul>\r\n\r\n\r\n                        </div>\r\n\r\n\r\n\r\n                    </div>\r\n\r\n                    <div class=\"header-brand\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d31319", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d31691", async() => {
                 WriteLiteral(@"
                             <img class=""nav-logo""
                                  src=""https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/dwcf0a1c6d/images/svg-icons/logo-gs-mono.svg""
@@ -522,7 +536,7 @@ WriteAttributeValue("", 6943, item.For, 6943, 9, false);
 
                             <div class=""row d-flex justify-content-center align-items-center"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d33232", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d33604", async() => {
                 WriteLiteral(@"
                                     <div class=""search"">
 
@@ -591,7 +605,7 @@ WriteAttributeValue("", 6943, item.For, 6943, 9, false);
                         <div class=""section-last"">
                             <div class=""trade-ins"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d37768", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d38140", async() => {
                 WriteLiteral(@"
                                     <div class=""icon"">
                                         <svg height=""28"" viewBox=""0 0 24 24"" width=""28""><path d=""M7 7H17V10L21 6L17 2V5H5V11H7V7ZM17 17H7V14L3 18L7 22V19H19V13H17V17Z"" fill=""black"" data-darkreader-inline-fill="""" style=""--darkreader-inline-fill:#f9f7f4;""></path></svg>
@@ -616,7 +630,7 @@ WriteAttributeValue("", 6943, item.For, 6943, 9, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            </div>\r\n\r\n                            <div class=\"popup-rewards\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d39845", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d40217", async() => {
                 WriteLiteral("\r\n                                    <div class=\"icon\">\r\n                                        <img src=\"https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/dw49576b4b/images/svg-icons/powerup-icon.svg\"");
                 BeginWriteAttribute("alt", " alt=\"", 11488, "\"", 11494, 0);
                 EndWriteAttribute();
@@ -637,7 +651,7 @@ WriteAttributeValue("", 6943, item.For, 6943, 9, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                            </div>\r\n\r\n                            <div class=\"sign-in\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d41983", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b504a1db6aba31c643364a6487c6c775ee37d42355", async() => {
                 WriteLiteral(@"
                                     <div class=""icon"">
                                         <i class=""fa-regular fa-user""></i>

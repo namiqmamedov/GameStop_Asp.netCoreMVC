@@ -42,27 +42,41 @@ using GameStop.ComponentViewModels.Header;
 #nullable disable
 #nullable restore
 #line 6 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Areas\Admin\Views\_ViewImports.cshtml"
-using GameStop.ViewModels.Products;
+using GameStop.ViewModels;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 7 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Areas\Admin\Views\_ViewImports.cshtml"
-using GameStop.ViewModels.Basket;
+using GameStop.ViewModels.Products;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 8 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Areas\Admin\Views\_ViewImports.cshtml"
+using GameStop.ViewModels.Basket;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 9 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Areas\Admin\Views\_ViewImports.cshtml"
 using GameStop.ViewModels.CategoryMain;
 
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 10 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Areas\Admin\Views\_ViewImports.cshtml"
+using GameStop.Areas.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"735a04e0f0c09cbb7de44f5016875d6a4214aed6", @"/Areas/Admin/Views/Category/Create.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"805c83334547ed0c74508e0ac0a4efb62d4f4e6e", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"44a5bfcb11858b659ad9937961ba0483d7d9307a", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Category_Create : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Category>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("for", new global::Microsoft.AspNetCore.Html.HtmlString("exampleFormControlInput1"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -108,9 +122,9 @@ using GameStop.ViewModels.CategoryMain;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h1>Create</h1>\r\n\r\n<div class=\"content\">\r\n    <div class=\"main product-index\">\r\n        <div class=\"row\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "735a04e0f0c09cbb7de44f5016875d6a4214aed67176", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "735a04e0f0c09cbb7de44f5016875d6a4214aed67571", async() => {
                 WriteLiteral("\r\n                <div class=\"mb-3\">\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "735a04e0f0c09cbb7de44f5016875d6a4214aed67494", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("label", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "735a04e0f0c09cbb7de44f5016875d6a4214aed67889", async() => {
                     WriteLiteral("Email address");
                 }
                 );
@@ -134,7 +148,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_LabelTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "735a04e0f0c09cbb7de44f5016875d6a4214aed69238", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "735a04e0f0c09cbb7de44f5016875d6a4214aed69633", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -158,7 +172,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "735a04e0f0c09cbb7de44f5016875d6a4214aed611012", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("span", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "735a04e0f0c09cbb7de44f5016875d6a4214aed611407", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationMessageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationMessageTagHelper>();

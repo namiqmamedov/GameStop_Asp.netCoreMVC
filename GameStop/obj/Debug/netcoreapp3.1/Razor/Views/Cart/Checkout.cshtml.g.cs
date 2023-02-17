@@ -61,8 +61,22 @@ using GameStop.ViewModels.CategoryMain;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 9 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Views\_ViewImports.cshtml"
+using GameStop.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 10 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Views\_ViewImports.cshtml"
+using GameStop.Areas.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3505d1ae9d78680b1e75267d489b7ef44115a3e7", @"/Views/Cart/Checkout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5513d283e348f351891d376a5c38fb0e39b676c3", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"924d72338adddea31488f3c0d97ae31c0a6756a5", @"/Views/_ViewImports.cshtml")]
     public class Views_Cart_Checkout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("rel", new global::Microsoft.AspNetCore.Html.HtmlString("stylesheet"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -225,9 +239,9 @@ using GameStop.ViewModels.CategoryMain;
 #line hidden
 #nullable disable
             WriteLiteral("\n<!DOCTYPE html>\n<html lang=\"en\">\n\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e743347", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e743718", async() => {
                 WriteLiteral("\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Cart Checkout | GameStop</title>\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "3505d1ae9d78680b1e75267d489b7ef44115a3e743826", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "3505d1ae9d78680b1e75267d489b7ef44115a3e744197", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -270,9 +284,9 @@ using GameStop.ViewModels.CategoryMain;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e747212", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e747583", async() => {
                 WriteLiteral("\n\n\n\n    <div class=\"loginHeader\">\n        <div class=\"header-logo\">\n            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e747557", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e747928", async() => {
                     WriteLiteral("<img src=\"https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/dwe31411ff/images/svg-icons/logo-gs-mono.svg\" alt=\"header logo\">");
                 }
                 );
@@ -336,7 +350,7 @@ using GameStop.ViewModels.CategoryMain;
                                                 </div>
                                                 <div class=""legal"">
                                                     By tapping Place Order, you agree to GameStop's <a href=""PrivacyPolicy.html"" target=""_blank"">Privacy Policy</a> and ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e751779", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e752150", async() => {
                     WriteLiteral("Conditions of Use");
                 }
                 );
@@ -389,7 +403,7 @@ using GameStop.ViewModels.CategoryMain;
                     <div class=""col-md-8 order-md-1"">
                         <h4 class=""mb-3 shipping-addr-name"">Shipping</h4>
                         ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e755381", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e755752", async() => {
                     WriteLiteral(@"
                             <div class=""row mb-name"">
                                 <div class=""col-md-6 mb-3"">
@@ -449,7 +463,7 @@ using GameStop.ViewModels.CategoryMain;
                                     <label class=""checkoutLabel"" for=""state"">State</label>
                                     <select class=""custom-select d-block w-100"" id=""state"" required>
                                         ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e759296", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e759667", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
@@ -464,7 +478,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e760573", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e760944", async() => {
                         WriteLiteral("Alabama");
                     }
                     );
@@ -481,7 +495,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e761991", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e762362", async() => {
                         WriteLiteral("Alaska");
                     }
                     );
@@ -498,7 +512,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e763410", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e763781", async() => {
                         WriteLiteral("Arizona");
                     }
                     );
@@ -515,7 +529,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e764831", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e765202", async() => {
                         WriteLiteral("Arkansas");
                     }
                     );
@@ -532,7 +546,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e766253", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e766624", async() => {
                         WriteLiteral("Armed Forces - Americas");
                     }
                     );
@@ -549,7 +563,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e767690", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e768061", async() => {
                         WriteLiteral("Armed Forces - Europe");
                     }
                     );
@@ -566,7 +580,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e769125", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e769496", async() => {
                         WriteLiteral("Armed Forces - Pacific");
                     }
                     );
@@ -583,7 +597,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e770561", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e770932", async() => {
                         WriteLiteral("California");
                     }
                     );
@@ -600,7 +614,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e771985", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e772356", async() => {
                         WriteLiteral("Colorado");
                     }
                     );
@@ -617,7 +631,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e773407", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e773778", async() => {
                         WriteLiteral("Connecticut");
                     }
                     );
@@ -634,7 +648,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e774832", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e775203", async() => {
                         WriteLiteral("Delaware");
                     }
                     );
@@ -651,7 +665,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e776254", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e776625", async() => {
                         WriteLiteral("District of Columbia");
                     }
                     );
@@ -668,7 +682,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e777688", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e778059", async() => {
                         WriteLiteral("Florida");
                     }
                     );
@@ -685,7 +699,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e779109", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e779480", async() => {
                         WriteLiteral("Georgia");
                     }
                     );
@@ -702,7 +716,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e780530", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e780901", async() => {
                         WriteLiteral("Hawaii");
                     }
                     );
@@ -719,7 +733,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e781950", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e782321", async() => {
                         WriteLiteral("Idaho");
                     }
                     );
@@ -736,7 +750,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e783369", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e783740", async() => {
                         WriteLiteral("Illinois");
                     }
                     );
@@ -753,7 +767,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e784791", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e785162", async() => {
                         WriteLiteral("Indiana");
                     }
                     );
@@ -770,7 +784,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e786212", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e786583", async() => {
                         WriteLiteral("Iowa");
                     }
                     );
@@ -787,7 +801,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e787630", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e788001", async() => {
                         WriteLiteral("Kansas");
                     }
                     );
@@ -804,7 +818,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e789050", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e789421", async() => {
                         WriteLiteral("Kentucky");
                     }
                     );
@@ -821,7 +835,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e790472", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e790843", async() => {
                         WriteLiteral("Louisiana");
                     }
                     );
@@ -838,7 +852,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e791895", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e792266", async() => {
                         WriteLiteral("Maine");
                     }
                     );
@@ -855,7 +869,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e793314", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e793685", async() => {
                         WriteLiteral("Maryland");
                     }
                     );
@@ -872,7 +886,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e794736", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e795107", async() => {
                         WriteLiteral("Massachusetts");
                     }
                     );
@@ -889,7 +903,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e796163", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e796534", async() => {
                         WriteLiteral("Michigan");
                     }
                     );
@@ -906,7 +920,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e797585", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e797956", async() => {
                         WriteLiteral("Minnesota");
                     }
                     );
@@ -923,7 +937,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e799008", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e799379", async() => {
                         WriteLiteral("Mississippi");
                     }
                     );
@@ -940,7 +954,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7100433", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7100804", async() => {
                         WriteLiteral("Missouri");
                     }
                     );
@@ -957,7 +971,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7101856", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7102227", async() => {
                         WriteLiteral("Montana");
                     }
                     );
@@ -974,7 +988,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7103278", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7103649", async() => {
                         WriteLiteral("Nebraska");
                     }
                     );
@@ -991,7 +1005,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7104701", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7105072", async() => {
                         WriteLiteral("Nevada");
                     }
                     );
@@ -1008,7 +1022,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7106122", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7106493", async() => {
                         WriteLiteral("New Hampshire");
                     }
                     );
@@ -1025,7 +1039,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7107550", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7107921", async() => {
                         WriteLiteral("New Jersey");
                     }
                     );
@@ -1042,7 +1056,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7108975", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7109346", async() => {
                         WriteLiteral("New Mexico");
                     }
                     );
@@ -1059,7 +1073,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7110400", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7110771", async() => {
                         WriteLiteral("New York");
                     }
                     );
@@ -1076,7 +1090,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7111823", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7112194", async() => {
                         WriteLiteral("North Carolina");
                     }
                     );
@@ -1093,7 +1107,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7113252", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7113623", async() => {
                         WriteLiteral("North Dakota");
                     }
                     );
@@ -1110,7 +1124,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7114679", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7115050", async() => {
                         WriteLiteral("Ohio");
                     }
                     );
@@ -1127,7 +1141,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7116098", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7116469", async() => {
                         WriteLiteral("Oklahoma");
                     }
                     );
@@ -1144,7 +1158,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7117521", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7117892", async() => {
                         WriteLiteral("Oregon");
                     }
                     );
@@ -1161,7 +1175,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7118942", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7119313", async() => {
                         WriteLiteral("Pennsylvania");
                     }
                     );
@@ -1178,7 +1192,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7120369", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7120740", async() => {
                         WriteLiteral("Puerto Rico");
                     }
                     );
@@ -1195,7 +1209,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7121795", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7122166", async() => {
                         WriteLiteral("Rhode Island");
                     }
                     );
@@ -1212,7 +1226,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7123222", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7123593", async() => {
                         WriteLiteral("South Carolina");
                     }
                     );
@@ -1229,7 +1243,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7124651", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7125022", async() => {
                         WriteLiteral("South Dakota");
                     }
                     );
@@ -1246,7 +1260,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7126078", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7126449", async() => {
                         WriteLiteral("Tennessee");
                     }
                     );
@@ -1263,7 +1277,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7127504", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7127875", async() => {
                         WriteLiteral("Texas");
                     }
                     );
@@ -1280,7 +1294,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7128927", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7129298", async() => {
                         WriteLiteral("Utah");
                     }
                     );
@@ -1297,7 +1311,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7130349", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7130720", async() => {
                         WriteLiteral("Vermont");
                     }
                     );
@@ -1314,7 +1328,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7131774", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7132145", async() => {
                         WriteLiteral("Virginia");
                     }
                     );
@@ -1331,7 +1345,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7133200", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7133571", async() => {
                         WriteLiteral("Washington");
                     }
                     );
@@ -1348,7 +1362,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7134628", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7134999", async() => {
                         WriteLiteral("West Virginia");
                     }
                     );
@@ -1365,7 +1379,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7136059", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7136430", async() => {
                         WriteLiteral("Wisconsin");
                     }
                     );
@@ -1382,7 +1396,7 @@ using GameStop.ViewModels.CategoryMain;
                     Write(__tagHelperExecutionContext.Output);
                     __tagHelperExecutionContext = __tagHelperScopeManager.End();
                     WriteLiteral("\n                                        ");
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7137486", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7137857", async() => {
                         WriteLiteral("Wyoming");
                     }
                     );
@@ -1501,7 +1515,7 @@ using GameStop.ViewModels.CategoryMain;
             crossorigin=""anonymous"" referrerpolicy=""no-referrer""></script>
     <script src=""https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js""></script>
     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7145306", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7145677", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -1515,7 +1529,7 @@ using GameStop.ViewModels.CategoryMain;
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7146407", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3505d1ae9d78680b1e75267d489b7ef44115a3e7146778", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

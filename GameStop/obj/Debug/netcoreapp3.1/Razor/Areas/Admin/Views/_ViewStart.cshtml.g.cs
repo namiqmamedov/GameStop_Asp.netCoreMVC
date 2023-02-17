@@ -42,27 +42,41 @@ using GameStop.ComponentViewModels.Header;
 #nullable disable
 #nullable restore
 #line 6 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Areas\Admin\Views\_ViewImports.cshtml"
-using GameStop.ViewModels.Products;
+using GameStop.ViewModels;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 7 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Areas\Admin\Views\_ViewImports.cshtml"
-using GameStop.ViewModels.Basket;
+using GameStop.ViewModels.Products;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 8 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Areas\Admin\Views\_ViewImports.cshtml"
+using GameStop.ViewModels.Basket;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 9 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Areas\Admin\Views\_ViewImports.cshtml"
 using GameStop.ViewModels.CategoryMain;
 
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 10 "C:\Users\ACER\source\repos\C#\GameStop\GameStop\Areas\Admin\Views\_ViewImports.cshtml"
+using GameStop.Areas.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Areas/Admin/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"805c83334547ed0c74508e0ac0a4efb62d4f4e6e", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"44a5bfcb11858b659ad9937961ba0483d7d9307a", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

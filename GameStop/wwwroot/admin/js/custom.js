@@ -13,7 +13,6 @@
         }).then((result) => {
             if (result.isConfirmed) {
 
-
                 let url = $(this).attr('href');
 
                 fetch(url)
@@ -27,6 +26,7 @@
                     'Your file has been deleted.',
                     'success'
                 )
+
             }
         })
 

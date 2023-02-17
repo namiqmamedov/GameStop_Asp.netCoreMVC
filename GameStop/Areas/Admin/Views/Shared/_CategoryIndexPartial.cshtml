@@ -1,7 +1,7 @@
 ﻿@model PageNationList<Category>
 
 @{
-    int counter = ViewBag.PageIndex == 1 ? 0 : (ViewBag.PageIndex - 1) * 5;
+    int counter = Model.PageIndex == 1 ? 0 : (Model.PageIndex - 1) * 5;
 
 }
 
@@ -47,11 +47,11 @@
 
 <nav class="justify-content-center d-flex" aria-label="Page navigation example">
     <ul class="pagination">
-        @if (ViewBag.PageIndex > 1)
+        @if (Model.HasPrev)
         {
             <li class="page-item">
 
-                <a class="page-link" asp-area="admin" asp-controller="category" asp-action="index" asp-route-page="@(ViewBag.PageIndex-1)" aria-label="Previous">
+                <a class="page-link" asp-area="admin" asp-controller="category" asp-action="index" asp-route-page="@(Model.PageIndex-1)" aria-label="Previous">
 
 
                     <span aria-hidden="true">&laquo;</span>
@@ -59,15 +59,15 @@
                 </a>
             </li>
         }
-        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        @for (int i = Model.Start; i <= Model.End; i++)
         {
             <li class="page-item"><a class="page-link" asp-area="admin" asp-controller="category" asp-action="index" asp-route-page="@i">@i</a></li>
 
         }
-        @if (ViewBag.PageIndex < ViewBag.TotalPages)
+        @if (Model.HasNext)
         {
             <li class="page-item">
-                <a class="page-link" asp-area="admin" asp-controller="category" asp-action="index" asp-route-page="@(ViewBag.TotalPages+1)" aria-label="Next">
+                <a class="page-link" asp-area="admin" asp-controller="category" asp-action="index" asp-route-page="@(Model.PageIndex+1)" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                     <span class="sr-only">Next</span>
                 </a>
