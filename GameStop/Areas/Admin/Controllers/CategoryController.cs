@@ -158,5 +158,105 @@ namespace GameStop.Areas.Admin.Controllers
                 .ToListAsync());
 
         }
+
+        // FILTER OPTIONS 
+
+
+        public async Task<IActionResult> Matched(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Category> categories = await _context.Categories
+                 .Where(p => !p.IsDeleted)
+                 .ToListAsync();
+
+            if (categories == null) return NotFound();
+
+            return PartialView("_CategoryIndexPartial", categories);
+        }
+
+
+        public async Task<IActionResult> OldToNew(int? id)
+        {
+            if (id == null) return NotFound();
+            IEnumerable<Category> categories = await _context.Categories
+                   .OrderBy(p => p.CreatedAt)
+                 .ToListAsync();
+
+            if (categories == null) return NotFound();
+
+            return PartialView("_CategoryIndexPartial", categories);
+        }
+
+        //public async Task<IActionResult> LowToHigh(int? id)
+        //{
+        //    if (id == null) return NotFound();
+        //    IEnumerable<Product> products = await _context.Products
+        //         .OrderBy(m => (m.Price + m.DiscountedPrice))
+        //         .ToListAsync();
+
+        //    if (products == null) return NotFound();
+
+        //    return ViewComponent("PriceSort", products);
+        //}
+
+        //public async Task<IActionResult> HighToLow(int? id)
+        //{
+        //    if (id == null) return NotFound();
+        //    IEnumerable<Product> products = await _context.Products
+        //        .OrderByDescending(m => (m.Price + m.DiscountedPrice))
+        //        .ToListAsync();
+
+        //    if (products == null) return NotFound();
+
+        //    return ViewComponent("PriceSort", products);
+        //}
+
+        //public async Task<IActionResult> AtoZ(int? id)
+        //{
+        //    if (id == null) return NotFound();
+        //    IEnumerable<Product> products = await _context.Products
+        //         .OrderBy(p => p.Title)
+        //         .ToListAsync();
+
+        //    if (products == null) return NotFound();
+
+        //    return ViewComponent("PriceSort", products);
+        //}
+
+        //public async Task<IActionResult> ZtoA(int? id)
+        //{
+        //    if (id == null) return NotFound();
+        //    IEnumerable<Product> products = await _context.Products
+        //         .OrderByDescending(p => p.Title)
+        //         .ToListAsync();
+
+        //    if (products == null) return NotFound();
+
+        //    return ViewComponent("PriceSort", products);
+        //}
+
+        //public async Task<IActionResult> OldToNew(int? id)
+        //{
+        //    if (id == null) return NotFound();
+        //    IEnumerable<Product> products = await _context.Products
+        //         .OrderBy(p => p.CreatedAt)
+        //         .ToListAsync();
+
+        //    if (products == null) return NotFound();
+
+        //    return ViewComponent("PriceSort", products);
+        //}
+
+        //public async Task<IActionResult> NewToOld(int? id)
+        //{
+        //    if (id == null) return NotFound();
+        //    IEnumerable<Product> products = await _context.Products
+        //         .OrderByDescending(p => p.CreatedAt)
+        //         .ToListAsync();
+
+        //    if (products == null) return NotFound();
+
+        //    return ViewComponent("PriceSort", products);
+        //}
     }
 }

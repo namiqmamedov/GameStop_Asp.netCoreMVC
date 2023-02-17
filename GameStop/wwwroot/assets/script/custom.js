@@ -171,23 +171,23 @@ $(document).ready(function () {
         //    })
     })
 
-    $(document).on('click', '.dropdown-menu li a', function (e) {
-        e.preventDefault();
+    //$(document).on('click', '.dropdown-menu li a', function (e) {
+    //    e.preventDefault();
 
-        let url1 = $(this).val();
+    //    let url1 = $(this).val();
 
-        let url = $(this).attr('href');
+    //    let url = $(this).attr('href');
 
 
-        console.log(url1);
-        console.log(url);
+    //    console.log(url1);
+    //    console.log(url);
 
-        fetch(url)
-            .then(res => res.text())
-            .then(data => {
-                $('.product-main .cardBoxes').html(data);
-            })
-    })
+    //    fetch(url)
+    //        .then(res => res.text())
+    //        .then(data => {
+    //            $('.product-main .cardBoxes').html(data);
+    //        })
+    //})
 
     // filter sort
     $(document).on("click", ".priceSort", function (e) {

@@ -23,11 +23,6 @@ $(document).ready(function () {
     });
 })
 
-//$(document).ready(function () {
-//    if ($('.minicart-quantity').html() <= 0) {
-//        $(".minicart-quantity").hide();
-//    }
-//});
 
 
 var perfEntries = performance.getEntriesByType("navigation");

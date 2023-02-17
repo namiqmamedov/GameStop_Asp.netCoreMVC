@@ -65,4 +65,23 @@
 
 
     })
+
+
+    // filter sort
+    $(document).on("click", ".priceSortArea", function (e) {
+        e.preventDefault()
+
+        let url = $(this).attr("href")
+
+        fetch(url)
+            .then(res => res.text())
+            .then(data => {
+                $('.tbl-content').html(data);
+            })
+    })
+
+
+    $('.dropdown-menu li a').click(function () {
+        $('.selected-option').text($(this).text());
+    });
 })

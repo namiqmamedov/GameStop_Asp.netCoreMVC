@@ -5,8 +5,8 @@
     <div class="main product-index">
         <div class="row">
             <div class="d-flex">
-                <div class="col-4">
-                    <h2>Product</h2>
+                <div class="col-4 mb-3">
+                    <h2>Category</h2>
                 </div>
                 <div class="col-8 d-flex justify-content-end">
                     <a asp-area="admin" asp-controller="category" asp-action="create">
@@ -60,19 +60,16 @@
                         <form>
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="sortBold">Sort by:</span><span class="selected-option"> Best Matches</span>
+                                    <span class="sortBold"></span><span class="selected-option"> Best Matches</span>
                                 </button>
                                 <ul name="status" class="dropdown-menu">
                                     <span class="up-arrow"></span>
 
-                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/Matched/2">Best Matches</a></li>
-                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/LowToHigh/2">Low To High</a></li>
-                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/HighToLow/2">High To Low</a></li>
-                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/AtoZ/2">Product Name A-Z</a></li>
-                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/ZtoA/2">Product Name Z-A</a></li>
-                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/OldToNew/2">Product Date Oldest to Newest</a></li>
-                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/NewToOld/2">Product Date Newest to Oldest</a></li>
-
+                                    <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="matched" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Best Matches</a></li>
+                                    <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="OldToNew" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Date Oldest to Newest</a></li>
+                                    <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="NewToOld" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Date Newest to Oldtest</a></li>
+                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/AtoZ/2">Category Name A-Z</a></li>
+                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/ZtoA/2">Category Name Z-A</a></li>
                                 </ul>
                             </div>
                         </form>
