@@ -39,8 +39,15 @@ namespace GameStop.Controllers
             AppUser appUser = await _userManager.FindByEmailAsync(loginVM.Email);
             if (appUser == null)
             {
+                ModelState.AddModelError("", "Email or Password is incorrect");
                 return View(loginVM);
 
+            }
+
+            if (appUser.IsAdmin)
+            {
+                ModelState.AddModelError("", "You can't login as admin user!");
+                return View(loginVM);
             }
 
             if (!await _userManager.CheckPasswordAsync(appUser, loginVM.Password))
