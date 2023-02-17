@@ -22,7 +22,7 @@ namespace GameStop.Areas.Admin.Controllers
         public async Task<IActionResult> Index(int page)
         {
             IQueryable<Category> categories = _context.Categories
-                .OrderByDescending(c => c.Id);
+                .OrderBy(c => c.Id);
 
             return View(PageNationList<Category>.Create(categories,page,5));
         }
@@ -182,170 +182,78 @@ namespace GameStop.Areas.Admin.Controllers
 
             return PartialView("_CategoryIndexPartial",PageNationList<Category>.Create(categories, page, 5));
         }
-     
-        
-        
-        
-        
-        
-        
+            
         
         public async Task<IActionResult> Active(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Category> categories = await _context.Categories
-                 .Where(p => !p.IsDeleted)
-                 .ToListAsync();
+            IQueryable<Category> categories = _context.Categories
+                .OrderByDescending(c => c.IsDeleted == false);
 
-            int totalPages = (int)Math.Ceiling((decimal)categories.Count() / 5);
-
-            if (page < 1 || page > totalPages)
-            {
-                page = 1;
-            }
-
-            ViewBag.TotalPages = totalPages;
-            ViewBag.PageIndex = page;
-
-            categories = categories
-           .Skip((page - 1) * 5)
-           .Take(5);
 
             if (categories == null) return NotFound();
 
-            return PartialView("_CategoryIndexPartial", categories);
+            return PartialView("_CategoryIndexPartial", PageNationList<Category>.Create(categories, page, 5));
         }
 
         public async Task<IActionResult> InActive(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Category> categories = await _context.Categories
-                 .Where(p => p.IsDeleted)
-                 .ToListAsync();
-
-            int totalPages = (int)Math.Ceiling((decimal)categories.Count() / 5);
-
-            if (page < 1 || page > totalPages)
-            {
-                page = 1;
-            }
-
-            ViewBag.TotalPages = totalPages;
-            ViewBag.PageIndex = page;
-
-            categories = categories
-           .Skip((page - 1) * 5)
-           .Take(5);
+            IQueryable<Category> categories = _context.Categories
+            .OrderByDescending(c => c.IsDeleted == true);
 
             if (categories == null) return NotFound();
 
-            return PartialView("_CategoryIndexPartial", categories);
+            return PartialView("_CategoryIndexPartial", PageNationList<Category>.Create(categories, page, 5));
         }
 
 
         public async Task<IActionResult> OldToNew(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Category> categories = await _context.Categories
-                   .OrderBy(p => p.CreatedAt)
-                 .ToListAsync();
-
-            int totalPages = (int)Math.Ceiling((decimal)categories.Count() / 5);
-
-            if (page < 1 || page > totalPages)
-            {
-                page = 1;
-            }
-
-            ViewBag.TotalPages = totalPages;
-            ViewBag.PageIndex = page;
-
-            categories = categories
-           .Skip((page - 1) * 5)
-           .Take(5);
+            IQueryable<Category> categories = _context.Categories
+            .OrderBy(c => c.CreatedAt);
 
             if (categories == null) return NotFound();
 
-            return PartialView("_CategoryIndexPartial", categories);
+            return PartialView("_CategoryIndexPartial", PageNationList<Category>.Create(categories, page, 5));
+
         }
 
         public async Task<IActionResult> NewToOld(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Category> categories = await _context.Categories
-                   .OrderByDescending(p => p.CreatedAt)
-                 .ToListAsync();
-
-            int totalPages = (int)Math.Ceiling((decimal)categories.Count() / 5);
-
-            if (page < 1 || page > totalPages)
-            {
-                page = 1;
-            }
-
-            ViewBag.TotalPages = totalPages;
-            ViewBag.PageIndex = page;
-
-            categories = categories
-           .Skip((page - 1) * 5)
-           .Take(5);
+            IQueryable<Category> categories = _context.Categories
+           .OrderByDescending(c => c.CreatedAt);
 
             if (categories == null) return NotFound();
 
-            return PartialView("_CategoryIndexPartial", categories);
+            return PartialView("_CategoryIndexPartial", PageNationList<Category>.Create(categories, page, 5));
         }
 
 
         public async Task<IActionResult> AtoZ(int? id,int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Category> categories = await _context.Categories
-           .OrderBy(p => p.Name)
-           .ToListAsync();
 
-            int totalPages = (int)Math.Ceiling((decimal)categories.Count() / 5);
-
-            if (page < 1 || page > totalPages)
-            {
-                page = 1;
-            }
-
-            ViewBag.TotalPages = totalPages;
-            ViewBag.PageIndex = page;
-
-            categories = categories
-           .Skip((page - 1) * 5)
-           .Take(5);
+            IQueryable<Category> categories = _context.Categories
+           .OrderBy(c => c.Name);
 
             if (categories == null) return NotFound();
 
-            return PartialView("_CategoryIndexPartial", categories);
+            return PartialView("_CategoryIndexPartial", PageNationList<Category>.Create(categories, page, 5));
         }
 
         public async Task<IActionResult> ZtoA(int? id,int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Category> categories = await _context.Categories
-            .OrderByDescending(p => p.Name)
-            .ToListAsync();
 
-            int totalPages = (int)Math.Ceiling((decimal)categories.Count() / 5);
-
-            if (page < 1 || page > totalPages)
-            {
-                page = 1;
-            }
-
-            ViewBag.TotalPages = totalPages;
-            ViewBag.PageIndex = page;
-
-            categories = categories
-           .Skip((page - 1) * 5)
-           .Take(5);
+            IQueryable<Category> categories = _context.Categories
+           .OrderByDescending(c => c.Name);
 
             if (categories == null) return NotFound();
 
-            return PartialView("_CategoryIndexPartial", categories);
+            return PartialView("_CategoryIndexPartial", PageNationList<Category>.Create(categories, page, 5));
         }
 
     }

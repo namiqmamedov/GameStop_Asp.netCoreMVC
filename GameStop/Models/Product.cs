@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -42,6 +43,9 @@ namespace GameStop.Models
         public IEnumerable<ProductSpecs> ProductSpecs { get; set; }
         public IEnumerable<ProductLabel> ProductLabels { get; set; }
         public IEnumerable<ProductCondition> ProductConditions { get; set; }
+
+        [NotMapped]
+        public IFormFile File { get; set; }
 
     }
 }

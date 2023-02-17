@@ -45,6 +45,25 @@ namespace GameStop.Areas.Admin.Controllers
                 return View();
             }
 
+            if (product.File == null)
+            {
+                ModelState.AddModelError("File", "File is required");
+                return View(product);
+            }
+
+            if (product.File.ContentType != "image/*")
+            {
+                ModelState.AddModelError("File", "File extension must belong to the image");
+            }
+            if (product.File.Length > 20000)
+            {
+                ModelState.AddModelError("File", "The maximum size should be 20mb !");
+                return View(product);
+            }
+
+            //product.Image = product.File.CreateImage(_env, "assets", "img");
+
+
             await _context.Products.AddAsync(product);
             await _context.SaveChangesAsync();
 

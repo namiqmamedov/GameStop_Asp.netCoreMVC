@@ -61,7 +61,7 @@
         }
         @for (int i = Model.Start; i <= Model.End; i++)
         {
-            <li class="page-item"><a class="page-link" asp-area="admin" asp-controller="category" asp-action="index" asp-route-page="@i">@i</a></li>
+            <li class="page-item @(Model.PageIndex == i ? "active" :"")"><a class="page-link" asp-area="admin" asp-controller="category" asp-action="index" asp-route-page="@i">@i</a></li>
 
         }
         @if (Model.HasNext)
