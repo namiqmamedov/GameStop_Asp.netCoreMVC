@@ -23,7 +23,6 @@ namespace GameStop.Areas.Admin.Controllers
             IEnumerable<Category> categories = await _context.Categories
                .ToListAsync();
 
-
             int totalPages = (int)Math.Ceiling((decimal)categories.Count() / 5);
 
             if (page < 1 || page > totalPages)
@@ -37,7 +36,6 @@ namespace GameStop.Areas.Admin.Controllers
             categories = categories
            .Skip((page - 1) * 5)
            .Take(5);
-
 
             return View(categories);
         }
@@ -177,84 +175,183 @@ namespace GameStop.Areas.Admin.Controllers
 
         // FILTER OPTIONS 
 
-        public async Task<IActionResult> Matched(int? id)
+        public async Task<IActionResult> Matched(int? id, int page)
         {
             if (id == null) return NotFound();
             IEnumerable<Category> categories = await _context.Categories
                  .ToListAsync();
 
+            int totalPages = (int)Math.Ceiling((decimal)categories.Count() / 5);
+
+            if (page < 1 || page > totalPages)
+            {
+                page = 1;
+            }
+
+            ViewBag.TotalPages = totalPages;
+            ViewBag.PageIndex = page;
+
+            categories = categories
+           .Skip((page - 1) * 5)
+           .Take(5);
+
+
             if (categories == null) return NotFound();
 
             return PartialView("_CategoryIndexPartial", categories);
         }
-        public async Task<IActionResult> Active(int? id)
+        public async Task<IActionResult> Active(int? id, int page)
         {
             if (id == null) return NotFound();
             IEnumerable<Category> categories = await _context.Categories
                  .Where(p => !p.IsDeleted)
                  .ToListAsync();
 
+            int totalPages = (int)Math.Ceiling((decimal)categories.Count() / 5);
+
+            if (page < 1 || page > totalPages)
+            {
+                page = 1;
+            }
+
+            ViewBag.TotalPages = totalPages;
+            ViewBag.PageIndex = page;
+
+            categories = categories
+           .Skip((page - 1) * 5)
+           .Take(5);
+
             if (categories == null) return NotFound();
 
             return PartialView("_CategoryIndexPartial", categories);
         }
 
-        public async Task<IActionResult> InActive(int? id)
+        public async Task<IActionResult> InActive(int? id, int page)
         {
             if (id == null) return NotFound();
             IEnumerable<Category> categories = await _context.Categories
                  .Where(p => p.IsDeleted)
                  .ToListAsync();
 
+            int totalPages = (int)Math.Ceiling((decimal)categories.Count() / 5);
+
+            if (page < 1 || page > totalPages)
+            {
+                page = 1;
+            }
+
+            ViewBag.TotalPages = totalPages;
+            ViewBag.PageIndex = page;
+
+            categories = categories
+           .Skip((page - 1) * 5)
+           .Take(5);
+
             if (categories == null) return NotFound();
 
             return PartialView("_CategoryIndexPartial", categories);
         }
 
 
-        public async Task<IActionResult> OldToNew(int? id)
+        public async Task<IActionResult> OldToNew(int? id, int page)
         {
             if (id == null) return NotFound();
             IEnumerable<Category> categories = await _context.Categories
                    .OrderBy(p => p.CreatedAt)
                  .ToListAsync();
 
+            int totalPages = (int)Math.Ceiling((decimal)categories.Count() / 5);
+
+            if (page < 1 || page > totalPages)
+            {
+                page = 1;
+            }
+
+            ViewBag.TotalPages = totalPages;
+            ViewBag.PageIndex = page;
+
+            categories = categories
+           .Skip((page - 1) * 5)
+           .Take(5);
+
             if (categories == null) return NotFound();
 
             return PartialView("_CategoryIndexPartial", categories);
         }
 
-        public async Task<IActionResult> NewToOld(int? id)
+        public async Task<IActionResult> NewToOld(int? id, int page)
         {
             if (id == null) return NotFound();
             IEnumerable<Category> categories = await _context.Categories
                    .OrderByDescending(p => p.CreatedAt)
                  .ToListAsync();
 
+            int totalPages = (int)Math.Ceiling((decimal)categories.Count() / 5);
+
+            if (page < 1 || page > totalPages)
+            {
+                page = 1;
+            }
+
+            ViewBag.TotalPages = totalPages;
+            ViewBag.PageIndex = page;
+
+            categories = categories
+           .Skip((page - 1) * 5)
+           .Take(5);
+
             if (categories == null) return NotFound();
 
             return PartialView("_CategoryIndexPartial", categories);
         }
 
 
-        public async Task<IActionResult> AtoZ(int? id)
+        public async Task<IActionResult> AtoZ(int? id,int page)
         {
             if (id == null) return NotFound();
             IEnumerable<Category> categories = await _context.Categories
            .OrderBy(p => p.Name)
            .ToListAsync();
 
+            int totalPages = (int)Math.Ceiling((decimal)categories.Count() / 5);
+
+            if (page < 1 || page > totalPages)
+            {
+                page = 1;
+            }
+
+            ViewBag.TotalPages = totalPages;
+            ViewBag.PageIndex = page;
+
+            categories = categories
+           .Skip((page - 1) * 5)
+           .Take(5);
+
             if (categories == null) return NotFound();
 
             return PartialView("_CategoryIndexPartial", categories);
         }
 
-        public async Task<IActionResult> ZtoA(int? id)
+        public async Task<IActionResult> ZtoA(int? id,int page)
         {
             if (id == null) return NotFound();
             IEnumerable<Category> categories = await _context.Categories
             .OrderByDescending(p => p.Name)
             .ToListAsync();
+
+            int totalPages = (int)Math.Ceiling((decimal)categories.Count() / 5);
+
+            if (page < 1 || page > totalPages)
+            {
+                page = 1;
+            }
+
+            ViewBag.TotalPages = totalPages;
+            ViewBag.PageIndex = page;
+
+            categories = categories
+           .Skip((page - 1) * 5)
+           .Take(5);
 
             if (categories == null) return NotFound();
 

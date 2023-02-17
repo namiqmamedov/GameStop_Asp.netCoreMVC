@@ -1,6 +1,5 @@
 ﻿@model IEnumerable<Category>
 
-
 <div class="content">
     <div class="main product-index">
         <div class="row">
@@ -82,10 +81,11 @@
             <div class="table-responsive mt-4 tbl-content">
 
                 @await Html.PartialAsync("_CategoryIndexPartial", Model)
+
             </div>
         </div>
     </div>
-    <nav class="justify-content-center d-flex" aria-label="Page navigation example">
+    @*<nav class="justify-content-center d-flex" aria-label="Page navigation example">
         <ul class="pagination">
             @if (ViewBag.PageIndex > 1)
             {
@@ -114,7 +114,7 @@
                 </li>
             }
         </ul>
-    </nav>
+    </nav>*@
 </div>
 
 

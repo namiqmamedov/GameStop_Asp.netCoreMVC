@@ -66,6 +66,20 @@
 
     })
 
+    $(document).on("click", ".swal2-confirm", function (e) {
+        e.preventDefault()
+
+        let url = $(this).attr("class")
+
+        alert("log");
+
+        //fetch(url)
+        //    .then(res => res.text())
+        //    .then(data => {
+        //        $('.tbl-content').html(data);
+        //    })
+    })
+
 
     // filter sort
     $(document).on("click", ".priceSortArea", function (e) {

@@ -1,5 +1,7 @@
-﻿@{ 
-    int counter = 1;
+﻿@model IEnumerable<Category>
+
+@{
+    int counter = ViewBag.PageIndex == 1 ? 0 :  (ViewBag.PageIndex - 1) * 5;
 }
 
 <table class="table table-hover table-striped">
@@ -12,34 +14,64 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (Category item in Model)   
+        @foreach (Category item in Model)
         {
-        <tr>
-            <th scope="row">@counter</th>
-            <td>@item.Name</td>
-            <td style="color:@(item.IsDeleted ? "red":"green")">@(item.IsDeleted ? "Inactive":"Active")</td>
-            <td>
-                @if (item.IsDeleted)
-                {
-                    <a class="btn btn-primary restoreBtn" asp-controller="category" asp-action="restore" asp-area="admin" asp-route-id="@item.Id">
-                        <i class="bi bi-bootstrap-reboot"></i>
-                    </a>
-                }
-                else
-                {
-                    <a class="btn btn-danger removeBtn" asp-controller="category" asp-action="delete" asp-area="admin" asp-route-id="@item.Id">
-                        <i class="fa-solid fa-trash"></i>
-                    </a>
-                }
-
-            </td>
-
-
-        </tr>
-
             counter++;
+
+            <tr>
+                <th scope="row">@counter</th>
+                <td>@item.Name</td>
+                <td style="color:@(item.IsDeleted ? "red":"green")">@(item.IsDeleted ? "Inactive":"Active")</td>
+                <td>
+                    @if (item.IsDeleted)
+                    {
+                        <a class="btn btn-primary restoreBtn" asp-controller="category" asp-action="restore" asp-area="admin" asp-route-id="@item.Id">
+                            <i class="bi bi-bootstrap-reboot"></i>
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-danger removeBtn" asp-controller="category" asp-action="delete" asp-area="admin" asp-route-id="@item.Id">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    }
+
+                </td>
+            </tr>
+
         }
     </tbody>
 </table>
 
-                    
+
+<nav class="justify-content-center d-flex" aria-label="Page navigation example">
+    <ul class="pagination">
+        @if (ViewBag.PageIndex > 1)
+        {
+            <li class="page-item">
+
+                <a class="page-link" asp-area="admin" asp-controller="category" asp-action="index" asp-route-page="@(ViewBag.PageIndex-1)" aria-label="Previous">
+
+
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+        }
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            <li class="page-item"><a class="page-link" asp-area="admin" asp-controller="category" asp-action="index" asp-route-page="@i">@i</a></li>
+
+        }
+        @if (ViewBag.PageIndex < ViewBag.TotalPages)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-area="admin" asp-controller="category" asp-action="index" asp-route-page="@(ViewBag.TotalPages+1)" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>
+
