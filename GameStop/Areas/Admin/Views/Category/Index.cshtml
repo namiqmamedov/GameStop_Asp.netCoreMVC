@@ -1,4 +1,4 @@
-﻿@model List<Category>
+﻿@model IEnumerable<Category>
 
 
 <div class="content">
@@ -14,75 +14,107 @@
                     </a>
                 </div>
             </div>
-               <div class="product-filter">
+            <div class="product-filter">
 
-                    <div class="sort-section">
-
-
-                        <div class="select">
-                            <i class="fa-solid fa-filter"></i>
-                            <select>
-
-                                <option>
-
-                                    Best Matches
-
-                                </option>
-                                <option>
-
-                                    Price Low To High
-
-                                </option>
-                                <option>
-                                    Product Name A - Z
-                                </option>
-                                <option value="1">
-                                    Product Name Z - A
-                                </option>
-                                <option value="2">
-                                    Most Popular
-                                </option>
-                                <option value="3">
-                                    Top Sellers
-                                </option>
-                                <option value="1">
-                                    Release Date Oldest to Newest
-                                </option>
-                                <option value="2">
-                                    Release Date Newest to Oldest
-                                </option>
-                                <option value="3">
-                                    Most Relevant
-                                </option>
-                            </select>
-                        </div>
-
-                        <form>
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="sortBold"></span><span class="selected-option"> Best Matches</span>
-                                </button>
-                                <ul name="status" class="dropdown-menu">
-                                    <span class="up-arrow"></span>
-
-                                    <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="Matched" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Best Matched</a></li>
-                                    <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="Active" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Active</a></li>
-                                    <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="InActive" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Inactive</a></li>
-                                    <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="OldToNew" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Date Oldest to Newest</a></li>
-                                    <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="NewToOld" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Date Newest to Oldtest</a></li>
-                                    <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="AtoZ" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Category Name A-Z</a></li>
-                                    <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="ZtoA" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Category Name Z-A</a></li>
-                                </ul>
-                            </div>
-                        </form>
+                <div class="sort-section">
 
 
+                    <div class="select">
+                        <i class="fa-solid fa-filter"></i>
+                        <select>
+
+                            <option>
+
+                                Best Matches
+
+                            </option>
+                            <option>
+
+                                Price Low To High
+
+                            </option>
+                            <option>
+                                Product Name A - Z
+                            </option>
+                            <option value="1">
+                                Product Name Z - A
+                            </option>
+                            <option value="2">
+                                Most Popular
+                            </option>
+                            <option value="3">
+                                Top Sellers
+                            </option>
+                            <option value="1">
+                                Release Date Oldest to Newest
+                            </option>
+                            <option value="2">
+                                Release Date Newest to Oldest
+                            </option>
+                            <option value="3">
+                                Most Relevant
+                            </option>
+                        </select>
                     </div>
+
+                    <form>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="sortBold"></span><span class="selected-option"> Best Matches</span>
+                            </button>
+                            <ul name="status" class="dropdown-menu">
+                                <span class="up-arrow"></span>
+
+                                <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="Matched" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Best Matched</a></li>
+                                <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="Active" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Active</a></li>
+                                <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="InActive" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Inactive</a></li>
+                                <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="OldToNew" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Date Oldest to Newest</a></li>
+                                <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="NewToOld" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Date Newest to Oldtest</a></li>
+                                <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="AtoZ" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Category Name A-Z</a></li>
+                                <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="ZtoA" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Category Name Z-A</a></li>
+                            </ul>
+                        </div>
+                    </form>
+
+
                 </div>
+            </div>
             <div class="table-responsive mt-4 tbl-content">
 
                 @await Html.PartialAsync("_CategoryIndexPartial", Model)
             </div>
         </div>
     </div>
+    <nav class="justify-content-center d-flex" aria-label="Page navigation example">
+        <ul class="pagination">
+            @if (ViewBag.PageIndex > 1)
+            {
+                <li class="page-item">
+
+                    <a class="page-link" asp-area="admin" asp-controller="category" asp-action="index" asp-route-page="@(ViewBag.PageIndex-1)" aria-label="Previous">
+
+
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+            }
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item"><a class="page-link" asp-area="admin" asp-controller="category" asp-action="index" asp-route-page="@i">@i</a></li>
+
+            }
+            @if (ViewBag.PageIndex < ViewBag.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-area="admin" asp-controller="category" asp-action="index" asp-route-page="@(ViewBag.TotalPages+1)" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
 </div>
+
+

@@ -18,14 +18,30 @@ namespace GameStop.Areas.Admin.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page)
         {
             IEnumerable<Category> categories = await _context.Categories
-                .ToListAsync();
+               .ToListAsync();
+
+
+            int totalPages = (int)Math.Ceiling((decimal)categories.Count() / 5);
+
+            if (page < 1 || page > totalPages)
+            {
+                page = 1;
+            }
+
+            ViewBag.TotalPages = totalPages;
+            ViewBag.PageIndex = page;
+
+            categories = categories
+           .Skip((page - 1) * 5)
+           .Take(5);
 
 
             return View(categories);
         }
+
 
         public IActionResult Create()
         {
@@ -245,54 +261,5 @@ namespace GameStop.Areas.Admin.Controllers
             return PartialView("_CategoryIndexPartial", categories);
         }
 
-        //public async Task<IActionResult> LowToHigh(int? id)
-        //{
-        //    if (id == null) return NotFound();
-        //    IEnumerable<Product> products = await _context.Products
-        //         .OrderBy(m => (m.Price + m.DiscountedPrice))
-        //         .ToListAsync();
-
-        //    if (products == null) return NotFound();
-
-        //    return ViewComponent("PriceSort", products);
-        //}
-
-        //public async Task<IActionResult> HighToLow(int? id)
-        //{
-        //    if (id == null) return NotFound();
-        //    IEnumerable<Product> products = await _context.Products
-        //        .OrderByDescending(m => (m.Price + m.DiscountedPrice))
-        //        .ToListAsync();
-
-        //    if (products == null) return NotFound();
-
-        //    return ViewComponent("PriceSort", products);
-        //}
-
-
-
-        //public async Task<IActionResult> OldToNew(int? id)
-        //{
-        //    if (id == null) return NotFound();
-        //    IEnumerable<Product> products = await _context.Products
-        //         .OrderBy(p => p.CreatedAt)
-        //         .ToListAsync();
-
-        //    if (products == null) return NotFound();
-
-        //    return ViewComponent("PriceSort", products);
-        //}
-
-        //public async Task<IActionResult> NewToOld(int? id)
-        //{
-        //    if (id == null) return NotFound();
-        //    IEnumerable<Product> products = await _context.Products
-        //         .OrderByDescending(p => p.CreatedAt)
-        //         .ToListAsync();
-
-        //    if (products == null) return NotFound();
-
-        //    return ViewComponent("PriceSort", products);
-        //}
     }
 }

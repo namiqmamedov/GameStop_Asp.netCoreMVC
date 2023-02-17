@@ -84,4 +84,17 @@
     $('.dropdown-menu li a').click(function () {
         $('.selected-option').text($(this).text());
     });
+
+
+    //$(document).on("click", ".page-link", function (e) {
+    //    e.preventDefault()
+
+    //    let url = $(this).attr("href")
+
+    //    fetch(url)
+    //        .then(res => res.text())
+    //        .then(data => {
+    //            $('.table-main').html(data);
+    //        })
+    //})
 })

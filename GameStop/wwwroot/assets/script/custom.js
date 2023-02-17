@@ -151,45 +151,9 @@ $(document).ready(function () {
     })
 
 
-    $(document).on('click', '.selected-label', function (e) {
-        e.preventDefault();
-
-
-
-        /* let url1 = $(this).val();*/
-
-        //let url = $(this).attr('href');
-
-
-        //console.log(url1);
-        //console.log(url);
-
-        //fetch(url)
-        //    .then(res => res.text())
-        //    .then(data => {
-        //        $('.product-main .cardBoxes').html(data);
-        //    })
-    })
-
-    //$(document).on('click', '.dropdown-menu li a', function (e) {
-    //    e.preventDefault();
-
-    //    let url1 = $(this).val();
-
-    //    let url = $(this).attr('href');
-
-
-    //    console.log(url1);
-    //    console.log(url);
-
-    //    fetch(url)
-    //        .then(res => res.text())
-    //        .then(data => {
-    //            $('.product-main .cardBoxes').html(data);
-    //        })
-    //})
 
     // filter sort
+
     $(document).on("click", ".priceSort", function (e) {
         e.preventDefault()
 
@@ -201,18 +165,6 @@ $(document).ready(function () {
                 $('#card-boxing').html(data);
             })
     })
-
-    //$(document).on("click", ".nonPrice", function (e) {
-    //    e.preventDefault()
-
-    //    let url = $(this).attr("href")
-
-    //    fetch(url)
-    //        .then(res => res.text())
-    //        .then(data => {
-    //            $('.card-boxes').html(data);
-    //        })
-    //})
 
 
 });
