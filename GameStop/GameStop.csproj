@@ -135,4 +135,9 @@
     <None Include="wwwroot\admin\vendors\quill\quill.min.js" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\ViewModels\" />
+    <Folder Include="ViewModels\PagenationList\" />
+  </ItemGroup>
+
 </Project>

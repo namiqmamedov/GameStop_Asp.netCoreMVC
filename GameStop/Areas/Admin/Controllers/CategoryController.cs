@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GameStop.Areas.ViewModels;
 
 namespace GameStop.Areas.Admin.Controllers
 {
@@ -20,24 +21,10 @@ namespace GameStop.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index(int page)
         {
-            IEnumerable<Category> categories = await _context.Categories
-               .ToListAsync();
+            IQueryable<Category> categories = _context.Categories
+                .OrderByDescending(c => c.Id);
 
-            int totalPages = (int)Math.Ceiling((decimal)categories.Count() / 5);
-
-            if (page < 1 || page > totalPages)
-            {
-                page = 1;
-            }
-
-            ViewBag.TotalPages = totalPages;
-            ViewBag.PageIndex = page;
-
-            categories = categories
-           .Skip((page - 1) * 5)
-           .Take(5);
-
-            return View(categories);
+            return View(PageNationList<Category>.Create(categories,page,5));
         }
 
 

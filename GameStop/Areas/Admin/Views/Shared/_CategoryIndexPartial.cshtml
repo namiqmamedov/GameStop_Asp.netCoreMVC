@@ -1,7 +1,8 @@
-﻿@model IEnumerable<Category>
+﻿@model PageNationList<Category>
 
 @{
-    int counter = ViewBag.PageIndex == 1 ? 0 :  (ViewBag.PageIndex - 1) * 5;
+    int counter = ViewBag.PageIndex == 1 ? 0 : (ViewBag.PageIndex - 1) * 5;
+
 }
 
 <table class="table table-hover table-striped">
