@@ -1,7 +1,5 @@
 ﻿@model RegisterVM
-@{
-    Layout = null;
-}
+@{ Layout = null; }
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,12 +22,15 @@
         </div>
     </div>
 
-    <form action="#" method="post" autocomplete="off">
+
+    <form method="post" autocomplete="off">
         <div class="registerGameStop">
             <div class="register-content">
                 <h2 class="title-register">
                     Create Account
                 </h2>
+
+                <div class="text text-danger" style="color: red;display: flex; justify-content: center;" asp-validation-summary="ModelOnly"></div>
             </div>
 
             <div class="registerPage">
@@ -38,13 +39,17 @@
                     <div class="registerName">
                         <label asp-for="Name" class="form-label">First Name</label>
                         <div class="register-name-field">
-                            <input name="name" type="text" asp-for="Name">
+                            <input asp-for="Name" type="text" id="sign_up_name">
+                            <span class="text text-danger" asp-validation-for="Name"></span>
+
                         </div>
                     </div>
                     <div class="registerLastName">
                         <label asp-for="Surname" class="form-label">Last Name</label>
                         <div class="register-last-name-field">
-                            <input name="last-name" type="text" asp-for="Surname">
+                            <input asp-for="Surname" type="text" id="sign_up_last_name">
+                            <span class="text text-danger" asp-validation-for="Surname"></span>
+
                         </div>
                     </div>
                     <div class="registerEmail">
@@ -53,7 +58,8 @@
                             <span class="form-indicator">*</span>
                         </label>
                         <div class="register-email-field">
-                            <input name="email" type="email" asp-for="Email">
+                            <input asp-for="Email" id="sign_up_email">
+                            <span class="text text-danger" asp-validation-for="Email"></span>
                         </div>
                     </div>
                     <div class="passwdSection">
@@ -63,7 +69,7 @@
                                 <span class="form-indicator">*</span>
                             </label>
                             <div class="register-password-field">
-                                <input name="passwd" maxlength="72" type="password" asp-for="Password">
+                                <input asp-for="Password" maxlength="72" type="password" id="sign_up_passwd">
                             </div>
                         </div>
 
@@ -73,7 +79,7 @@
                                 <span class="form-indicator">*</span>
                             </label>
                             <div class="register-password-field">
-                                <input name="passwd_confirmation" maxlength="72" type="password" asp-for="ConfirmPassword">
+                                <input asp-for="ConfirmPassword" maxlength="72" type="password" id="sign_up_passwd">
                             </div>
                         </div>
                     </div>
@@ -84,7 +90,7 @@
                     </div>
 
                     <div class="registerButton">
-                        <button type="submit" class="btn-login">Create account</button>
+                        <button class="btn-login">Create account</button>
                     </div>
 
 
@@ -104,6 +110,6 @@
 
 </html>
 
-@section Script{ 
-  <partial name="_ValidationPartial">;
+@section Script{
+    <partial name="_ValidationPartial">
 }
