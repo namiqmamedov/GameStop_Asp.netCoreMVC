@@ -1,0 +1,74 @@
+﻿@model LoginVM
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>GameStop - Admin Login</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/admin/images/logo/favicon.ico">
+
+    <!-- page css -->
+    <!-- Core css -->
+    <link href="~/admin/css/app.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="auth-full-height d-flex flex-row align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="m-2">
+                                <div class="d-flex justify-content-center mt-3">
+                                    <div class="text-center logo">
+                                        <img alt="logo" class="img-fluid" src="~/admin/images/logo-gs-mono.svg" style="height: 48px;">
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <p class="text-muted">Sign in your account to continue</p>
+                                </div>
+                                <form method="post">
+                                    <div class="text text-danger" style="color: red;display: flex; justify-content: center;" asp-validation-summary="ModelOnly"></div>
+                                    <div class="form-group mb-3">
+                                        <label class="form-label">Username</label>
+                                        <input class="form-control" asp-for="Username" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-group input-affix flex-column">
+                                            <label class="form-label">Password</label>
+                                            <input formcontrolname="password" class="form-control" asp-for="Password">
+                                            @*<i class="suffix-icon feather cursor-pointer text-dark icon-eye" ng-reflect-ng-class="icon-eye"></i>*@
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">Log In</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Vendors JS -->
+    <script src="~/admin/js/vendors.min.js"></script>
+
+    <!-- page js -->
+    <!-- Core JS -->
+    <script src="~/admin/js/app.min.js"></script>
+
+</body>
+
+</html>

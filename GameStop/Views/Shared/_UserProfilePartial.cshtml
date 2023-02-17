@@ -1,0 +1,30 @@
+﻿@model ProfileVM
+
+<div class="text text-danger" asp-validation-summary="ModelOnly"></div>
+
+<form method="POST" autocomplete="off" asp-controller="user" asp-action="update">
+
+    <div class="inputs">
+        <label class="field-name" for="full_name">Name</label>
+        <input id="full_name" asp-for="Name" maxlength="100" autocomplete="off">
+        <span class="text text-danger" asp-validation-for="Name"></span>
+    </div>
+    <div class="inputs">
+        <label for="email_acc" class="field-name">Email</label>
+        <input id="email_acc" asp-for="Email" aria-required="true">
+        <span class="text text-danger" asp-validation-for="Name"></span>
+    </div>
+
+    <div class="inputs">
+        <label for="phone_acc" class="field-name">Username</label> <input id="phone_acc" type="text" asp-for="Username" aria-required="true">
+        <span class="text text-danger" asp-validation-for="Name"></span>
+    </div>
+
+    <div class="save-button-form w-100">
+        <button id="savebutton" type="submit" class="btn ">Save</button>
+    </div>
+</form>
+
+@section Script{
+    <partial name="_ValidationPartial" />
+}

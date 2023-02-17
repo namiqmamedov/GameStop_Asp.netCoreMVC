@@ -13,6 +13,7 @@ namespace GameStop.Models
     {
 
         [StringLength(255)]
+        [Required]
         public string Title { get; set; }
 
         [Column("Money")]
@@ -27,10 +28,10 @@ namespace GameStop.Models
         [StringLength(255)]
         public string Brand { get; set; }
 
-        [StringLength(255)]
+        [StringLength(9255)]
         public string Image { get; set; }
 
-        [Range(0,int.MaxValue)]
+        [Range(0, int.MaxValue)]
         public int Count { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
@@ -38,14 +39,48 @@ namespace GameStop.Models
         public int SubCategoryId { get; set; }
         public SubCategory SubCategory { get; set; }
 
-        public IEnumerable<ProductImage> ProductImages { get; set; }
-        public IEnumerable<ProductFeatures> ProductFeatures { get; set; }
-        public IEnumerable<ProductSpecs> ProductSpecs { get; set; }
-        public IEnumerable<ProductLabel> ProductLabels { get; set; }
-        public IEnumerable<ProductCondition> ProductConditions { get; set; }
+        public List<ProductImage> ProductImages { get; set; }
+        public List<ProductFeatures> ProductFeatures { get; set; }
+        public List<ProductDescription> ProductDescriptions { get; set; }
+        public List<ProductSpecs> ProductSpecs { get; set; }
+        public List<ProductLabel> ProductLabels { get; set; }
+        public List<ProductCondition> ProductConditions { get; set; }
+        public IEnumerable<OrderItem> OrderItems { get; set; }
 
         [NotMapped]
+        //[Required]
+        [DisplayName("Image")]
         public IFormFile File { get; set; }
+        [DisplayName("Product Images")]
+        [NotMapped]
+        public IEnumerable<IFormFile> ProductImagesFile { get; set; }
+
+        [DisplayName("Product Features")]
+        [NotMapped]
+        public List<string> ProductFeaturesMain { get; set; } = new List<string>();
+
+        [DisplayName("Product Description")]
+        [NotMapped]
+        public List<string> ProductDescriptionMain { get; set; } = new List<string>();
+
+        [DisplayName("Product Specifications")]
+        [NotMapped]
+        public List<string> ProductSpecsMain { get; set; }
+
+        [NotMapped]
+        public List<int> LabelIds { get; set; } = new List<int>();
+
+        [NotMapped]
+        public List<int> Counts { get; set; } = new List<int>();
+        [NotMapped]
+        public List<int> ConditionIds { get; set; } = new List<int>();
+
+        [NotMapped]
+        public List<int> CondCounts { get; set; } = new List<int>();
+
+
+     
+
 
     }
 }

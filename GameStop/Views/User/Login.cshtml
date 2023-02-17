@@ -2,7 +2,7 @@
 
 
 @{ Layout = null;
-                ViewData["Title"] = "Login"; }
+    ViewData["Title"] = "Login"; }
 
 
 
@@ -35,31 +35,32 @@
         </div>
 
         <form method="post" autocomplete="off">
+            <div class="text text-danger" style="color: red;display: flex; justify-content: center;" asp-validation-summary="ModelOnly"></div>
             <div class="loginPage">
-                <div class="text text-danger" style="color: red;display: flex; justify-content: center;" asp-validation-summary="ModelOnly"></div>
 
                 <div class="loginSection">
                     <div class="loginEmail">
-                        <label for="sign_in_email" class="form-label">Email address</label>
+                        <label asp-for="Email" class="form-label">Email address</label>
                         <div class="login-email-field">
                             <input asp-for="Email" id="sign_in_email" aria-required="true">
                         </div>
                     </div>
                     <div class="loginPass">
-                        <label for="sign_in_passwd" class="form-label">Password</label>
+                        <label asp-for="Password" class="form-label">Password</label>
                         <div class="login-email-field">
-                            <input type="password" maxlength="72" name="password" id="sign_in_passwd">
+                            <input asp-for="Password" maxlength="72" id="sign_in_passwd">
                         </div>
                     </div>
                     <div class="bottomInput">
                         <div class="top-text">
-                            <div class="pull-left">
-                                <input asp-for="RememberMe" type="checkbox">
-                                <label asp-for="RememberMe">Remember me</label>
-                            </div>
-
-                            <div class="pull-right">
-                                <a asp-controller="user" asp-action="password" asp-area="new">Forgot your password?</a>
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox small">
+                                    <input  class="custom-control-input" asp-for="RememberMe">
+                                    <label class="custom-control-label" asp-for="RememberMe">
+                                        Remember
+                                        Me
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>

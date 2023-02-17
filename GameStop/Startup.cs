@@ -54,8 +54,8 @@ namespace GameStop
                 options.Password.RequireNonAlphanumeric = false;
 
                 options.Lockout.AllowedForNewUsers = true;
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromSeconds(35);
-                options.Lockout.MaxFailedAccessAttempts = 4;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromSeconds(15);
+                options.Lockout.MaxFailedAccessAttempts = 15;
 
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
         }
@@ -73,6 +73,7 @@ namespace GameStop
             app.UseStaticFiles();
 
             app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

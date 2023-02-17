@@ -1,72 +1,32 @@
-﻿@model IEnumerable<Product>
+﻿@model PageNationList<Product>
 
 <div class="card-boxes">
     <div id="product-base" class="product-carousel">
         <div id="productCard" class="card-box d-flex flex-wrap col-12 col-lg-12 col-md-6 col-xs-12">
-
             @foreach (Product product in Model)
-            {
-                <div class="card">
+            {<div class="card">
                     <a asp-controller="product" asp-action="detail" asp-route-id="@product.Id">
-
-                        <img src="~/assets/img/@product.Image"
-                             class="card-img-top" alt="">
-
+                        <img src="~/assets/img/products/@product.Image" class="card-img-top" alt="">
                         <div class="card-body">
-                            <div class="card-price d-flex">
-                                @if (product.DiscountedPrice > 0)
-                                {
-                                    <span class="price"></span>
-                                }
-
-                                else
-                                {
-                                    <span class="price">$@product.Price</span>
-                                }
-
-
-                                @if (product.DiscountedPrice > 0)
-                                {
-                                    <span class="currentPrice">$@product.DiscountedPrice</span>
-                                }
-
-                                @if (product.OldPrice > 0)
-                                {
-                                    <span class="price-design">
-                                        <span class="oldPrice">$@product.OldPrice</span>
-                                    </span>
-                                }
-                            </div>
-                            <span class="moreOptions">More Options</span>
+                            <div class="card-price d-flex"> @if (product.DiscountedPrice > 0)
+                            {<span class="price"></span> }
+                            else
+                            { <span class="price">$@product.Price</span>} @if (product.DiscountedPrice > 0)
+                            {<span class="currentPrice">$@product.DiscountedPrice</span>} @if (product.OldPrice > 0)
+                            {<span class="price-design"> <span class="oldPrice">$@product.OldPrice</span> </span>} </div> <span class="moreOptions">More Options</span>
                             <p class="card-text">@product.Title</p>
                             <div class="customer-rating d-flex">
                                 <div class="star-rating4">
                                     <div class="star4"></div>
                                 </div>
-                                <div class="rating-count">
-                                    (3)
-                                </div>
+                                <div class="rating-count"> (3) </div>
                             </div>
-                            <div class="badge-content">
-                                <span class="badge"></span>
-                            </div>
+                            <div class="badge-content"> <span class="badge"></span> </div>
                         </div>
                     </a>
-                </div>
-            }
-
-            @*<nav class="pagination-container">
-
-                    <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
-                    </button>
-                    <div id="pagination-numbers">
-
-                    </div>
-
-
-                    <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
-                    </button>
+                </div>} @*<nav class="pagination-container"> <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page"> </button>
+                    <div id="pagination-numbers"> </div> <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page"> </button>
                 </nav>*@
+            </div>
         </div>
     </div>
-</div>

@@ -1,5 +1,6 @@
 ﻿using GameStop.DAL;
 using GameStop.Models;
+using GameStop.ViewModels;
 using GameStop.ViewModels.Basket;
 using GameStop.ViewModels.Products;
 using Microsoft.AspNetCore.Mvc;
@@ -21,205 +22,211 @@ namespace GameStop.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index(int? id)
+        public async Task<IActionResult> Index(int? id, int page)
         {
-            ProductVM productVM = new ProductVM
-            {
-                Products = await _context.Products.Where(p => p.IsDeleted == false).ToListAsync(),
-                ProductLabels = await _context.ProductLabels.Where(p => p.IsDeleted == false).ToListAsync(),
-                ProductConditions = await _context.ProductConditions.Where(p => p.IsDeleted == false).ToListAsync(),
-            };
+            IQueryable<Product> products = _context.Products
+                .Where(b => b.IsDeleted == false)
+                .Where(c => c.Category.IsDeleted == false)
+                .OrderBy(c => c.Id);
 
-
-            return View(productVM);
+            return View(PageNationList<Product>.Create(products, page, 24));
         }
 
-        public async Task<IActionResult> Matched(int? id)
+        public async Task<IActionResult> Matched(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products
-                 .Where(p => !p.IsDeleted)
-                 .ToListAsync();
+            IQueryable<Product> products = _context.Products
+                .Where(p => p.IsDeleted == false);
 
             if (products == null) return NotFound();
 
-            return ViewComponent("PriceSort", products);
+            return ViewComponent("PriceSort", PageNationList<Product>.Create(products, page, 24));
         }
-        public async Task<IActionResult> LowToHigh(int? id)
+        public async Task<IActionResult> LowToHigh(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products
-                 .OrderBy(m => (m.Price + m.DiscountedPrice))
-                 .ToListAsync();
+            IQueryable<Product> products = _context.Products
+                                 .Where(p => p.IsDeleted == false)
+
+                 .OrderBy(m => (m.Price + m.DiscountedPrice));
 
             if (products == null) return NotFound();
 
-            return ViewComponent("PriceSort", products);
+            return ViewComponent("PriceSort", PageNationList<Product>.Create(products, page, 24));
         }
 
-        public async Task<IActionResult> HighToLow(int? id)
+        public async Task<IActionResult> HighToLow(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products
-                .OrderByDescending(m => (m.Price + m.DiscountedPrice))
-                .ToListAsync();
+            IQueryable<Product> products = _context.Products
+                 .Where(p => p.IsDeleted == false)
+                .OrderByDescending(m => (m.Price + m.DiscountedPrice));
 
             if (products == null) return NotFound();
 
-            return ViewComponent("PriceSort", products);
+            return ViewComponent("PriceSort", PageNationList<Product>.Create(products, page, 24));
         }
 
-        public async Task<IActionResult> AtoZ(int? id)
+        public async Task<IActionResult> AtoZ(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products
-                 .OrderBy(p => p.Title)
-                 .ToListAsync();
+            IQueryable<Product> products = _context.Products
+                 .Where(p => p.IsDeleted == false)
+                 .OrderBy(p => p.Title);
 
             if (products == null) return NotFound();
 
-            return ViewComponent("PriceSort", products);
+            return ViewComponent("PriceSort", PageNationList<Product>.Create(products, page, 24));
         }
 
-        public async Task<IActionResult> ZtoA(int? id)
+        public async Task<IActionResult> ZtoA(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products
-                 .OrderByDescending(p => p.Title)
-                 .ToListAsync();
+            IQueryable<Product> products = _context.Products
+                 .Where(p => p.IsDeleted == false)
+                 .OrderByDescending(p => p.Title);
 
             if (products == null) return NotFound();
 
-            return ViewComponent("PriceSort", products);
+            return ViewComponent("PriceSort", PageNationList<Product>.Create(products, page, 24));
+
         }
 
-        public async Task<IActionResult> OldToNew(int? id)
+        public async Task<IActionResult> OldToNew(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products
-                 .OrderBy(p => p.CreatedAt)
-                 .ToListAsync();
+            IQueryable<Product> products = _context.Products
+                  .Where(p => p.IsDeleted == false)
+                 .OrderBy(p => p.CreatedAt);
 
             if (products == null) return NotFound();
 
-            return ViewComponent("PriceSort", products);
+            return ViewComponent("PriceSort", PageNationList<Product>.Create(products, page, 24));
         }
 
-        public async Task<IActionResult> NewToOld(int? id)
+        public async Task<IActionResult> NewToOld(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products
-                 .OrderByDescending(p => p.CreatedAt)
-                 .ToListAsync();
+            IQueryable<Product> products = _context.Products
+                  .Where(p => p.IsDeleted == false)
+                 .OrderByDescending(p => p.CreatedAt);
 
             if (products == null) return NotFound();
 
-            return ViewComponent("PriceSort", products);
+            return ViewComponent("PriceSort", PageNationList<Product>.Create(products, page, 24));
         }
 
-        public async Task<IActionResult> PriceFilterOne(int? id)
+        public async Task<IActionResult> PriceFilterOne(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products
-                 .Where(p=>p.Price > 0.1 && p.Price < 20)
-                 .OrderBy(p=>p.Price)
-                 .ToListAsync();
+            IQueryable<Product> products = _context.Products
+                 .Where(p => p.Price > 0.1 && p.Price < 10 || p.DiscountedPrice > 0.1 || p.DiscountedPrice < 10)
+                 .Where(p => p.IsDeleted == false)
+                 .OrderBy(m => (m.Price + m.DiscountedPrice));
 
             if (products == null) return NotFound();
 
-            return ViewComponent("PriceSort", products);
+            return ViewComponent("PriceSort", PageNationList<Product>.Create(products, page, 24));
         }
 
-        public async Task<IActionResult> PriceFilterTwo(int? id)
+        public async Task<IActionResult> PriceFilterTwo(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products
-                 .Where(p => p.Price > 10 && p.Price < 25)
-                 .ToListAsync();
+            IQueryable<Product> products = _context.Products
+                 .Where(p => p.Price > 10 && p.Price < 25 || p.DiscountedPrice > 10 && p.DiscountedPrice < 25)
+                  .Where(p => p.IsDeleted == false)
+                 .OrderBy(m => (m.Price + m.DiscountedPrice));
 
             if (products == null) return NotFound();
 
-            return ViewComponent("PriceSort", products);
+            return ViewComponent("PriceSort", PageNationList<Product>.Create(products, page, 24));
+
         }
-        public async Task<IActionResult> PriceFilterThree(int? id)
+        public async Task<IActionResult> PriceFilterThree(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products
-                 .Where(p => p.Price > 25 && p.Price < 50)
-                 .ToListAsync();
+            IQueryable<Product> products = _context.Products
+                 .Where(p => p.Price > 25 && p.Price < 50 ||
+                 p.DiscountedPrice > 25 &&  p.DiscountedPrice < 50)
+                 .Where(p => p.IsDeleted == false)
+                .OrderBy(m => (m.Price + m.DiscountedPrice));
 
             if (products == null) return NotFound();
 
-            return ViewComponent("PriceSort", products);
+            return ViewComponent("PriceSort", PageNationList<Product>.Create(products, page, 24));
+
         }
 
-        public async Task<IActionResult> PriceFilterFour(int? id)
+        public async Task<IActionResult> PriceFilterFour(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products
-                 .Where(p => p.Price > 50 && p.Price < 75)
-                 .ToListAsync();
+            IQueryable<Product> products = _context.Products
+                 .Where(p => p.Price > 50 && p.Price < 75 ||
+                 p.DiscountedPrice > 50 && p.DiscountedPrice < 75)
+                  .Where(p => p.IsDeleted == false)
+                  .OrderBy(m => (m.Price + m.DiscountedPrice));
+
 
             if (products == null) return NotFound();
 
-            return ViewComponent("PriceSort", products);
+            return ViewComponent("PriceSort", PageNationList<Product>.Create(products, page, 24));
+
         }
 
-        public async Task<IActionResult> PriceFilterFive(int? id)
+        public async Task<IActionResult> PriceFilterFive(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products
-                 .Where(p => p.Price > 75 && p.Price < 100)
-                 .ToListAsync();
+            IQueryable<Product> products = _context.Products
+                 .Where(p => p.Price > 75 && p.Price < 100 ||
+                 p.DiscountedPrice > 75 && p.DiscountedPrice < 100)
+                 .Where(p => p.IsDeleted == false)
+                 .OrderBy(m => (m.Price + m.DiscountedPrice));
+
 
             if (products == null) return NotFound();
 
-            return ViewComponent("PriceSort", products);
+            return ViewComponent("PriceSort", PageNationList<Product>.Create(products, page, 24));
+
         }
 
-        public async Task<IActionResult> PriceFilterSix(int? id)
+        public async Task<IActionResult> PriceFilterSix(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products
-                 .Where(p => p.Price > 100 && p.Price < 200)
-                 .ToListAsync();
+            IQueryable<Product> products = _context.Products
+                 .Where(p => p.Price > 100 && p.Price < 200 ||
+                 p.DiscountedPrice > 100 && p.DiscountedPrice < 200)
+                 .Where(p => p.IsDeleted == false)
+                 .OrderBy(m => (m.Price + m.DiscountedPrice));
+
 
             if (products == null) return NotFound();
 
-            return ViewComponent("PriceSort", products);
+            return ViewComponent("PriceSort", PageNationList<Product>.Create(products, page, 24));
+
         }
 
 
-        public async Task<IActionResult> PriceFilterSeven(int? id)
+        public async Task<IActionResult> PriceFilterSeven(int? id, int page)
         {
             if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products
-                 .Where(p => p.Price > 200 && p.Price < 300)
-                 .ToListAsync();
-
+            IQueryable<Product> products = _context.Products
+                 .Where(p => p.Price > 200 && p.Price < 300 ||
+                 p.DiscountedPrice > 200 && p.DiscountedPrice < 300)
+                 .Where(p => p.IsDeleted == false)
+                 .OrderBy(m => (m.Price + m.DiscountedPrice));
             if (products == null) return NotFound();
 
-            return ViewComponent("PriceSort", products);
-        }
+            return ViewComponent("PriceSort", PageNationList<Product>.Create(products, page, 24));
 
-        public async Task<IActionResult> PriceFilterEight(int? id)
-        {
-            if (id == null) return NotFound();
-            IEnumerable<Product> products = await _context.Products
-                 .Where(p => p.Price < 300)
-                 .ToListAsync();
-
-            if (products == null) return NotFound();
-
-            return ViewComponent("PriceSort", products);
         }
 
         public async Task<IActionResult> PriceFilterEighttt(int? id)
         {
             if (id == null) return NotFound();
             IEnumerable<ProductCondition> products = await _context.ProductConditions
-                 .Where(p=>p.Product.IsDeleted == false)
-                 .OrderBy(p=>p.Product)
+                 .Where(p => p.Product.IsDeleted == false)
+                 .Where(p => p.IsDeleted == false)
+                 .OrderBy(p => p.Product)
                  .ToListAsync();
 
             if (products == null) return NotFound();
@@ -264,13 +271,15 @@ namespace GameStop.Controllers
             ProductDetailVM productDetailVM = new ProductDetailVM
             {
                 Product = _context.Products.Include(p => p.ProductImages)
-                .Include(p => p.ProductFeatures).
-                Include(p => p.ProductSpecs).
+                .Include(p => p.ProductFeatures)
+                .Include(p => p.ProductDescriptions)
+                .Include(p => p.ProductSpecs).
                 Include(p => p.ProductLabels).
                 ThenInclude(p => p.Label)
                 .Include(p => p.ProductConditions).
                 ThenInclude(p => p.Condition)
                 .Where(p => p.ProductLabels.Any(p => p.Count > 0))
+                .Where(p => p.ProductConditions.Any(p => p.Count > 0))
                 .FirstOrDefault(p => p.IsDeleted == false && p.Id == id),
             };
 

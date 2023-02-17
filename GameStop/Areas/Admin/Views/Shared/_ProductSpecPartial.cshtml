@@ -1,0 +1,81 @@
+﻿@model List<ProductSpecs>
+
+
+
+
+@foreach (ProductSpecs productSpecs in Model)
+{
+    <div class="form-group">
+        <label asp-for="@productSpecs.UPC" class="form-label"></label>
+        <input asp-for="@productSpecs.UPC" name="ProductSpecsMain" class="form-control">
+        <span asp-validation-for="@productSpecs.UPC" class="text text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@productSpecs.IsOnline" class="form-label"></label>
+        <input asp-for="@productSpecs.IsOnline" name="ProductSpecsMain[]" class="form-control">
+        <span asp-validation-for="@productSpecs.IsOnline" class="text text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@productSpecs.Franchise" class="form-label"></label>
+        <input asp-for="@productSpecs.Franchise" name="ProductSpecsMain[]" class="form-control">
+        <span asp-validation-for="@productSpecs.Franchise" class="text text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@productSpecs.PublisherName" class="form-label"></label>
+        <input asp-for="@productSpecs.PublisherName" name="ProductSpecsMain[]" class="form-control">
+        <span asp-validation-for="@productSpecs.PublisherName" class="text text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@productSpecs.DeveloperName" class="form-label"></label>
+        <input asp-for="@productSpecs.DeveloperName" name="ProductSpecsMain" class="form-control">
+        <span asp-validation-for="@productSpecs.DeveloperName" class="text text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@productSpecs.Manufacturer" class="form-label"></label>
+        <input asp-for="@productSpecs.Manufacturer" name="ProductSpecsMain[]" class="form-control">
+        <span asp-validation-for="@productSpecs.Manufacturer" class="text text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="@productSpecs.ProdLength" class="form-label"></label>
+        <input asp-for="@productSpecs.ProdLength" name="ProductSpecsMain[]" class="form-control">
+        <span asp-validation-for="@productSpecs.ProdLength" class="text text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@productSpecs.ProdWidth" class="form-label"></label>
+        <input asp-for="@productSpecs.ProdWidth" name="ProductSpecsMain[]" class="form-control">
+        <span asp-validation-for="@productSpecs.ProdWidth" class="text text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@productSpecs.ProdHeight" class="form-label"></label>
+        <input asp-for="@productSpecs.ProdHeight" name="ProductSpecsMain[]" class="form-control">
+        <span asp-validation-for="@productSpecs.ProdHeight" class="text text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@productSpecs.UnitOfMeasure" class="form-label"></label>
+        <input asp-for="@productSpecs.UnitOfMeasure" name="ProductSpecsMain[]" class="form-control">
+        <span asp-validation-for="@productSpecs.UnitOfMeasure" class="text text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@productSpecs.ProdWeight" class="form-label"></label>
+        <input asp-for="@productSpecs.ProdWeight" name="ProductSpecsMain[]" class="form-control">
+        <span asp-validation-for="@productSpecs.ProdWeight" class="text text-danger"></span>
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@productSpecs.WeightUntOfMeasure" class="form-label"></label>
+        <input asp-for="@productSpecs.WeightUntOfMeasure" name="ProductSpecsMain[]" class="form-control">
+        <span asp-validation-for="@productSpecs.WeightUntOfMeasure" class="text text-danger"></span>
+    </div>
+
+
+
+}

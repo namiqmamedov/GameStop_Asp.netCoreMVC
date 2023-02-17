@@ -6,11 +6,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using GameStop.Areas.ViewModels;
+using GameStop.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GameStop.Areas.Admin.Controllers
 {
     [Area("admin")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
+
     public class CategoryController : Controller
     {
         private readonly AppDbContext _context;
@@ -26,7 +29,6 @@ namespace GameStop.Areas.Admin.Controllers
 
             return View(PageNationList<Category>.Create(categories,page,5));
         }
-
 
         public IActionResult Create()
         {
@@ -60,10 +62,15 @@ namespace GameStop.Areas.Admin.Controllers
 
         public async Task<IActionResult> Update(int? id)
         {
+            ViewBag.Category = await _context.Categories.Where(p => !p.IsDeleted).ToListAsync();
+            ViewBag.SubCategory = await _context.SubCategories.Where(p => !p.IsDeleted).ToListAsync();
+
+
             if (id == null)
             {
                 return BadRequest();
             }
+
 
             Category category = await _context.Categories.FirstOrDefaultAsync(p => p.Id == id);
 
@@ -79,6 +86,7 @@ namespace GameStop.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(int? id, Category category)
         {
+
             if (id == null)
             {
                 return BadRequest();
@@ -89,12 +97,12 @@ namespace GameStop.Areas.Admin.Controllers
                 return BadRequest();
             }
 
-            if (await _context.Categories.AnyAsync(p => p.Id != category.Id && !p.IsDeleted && p.Name.ToLower().Trim() == category.Name.ToLower().Trim() && !p.IsDeleted))
-            {
-                ModelState.AddModelError("Name", $"{category.Name} is already exists");
+            //if (await _context.Categories.AnyAsync(p => p.Id != category.Id && !p.IsDeleted && p.Name.ToLower().Trim() == category.Name.ToLower().Trim() && !p.IsDeleted))
+            //{
+            //    ModelState.AddModelError("Name", $"{category.Name} is already exists");
 
-                return View();
-            }
+            //    return View();
+            //}
 
             Category dbCategory = await _context.Categories.FirstOrDefaultAsync(p => p.Id == id);
 
@@ -104,7 +112,6 @@ namespace GameStop.Areas.Admin.Controllers
             }
 
             dbCategory.Name = category.Name;
-            dbCategory.CreatedAt = DateTime.Now;
             dbCategory.UpdatedAt = DateTime.Now;
 
             await _context.SaveChangesAsync();
@@ -230,7 +237,6 @@ namespace GameStop.Areas.Admin.Controllers
 
             return PartialView("_CategoryIndexPartial", PageNationList<Category>.Create(categories, page, 5));
         }
-
 
         public async Task<IActionResult> AtoZ(int? id,int page)
         {

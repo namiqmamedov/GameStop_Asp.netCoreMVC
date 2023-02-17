@@ -13,12 +13,14 @@
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="text-right d-flex">
+            <div class="text-right d-flex insider">
                 <div class="shopping">
-                    <a href="#" style="margin: 0 15px;">
+               
+                    <a href="#">
                         <i class="fa-solid fa-shop"></i>
-                        @Model.Settings.FirstOrDefault(s => s.Key == "Store Name").Value
+                        @Html.Raw(Model.Settings.FirstOrDefault(s => s.Key == "Store Name").Value)
                     </a>
+                        
                 </div>
                 <div class="check-order">
                     <a asp-controller="user" asp-action="index">
@@ -38,7 +40,17 @@
     <div class="promo">
         <div class="text">
             <a style="color: @Model.Settings.FirstOrDefault(p=>p.Key == "Promo Color").Value;" asp-controller="powerup" asp-action="index">
-                @Html.Raw(Model.Settings.FirstOrDefault(s => s.Key == "Promo Text").Value)
+                @*@Html.Raw(Model.Settings.FirstOrDefault(s => s.Key == "Promo Text").Value)*@
+                <span>
+                    <div class="main-background-price">
+                        @*<p>Take An Extra 20% Off</p>
+
+                            <p>Clearance Prices.*</p>*@
+
+                        @Html.Raw(Model.Settings.FirstOrDefault(s => s.Key == "Promo Text").Value)
+                    </div>
+                </span>
+
             </a>
 
         </div>
@@ -106,33 +118,33 @@
 
                                         @*<a asp-controller="category" asp-action="CategoryMain" asp-route-id="@category.Id" asp-route-subId="@category.SubCategories.Select(x=>x.Id).FirstOrDefault()">*@
                                         <input type="checkbox" id="item-@category.For" name="item-@category.For" class="m-menu__checkbox">
-                                            <div id="m-menu2" class="m-menu">
-                                                <div class="m-menu__header">
-                                                    <div class="back-label">
-                                                        <label onclick="backNav()" asp-for="@category.For" class="m-menu__toggle" for="item-@category.For">
-                                                            <i id="backNav" class="fa-solid fa-chevron-left"></i>
-                                                            <span class="prev">Back</span>
-                                                        </label>
-
-                                                    </div>
+                                        <div id="m-menu2" class="m-menu">
+                                            <div class="m-menu__header">
+                                                <div class="back-label">
+                                                    <label onclick="backNav()" asp-for="@category.For" class="m-menu__toggle" for="item-@category.For">
+                                                        <i id="backNav" class="fa-solid fa-chevron-left"></i>
+                                                        <span class="prev">Back</span>
+                                                    </label>
 
                                                 </div>
-                                                <ul class="menu-ul-1">
-                                                    <div class="category-games">
-                                                        <a asp-route-id="@category.Id">
-                                                            <span>@category.Name</span>
-                                                        </a>
-                                                    </div>
-
-                                                    @foreach (SubCategory item in Model.SubCategories)
-                                                    {
-                                                        <li><label for="item-@item.For"><a asp-controller="product" asp-action="index" asp-route-id="@item.Id">@item.Name</a></label></li>
-                                                    }
-                                                </ul>
-
 
                                             </div>
-                                           @*</a>*@
+                                            <ul class="menu-ul-1">
+                                                <div class="category-games">
+                                                    <a asp-route-id="@category.Id">
+                                                        <span>@category.Name</span>
+                                                    </a>
+                                                </div>
+
+                                                @foreach (SubCategory item in Model.SubCategories)
+                                                {
+                                                    <li><label for="item-@item.For"><a asp-controller="product" asp-action="index" asp-route-id="@item.Id">@item.Name</a></label></li>
+                                                }
+                                            </ul>
+
+
+                                        </div>
+                                        @*</a>*@
 
                                     </li>
                                 }
@@ -148,9 +160,9 @@
 
                     <div class="header-brand">
                         <a asp-controller="home" asp-action="index">
-                            <img class="nav-logo"
-                                 src="https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/dwcf0a1c6d/images/svg-icons/logo-gs-mono.svg"
-                                 alt="Logo">
+                            <div class="nav-logo">
+                                @Html.Raw(Model.Settings.FirstOrDefault(p => p.Key == "Logo").Value)
+                            </div>
                         </a>
                     </div>
 
@@ -162,7 +174,7 @@
                                     <div class="search">
 
                                         <i class="fa fa-search"></i>
-                                        <input type="search" id="inputSearch" name="srcInput" data-url="http://localhost:42389/product/search" class="form-control" placeholder="Search games,consoles & more" autocomplete="off">
+                                        <input type="search" id="inputSearch" name="srcInput" data-url="http://gamestopp-001-site1.atempurl.com/product/search" class="form-control" placeholder="Search games,consoles & more" autocomplete="off">
                                         <svg class="close_button" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                             <path fill="none" d="M0 0h24v24H0V0z"></path>
                                             <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path>
@@ -217,21 +229,28 @@
                             </div>
 
                             <div class="sign-in">
-                                <a asp-controller="user" asp-action="login">
-                                    <div class="icon">
-                                        <i class="fa-regular fa-user"></i>
-                                    </div>
-                                    <div class="text">
-                                        @if (User.Identity.IsAuthenticated)
-                                        {
-                                            <span>@User.Identity.Name</span>
-                                        }
-                                        else
-                                        {
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <a asp-controller="user" asp-action="profile">
+                                        <div class="icon">
+                                            <i class="fa-regular fa-user"></i>
+                                        </div>
+                                        <div class="text">
+                                            <span>Account</span>
+                                        </div>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a asp-controller="user" asp-action="login">
+                                        <div class="icon">
+                                            <i class="fa-regular fa-user"></i>
+                                        </div>
+                                        <div class="text">
                                             <span>Sign In</span>
-                                        }
-                                    </div>
-                                </a>
+                                        </div>
+                                    </a>
+                                }
                             </div>
 
                             <div id="mini-cart" class="cart">

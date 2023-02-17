@@ -1,0 +1,408 @@
+﻿@model Product
+@{
+
+    ViewData["Title"] = "Update";
+
+}
+
+<h1>Update Product</h1>
+<script src="~/assets/ckeditor5-build-classic/ckeditor.js"></script>
+<script async charset="utf-8" src="//cdn.embedly.com/widgets/platform.js"></script>
+<div class="content">
+    <div class="main1 product-index">
+        <div class="row">
+            <form method="post" enctype="multipart/form-data">
+                <div class="mb-3 form-data">
+
+                    <div class="form-group">
+                        <label asp-for="Title" class="form-label"></label>
+                        <input asp-for="Title" class="form-control">
+                        <span asp-validation-for="Title" class="text text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Price" class="form-label"></label>
+                        <input asp-for="Price" class="form-control">
+                        <span asp-validation-for="Price" class="text text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="DiscountedPrice" class="form-label"></label>
+                        <input asp-for="DiscountedPrice" class="form-control">
+                        <span asp-validation-for="DiscountedPrice" class="text text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="OldPrice" class="form-label"></label>
+                        <input asp-for="OldPrice" class="form-control">
+                        <span asp-validation-for="OldPrice" class="text text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Count" class="form-label"></label>
+                        <input asp-for="Count" class="form-control">
+                        <span asp-validation-for="Count" class="text text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Brand" class="form-label"></label>
+                        <input asp-for="Brand" class="form-control">
+                        <span asp-validation-for="Brand" class="text text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="File"></label>
+                        <input asp-for="File" type="file" accept="image/jpeg" class="form-control">
+                        <span asp-validation-for="File " class="text text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ProductImagesFile"></label>
+                        <input asp-for="ProductImagesFile" type="file" multiple accept="image/jpeg" class="form-control">
+
+                        <div class="d-flex productImages">
+                            @await Html.PartialAsync("_ProductImagePartial", Model.ProductImages)
+                        </div>
+
+                        <span asp-validation-for="ProductImagesFile" class="text text-danger"></span>
+                    </div>
+
+                    <label class="cat_text">Category</label>
+
+                    <div class="category-box d-flex">
+                        <div class="select-box">
+
+                            <select asp-for="CategoryId" asp-items="new SelectList(ViewBag.Category,nameof(Category.Id),nameof(Category.Name))">
+                                @*<option>Coffee</option>
+                                    <option>Tea</option>
+                                    <option>Juice</option>
+                                    <option selected>Cocktail</option>*@
+                            </select>
+                            <span class="text text-danger" asp-validation-for="CategoryId"> </span>
+                        </div>
+
+                        <div class="select-box">
+                            <label></label>
+
+                            <select asp-for="SubCategoryId" asp-items="new SelectList(ViewBag.SubCategory,nameof(SubCategory.Id),nameof(SubCategory.Name))">
+                                @*<option>Coffee</option>
+                                    <option>Tea</option>
+                                    <option>Juice</option>
+                                    <option selected>Cocktail</option>*@
+                            </select>
+                            <span class="text text-danger" asp-validation-for="SubCategoryId"> </span>
+                        </div>
+                    </div>
+
+
+                    <div class="all-accordion">
+                        <div id="accordionMain">
+                            <div class="accordionContent">
+                                <div class="faq-accordion-section">
+                                    <details class="accordion">
+                                        <summary class="accordion__title">
+                                            <h3><button>Feature</button></h3>
+                                        </summary>
+                                        <div class="accordion__content">
+                                            <div class="accordion__desc">
+                                                <div class="form-group">
+                                                    @await Html.PartialAsync("_ProductFeaturePartial", Model.ProductFeatures)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div @*class="accordionDesc"*@ id="accordionMain">
+                            <div class="accordionContent">
+                                <div class="faq-accordion-section">
+                                    <details class="accordion">
+                                        <summary class="accordion__title">
+                                            <h3><button>Description</button></h3>
+                                        </summary>
+                                        <div class="accordion__content">
+                                            <div class="accordion__desc">
+                                                <div class="form-group">
+                                                    @await Html.PartialAsync("_ProductDescriptionPartial", Model.ProductDescriptions)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="accordionMain">
+                            <div class="accordionContent">
+                                <div class="faq-accordion-section">
+                                    <details class="accordion">
+                                        <summary class="accordion__title">
+                                            <h3><button>Platform</button></h3>
+                                        </summary>
+                                        <div class="accordion__content">
+                                            <div class="accordion__desc">
+                                                <div class="InputContainer">
+                                                    <div class="LabelAdd">
+                                                        <div class="contentDynm">
+                                                            @if (Model.ProductLabels != null)
+                                                            {
+                                                                @for (int i = 0; i < Model.ProductLabels.Count(); i++)
+                                                                {
+                                                                    <div class="col-lg-5">
+                                                                        <div class="form-group">
+                                                                            <label>Select Platform</label>
+                                                                            <select class="form-control" name="LabelIds[]" asp-items="@new SelectList(ViewBag.Label, nameof(Label.Id), nameof(Label.Name),  Model.ProductLabels[i].Label?.Id)">
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="countMaster" class="col-lg-5">
+                                                                        <div class="form-group">
+                                                                            <label>Enter Count</label>
+                                                                            <input class="form-control" name="CondCounts[]" asp-for="@Model.ProductLabels[i].Count" placeholder="Enter Count" />
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="addInputButton">
+                                                                        <a asp-action="getlabelcountt" id="inputadding">
+                                                                            <i class="fa-solid fa-plus"></i>
+                                                                        </a>
+
+                                                                        @*<a class="removeLabel" id="inputadding" asp-area="admin" asp-controller="product" asp-action="removelabel" asp-route-id="@Model.ProductLabels.Select(x=>x.Id).ToList()">
+                                                                                <i class="fa-solid fa-minus"></i>
+                                                                            </a>*@
+
+                                                                    </div>
+                                                                }
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="accordionMain">
+                            <div class="accordionContent">
+                                <div class="faq-accordion-section">
+                                    <details class="accordion">
+                                        <summary class="accordion__title">
+                                            <h3><button>Condition</button></h3>
+                                        </summary>
+                                        <div class="accordion__content">
+                                            <div class="accordion__desc">
+                                                <div class="InputContainer1">
+                                                    <div class="LabelAdd1">
+                                                        <div class="contentDynm1">
+                                                            @if (Model.ProductConditions != null)
+                                                            {
+                                                                @for (int i = 0; i < Model.ProductConditions.Count(); i++)
+                                                                {
+                                                                    <div class="col-lg-5">
+                                                                        <div class="form-group">
+                                                                            <label>Select Condition</label>
+                                                                            <select class="form-control" name="ConditionIds" asp-items="@new SelectList(ViewBag.Condition, nameof(Condition.Id), nameof(Condition.Name),  Model.ProductConditions[i].Condition?.Id)">
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="countMaster" class="col-lg-5">
+                                                                        <div class="form-group">
+                                                                            <label>Enter Count</label>
+                                                                            <input class="form-control" name="Counts[]" asp-for="@Model.ProductConditions[i].Count" placeholder="Enter Count" />
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!--<div class="addInputButton">
+                                                                    <a asp-action="GetLabelCount" id="inputadding">
+                                                                        <i class="fa-solid fa-plus"></i>
+                                                                    </a>-->
+
+                                                                    @*<a class="removeLabel" id="inputadding" asp-area="admin" asp-controller="product" asp-action="removelabel" asp-route-id="@Model.ProductLabels.Select(x=>x.Id).ToList()">
+                                                                            <i class="fa-solid fa-minus"></i>
+                                                                        </a>*@
+
+                                                                    <!--</div>-->
+                                                                }
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </details>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Script{
+    <partial name="_ValidationPartial">
+
+        <script>
+
+            $(document).on("click", "#inputadding", function (e) {
+                e.preventDefault();
+                let url = $(this).attr("href")
+                fetch(url).then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    }
+                }).then(data => {
+                    $(".LabelAdd").append(data);
+                })
+            })
+
+
+        </script>
+
+        <script>
+
+
+
+    class MyUploadAdapter {
+        constructor(loader) {
+            // The file loader instance to use during the upload. It sounds scary but do not
+            // worry — the loader will be passed into the adapter later on in this guide.
+            this.loader = loader;
+        }
+
+        // More methods.
+        // ...
+
+        upload() {
+            return this.loader.file
+                .then(file => new Promise((resolve, reject) => {
+                    this._initRequest();
+                    this._initListeners(resolve, reject, file);
+                    this._sendRequest(file);
+                }));
+        }
+
+        // Aborts the upload process.
+        abort() {
+            if (this.xhr) {
+                this.xhr.abort();
+            }
+        }
+
+
+
+        _initRequest() {
+            const xhr = this.xhr = new XMLHttpRequest();
+
+            // Note that your request may look different. It is up to you and your editor
+            // integration to choose the right communication channel. This example uses
+            // a POST request with JSON as a data structure but your configuration
+            // could be different.
+            xhr.open('POST', '@Url.Action("UploadImage", "Setting")', true);
+            xhr.responseType = 'json';
+        }
+
+        _initListeners(resolve, reject, file) {
+            const xhr = this.xhr;
+            const loader = this.loader;
+            const genericErrorText = `Couldn't upload file: ${file.name}.`;
+
+            xhr.addEventListener('error', () => reject(genericErrorText));
+            xhr.addEventListener('abort', () => reject());
+            xhr.addEventListener('load', () => {
+                const response = xhr.response;
+
+                // This example assumes the XHR server's "response" object will come with
+                // an "error" which has its own "message" that can be passed to reject()
+                // in the upload promise.
+                //
+                // Your integration may handle upload errors in a different way so make sure
+                // it is done properly. The reject() function must be called when the upload fails.
+                if (!response || response.error) {
+                    return reject(response && response.error ? response.error.message : genericErrorText);
+                }
+
+                // If the upload is successful, resolve the upload promise with an object containing
+                // at least the "default" URL, pointing to the image on the server.
+                // This URL will be used to display the image in the content. Learn more in the
+                // UploadAdapter#upload documentation.
+                resolve({
+                    default: response.url
+                });
+            });
+
+            // Upload progress when it is supported. The file loader has the #uploadTotal and #uploaded
+            // properties which are used e.g. to display the upload progress bar in the editor
+            // user interface.
+            if (xhr.upload) {
+                xhr.upload.addEventListener('progress', evt => {
+                    if (evt.lengthComputable) {
+                        loader.uploadTotal = evt.total;
+                        loader.uploaded = evt.loaded;
+                    }
+                });
+            }
+        }
+
+        _sendRequest(file) {
+            // Prepare the form data.
+            const data = new FormData();
+
+            data.append('upload', file);
+
+            // Important note: This is the right place to implement security mechanisms
+            // like authentication and CSRF protection. For instance, you can use
+            // XMLHttpRequest.setRequestHeader() to set the request headers containing
+            // the CSRF token generated earlier by your application.
+
+            // Send the request.
+            this.xhr.send(data);
+        }
+    } function MyCustomUploadAdapterPlugin(editor) {
+            editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+                // Configure the URL to the upload script in your back-end here!
+                return new MyUploadAdapter(loader);
+            };
+    }
+
+
+    ClassicEditor
+        .create(document.querySelector('#inputCKftr'), {
+            //autoParagraph: false,
+
+            extraPlugins: [MyCustomUploadAdapterPlugin],
+        })
+        .then(editor => {
+            window.editor = editor;
+        })
+        .catch(err => {
+            console.error(err.stack);
+        });
+
+
+    ClassicEditor
+        .create(document.querySelector('#inputCKdesc'), {
+            mediaEmbed: {
+                previewsInData: true
+            },
+            extraPlugins: [MyCustomUploadAdapterPlugin],
+        })
+        .then(editor => {
+            window.editor = editor;
+        })
+        .catch(err => {
+            console.error(err.stack);
+        });
+
+
+        </script>
+}

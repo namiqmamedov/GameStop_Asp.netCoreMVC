@@ -8,42 +8,37 @@ using System.Threading.Tasks;
 
 namespace GameStop.Extension
 {
-    public static class FileManager
-    {
-        public static string CreateImage(this IFormFile file,IWebHostEnvironment env, params string[] folders)
+        public static class FileManager
         {
-            string fileName = $"{Guid.NewGuid()}_{DateTime.Now.ToString("yyyyMMddHHmmssffff")}_{file.FileName}";
-
-            string path = env.WebRootPath;
-
-            foreach (string folder in folders)
+            public static string CreateImage(this IFormFile file, IWebHostEnvironment env, params string[] folders)
             {
-                path = Path.Combine(path, folder);
+                string fileName = $"{Guid.NewGuid()}_{DateTime.Now.ToString("yyyyMMddHHmmssffff")}_{file.FileName}";
+
+                string path = env.WebRootPath;
+
+                foreach (string folder in folders)
+                {
+                    path = Path.Combine(path, folder);
+                }
+
+                path = Path.Combine(path, fileName);
+
+                using (FileStream fileStream = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(fileStream);
+                }
+
+                return fileName;
             }
 
-            foreach (string folder in folders)
+            public static bool CheckFileSize(this IFormFile file, double size)
             {
-                path = Path.Combine(path, folder);
+                return Math.Round((double)file.Length / 1024) < size;
             }
 
-            path = Path.Combine(path, fileName);
-
-            using (FileStream fileStream = new FileStream(path, FileMode.Create))
+            public static bool CheckFileType(this IFormFile file, string contentType)
             {
-                file.CopyTo(fileStream);
+                return file.ContentType == contentType;
             }
-
-            return fileName;
         }
-
-        public static bool CheckFileSize(this IFormFile file, double size)
-        {
-            return Math.Round((double)file.Length / 1024) < size;
-        }
-
-        public static bool CheckFileType(this IFormFile file, string contentType)
-        {
-            return file.ContentType == contentType;
-        }
-    }
 }

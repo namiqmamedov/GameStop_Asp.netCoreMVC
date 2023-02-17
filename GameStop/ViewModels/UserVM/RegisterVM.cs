@@ -14,15 +14,18 @@ namespace GameStop.ViewModels.UserVM
         [Required]
         [StringLength(255)]
         public string Surname { get; set; }
+
         [Required]
         [StringLength(255)]
-        public string UserName { get; set; }
+        public string Username { get; set; }
         [Required]
         [StringLength(255)]
         [EmailAddress]
         public string Email { get; set; }
         [Required]
         [StringLength(72)]
+        [DataType(DataType.Password)]
+        [RegularExpression(@"^((?=.*[a-z])(?=.*[A-Z])(?=.*\d)).+$")]
         public string Password { get; set; }
         [Required]
         [StringLength(72)]

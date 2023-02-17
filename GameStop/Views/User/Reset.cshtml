@@ -1,0 +1,128 @@
+﻿@model ProfileVM
+@{ ViewData["Title"] = "Password"; }
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | GameStop</title>
+    <link rel="stylesheet" href="~/assets/style/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css” />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+          integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+          integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="shortcit icon"
+          href="https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/dwfa874e29/images/favicons/favicon.ico">
+    <link rel="icon" href="https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/dwfa874e29/images/favicons/favicon.ico">
+</head>
+
+
+<div class="account-settings">
+    <div class="settings-acc">
+        <div class="account-dashboard-header">
+            <div class="container">
+                <div class="col-8 mt-auto mb-auto">
+                    <h3 class="text-white">Welcome, Namiq</h3>
+                </div>
+                <div class="col-4 mt-auto mb-auto">
+                    <div class="pull-right">
+                        <a class="logout_acc" href="#">Log out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="account-dashboard">
+                    <div class="my-acc-settings col-3">
+                        <div class="leftSection">
+                            <div class="card-acc">
+                                <div class="card-body-acc">
+                                    <ul class="list-group-acc">
+                                        <li class="list-acc d-flex">
+                                            <img alt="my-account"
+                                                 src="https://www.gamestop.com/on/demandware.static/-/Sites-gamestop-us-Library/default/dw0a160614/Account-dashboard-Icons/my-account.svg"
+                                                 title="my-account">
+                                            <p class="acc-header">My Account</p>
+                                        </li>
+                                        <ul id="list-acc" class="list-group-acc">
+                                            <li class="list-group-item">
+                                                <p class="acc-header1">Account Setting</p>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <a class="dashboard-nav-link" asp-controller="account" asp-action="index">
+                                                    Personal
+                                                    Data
+                                                </a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <a class="dashboard-nav-link" asp-controller="user" asp-action="reset">Password</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <a class="dashboard-nav-link" asp-controller="account" asp-action="address">Address Book</a>
+                                            </li>
+
+                                        </ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="data-section col-9">
+                        <div class="acc-data">
+
+
+                            <div class="card">
+                                <div class="info">
+                                    <h1 class="acc-center-header">Change Password</h1>
+                                </div>
+                                <div class="forms">
+                                    <div class="text text-danger" asp-validation-summary="ModelOnly"></div>
+                                    <form method="POST" autocomplete="off">
+                                        <div class="inputs">
+                                            <label class="field-pass" for="currentPass">
+                                                Current Password<span class="form-indicator">*</span>
+                                            </label> <input asp-for="CurrentPassword" id="currentPass" maxlength="72" autocomplete="off">
+                                            <span class="text text-danger" asp-validation-for="CurrentPassword"></span>
+
+                                        </div>
+                                        <div class="inputs">
+                                            <label for="email_acc" class="field-pass">New password<span class="form-indicator">*</span></label>
+                                            <input asp-for="Password" id="email_acc" autocomplete="off" aria-required="true">
+                                            <span class="text text-danger" asp-validation-for="Password"></span>
+                                        </div>
+
+                                        <div class="inputs">
+                                            <label for="phone_acc" class="field-pass">Confirm new password<span class="form-indicator">*</span></label>
+                                            <input asp-for="CurrentPassword" id="phone_acc" autocomplete="off" aria-required="true">
+                                            <span class="text text-danger" asp-validation-for="CurrentPassword"></span>
+
+                                        </div>
+
+                                        <div class="save-button-form w-100">
+                                            <button id="savebutton" type="submit" class="btn ">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

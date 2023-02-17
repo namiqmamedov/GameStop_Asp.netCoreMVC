@@ -14,6 +14,7 @@ namespace GameStop.ViewModels.UserVM
         public string Email { get; set; }
         [Required]
         [StringLength(72)]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
         public bool RememberMe { get; set; }
     }

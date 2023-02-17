@@ -97,6 +97,12 @@
     <Compile Remove="Migrations\20230212160012_UpdatedProductTableRemoveNullablePropForAllPrice.Designer.cs" />
     <Compile Remove="Migrations\20230214164228_UpdatedBaseEntity.cs" />
     <Compile Remove="Migrations\20230214164228_UpdatedBaseEntity.Designer.cs" />
+    <Compile Remove="Migrations\20230221181903_test.cs" />
+    <Compile Remove="Migrations\20230221181903_test.Designer.cs" />
+    <Compile Remove="Migrations\20230222212731_RemovedCountForProductCondition.cs" />
+    <Compile Remove="Migrations\20230222212731_RemovedCountForProductCondition.Designer.cs" />
+    <Compile Remove="Migrations\20230223000714_test.cs" />
+    <Compile Remove="Migrations\20230223000714_test.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -108,36 +114,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\admin\fonts\feathere8ab.svg" />
-    <None Include="wwwroot\admin\fonts\la-brands-400.svg" />
-    <None Include="wwwroot\admin\fonts\la-brands-400.woff2" />
-    <None Include="wwwroot\admin\fonts\la-regular-400.svg" />
-    <None Include="wwwroot\admin\fonts\la-regular-400.woff2" />
-    <None Include="wwwroot\admin\fonts\la-solid-900.svg" />
-    <None Include="wwwroot\admin\fonts\la-solid-900.woff2" />
-    <None Include="wwwroot\admin\js\app.min.js" />
-    <None Include="wwwroot\admin\js\pages\calendar.js" />
-    <None Include="wwwroot\admin\js\pages\chart.js" />
-    <None Include="wwwroot\admin\js\pages\chat.js" />
-    <None Include="wwwroot\admin\js\pages\dashboard.js" />
-    <None Include="wwwroot\admin\js\pages\form-validation.js" />
-    <None Include="wwwroot\admin\js\pages\icon.js" />
-    <None Include="wwwroot\admin\js\pages\mail.js" />
-    <None Include="wwwroot\admin\js\pages\user-list.js" />
-    <None Include="wwwroot\admin\js\vendors.min.js" />
-    <None Include="wwwroot\admin\vendors\apexcharts\dist\apexcharts.min.js" />
-    <None Include="wwwroot\admin\vendors\datatables\dataTables.bootstrap.min.js" />
-    <None Include="wwwroot\admin\vendors\datatables\jquery.dataTables.min.js" />
-    <None Include="wwwroot\admin\vendors\fullcalendar\lib\main.min.js" />
-    <None Include="wwwroot\admin\vendors\jquery-validation\jquery.validate.min.js" />
-    <None Include="wwwroot\admin\vendors\quill\quill.min.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ViewModels\PagenationList\" />
   </ItemGroup>
 
 </Project>

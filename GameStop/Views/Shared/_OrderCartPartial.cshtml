@@ -1,0 +1,54 @@
+﻿@model List<BasketVM>
+
+
+@foreach (BasketVM cart in Model)
+{
+    <div class="save-price">
+        You Save:
+        <span class="save-price-main">$ @(Model.Sum(b=>b.Count * b.Price + b.DiscountedPrice).ToString("F2")) USD</span>
+    </div>
+    <div class="row">
+        <div class="col-8">
+
+            <div class="cart-price-section">
+                <p class="font-bold sub-title-os">
+                    Total
+                </p>
+            </div>
+        </div>
+        <div class="col-4">
+            <p class="cart-total-price"> $94.29</p>
+        </div>
+    </div>
+}
+
+<div class="checkout-and-pay col-11">
+    <button type="submit" form="orderform " class="checkout-btn" href="#  ">
+        <span class="checkout-text">
+            Place Order
+        </span>
+    </button>
+</div>
+<div class="legal">
+    By tapping Place Order, you agree to GameStop's <a href="PrivacyPolicy.html" target="_blank">Privacy Policy</a> and <a href="~/assets/condition.html" target="_blank">Conditions of Use</a>.
+</div>
+
+<div class="card-header">
+    <h4 class="sub-header">Cart</h4>
+    (2 items)
+</div>
+
+<div class="shipment-items-section">
+    <div class="shipment-items">
+        <div class="item-thumbnail">
+            <div class="item-image">
+                <img class="product-image" src="https://media.gamestop.com/i/gamestop/11179571/UNCHARTED-Legacy-of-Thieves-Collection----PlayStation-5?$thumb$" alt="">
+            </div>
+        </div>
+        <div class="item-thumbnail">
+            <div class="item-image">
+                <img class="product-image" src="https://media.gamestop.com/i/gamestop/11097389/The-Last-of-Us-Part-II---PlayStation-4?$thumb$" alt="">
+            </div>
+        </div>
+    </div>
+</div>

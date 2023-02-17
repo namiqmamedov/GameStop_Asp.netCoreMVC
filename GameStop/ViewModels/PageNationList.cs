@@ -1,12 +1,15 @@
-﻿using System;
+﻿using GameStop.Models;
+using GameStop.ViewModels.Products;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GameStop.Areas.ViewModels
+namespace GameStop.ViewModels
 {
     public class PageNationList<T> : List<T>
     {
+
         public PageNationList(IQueryable<T> entities, int page, int totalPages )
         {
             TotalPages = totalPages;
@@ -37,7 +40,8 @@ namespace GameStop.Areas.ViewModels
 
 
             AddRange(entities);
-        } 
+        }
+
         public int TotalPages { get; }
         public int PageIndex { get; }
 

@@ -1,0 +1,28 @@
+﻿@model ProductVM
+
+<div class="contentDynm1">
+    <div class="col-lg-5">
+        <div class="form-group">
+            <label>Select Condition</label>
+            <select class="form-control" name="Product.ConditionIds[]" asp-items="@new SelectList(ViewBag.Condition, nameof(Condition.Id), nameof(Condition.Name))">
+            </select>
+        </div>
+    </div>
+    <div id="countMaster" class="col-lg-5">
+        <div class="form-group">
+            <label>Enter Count</label>
+            <input class="form-control" asp-for="Product.Counts" placeholder="Enter Count" />
+        </div>
+
+    </div>
+
+    <div class="addInputButton">
+        <a asp-action="GetCondCount" id="inputadding1">
+            <i class="fa-solid fa-plus"></i>
+        </a>
+
+        @*<a class="removeLabel" id="inputadding" asp-area="admin" asp-controller="product" asp-action="removelabel" asp-route-id="@Model.ProductLabels.Select(x=>x.Id).ToList()">
+                <i class="fa-solid fa-minus"></i>
+            </a>*@
+    </div>
+</div>

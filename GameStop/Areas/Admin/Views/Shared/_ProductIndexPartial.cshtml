@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewData["Title"] = "_ProductIndexPartial";
+}
+
+@{
+
+    int counter = Model.PageIndex == 1 ? 0 : (Model.PageIndex - 1) * 5;
+
+}
+
+
+<div class="table-responsive mt-4 tbl-content">
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr class="head__first">
+                <th scope="col">#</th>
+                <th style="padding-left: 23px;" scope="col">Image</th>
+                <th scope="col">Title</th>
+                <th scope="col">Price</th>
+                <th scope="col">Status</th>
+                <th scope="col">Setting</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Product item in Model)
+            {
+                counter++;
+
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td style=" width: 25%;">
+                        <div style="width: 41%" class="test-img">
+                            <img style="mix-blend-mode: multiply" class="w-100" src="~/assets/img/products/@item.Image" alt="Alternate Text" />
+                        </div>
+                    </td>
+                    <td class="title-prod">@item.Title</td>
+                    <td>
+
+                        @if (item.Price > 0)
+                        {
+                            <div class="prod-price">
+                                <div class="price-main-prod">
+                                    $@item.Price.ToString("F2")
+                                </div>
+                            </div>
+                        }
+
+                        else
+                        {
+                            <div class="all-price d-flex">
+                                <div class="discountedPrice">
+                                    $@item.DiscountedPrice.ToString("F2")
+                                </div>
+
+                                <span class="price-design">
+                                    <span class="oldPrice">$@item.OldPrice.ToString("F2")</span>
+                                </span>
+                            </div>
+
+                        }
+
+                    </td>
+                    <td style="color:@(item.IsDeleted ? "red":"green")">@(item.IsDeleted ? "Inactive":"Active")</td>
+                    <td>
+                        <div class="settings-tb d-flex gap-3">
+
+                            <a class="btn btn-primary edit-btn" asp-controller="product" asp-action="update" asp-area="admin" asp-route-id="@item.Id">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                            </a>
+
+                            @if (item.IsDeleted)
+                            {
+
+                                <a class="btn btn-primary restoreBtn1" asp-controller="product" asp-action="restoreProd" asp-area="admin" asp-route-id="@item.Id">
+                                    <i class="bi bi-bootstrap-reboot"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-danger removeBtn1" asp-controller="product" asp-action="deleteProd" asp-area="admin" asp-route-id="@item.Id">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            }
+
+                            @*<a class="wrapper btn btn-info infoBtn" asp-controller="product" asp-action="modal" asp-route-id="@item.Id" asp-area="admin">
+                                        <i class="fa-solid fa-circle-info"></i>
+                                </a>
+
+
+
+                                <div id="demo-modal" class="modal">
+                                    <div class="modal__content">
+                                        <div class="modal__main">
+                                            <div class="modal-img">
+
+
+                                            </div>
+
+                                            <div class="modal-base">
+                                                <h2 class="price-main__heading">@item.Title.FirstOrDefault()</h2>
+
+
+                                            </div>
+                                        </div>
+                                        <a href="#" class="modal__close">&times;</a>
+                                    </div>
+                                </div>*@
+                        </div>
+
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>

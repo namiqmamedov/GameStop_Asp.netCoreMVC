@@ -1,0 +1,8 @@
+﻿@model List<ProductDescription>
+
+@foreach (ProductDescription description in Model)
+{
+    <label asp-for="@description.Description" class="form-label"></label>
+    <textarea id="inputCKdesc" asp-for="@description.Description" name="ProductDescriptionMain[]"></textarea>
+    <span asp-validation-for="@description.Description" class="text text-danger"></span>
+}

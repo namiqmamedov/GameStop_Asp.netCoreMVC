@@ -1,0 +1,39 @@
+﻿@model SubCategory
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Create</h1>
+
+<div class="content">
+    <div class="main product-index">
+        <div class="row">
+            <form method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <div class="form-group">
+                        <label asp-for="Name" for="exampleFormControlInput1" class="form-label">Name</label>
+                        <input asp-for="Name" class="form-control">
+                        <span asp-validation-for="Name"></span>
+                    </div>
+
+                    <div class="select-box">
+                        <label></label>
+
+                        <select asp-for="CategoryId" asp-items="new SelectList(ViewBag.Category,nameof(Category.Id),nameof(Category.Name))">
+                            @*<option>Coffee</option>
+                                <option>Tea</option>
+                                <option>Juice</option>
+                                <option selected>Cocktail</option>*@
+                        </select>
+                        <span class="text text-danger" asp-validation-for="CategoryId"> </span>
+                    </div>
+
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+

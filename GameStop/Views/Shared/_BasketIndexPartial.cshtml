@@ -15,7 +15,7 @@
                 <div class="all-details d-flex">
                     <div class="leftDetail">
                         <div class="product-img">
-                            <a asp-controller="product" asp-action="detail" asp-route-id="@cart.ProductID"><img src="~/assets/img/@cart.Image" alt="img"></a>
+                            <a asp-controller="product" asp-action="detail" asp-route-id="@cart.ProductID"><img src="~/assets/img/products/@cart.Image" alt="img"></a>
                         </div>
                         <div class="product-details">
                             <div class="item-attributes">
@@ -23,12 +23,11 @@
                                     <a asp-controller="product" asp-action="detail" asp-route-id="@cart.ProductID"><h3 class="product-title">@cart.Title</h3></a>
                                 </div>
                                 <div class="product-condition">
-                                    <span class="condition">Condition</span>
+                                    <span class="condition">Condition:</span>
                                     <span class="condition-name">@cart.Condition</span>
                                 </div>
-                                <div class="product-
-                                     ">
-                                    <span class="platform">Platform</span>
+                                <div class="product-condition">
+                                    <span class="platform">Platform:</span>
                                     <span class="platform-name">@cart.Label</span>
                                 </div>
                             </div>
@@ -121,12 +120,12 @@
                                         </div>
                                     </div>
                                     <div class="col-4">
-                                        <p class="cart-total-price"> $@(Model.Sum(b=>b.Count * b.Price + b.DiscountedPrice).ToString("0.##"))</p>
+                                        <p class="cart-total-price"> $@(Model.Sum(b=>b.Count * b.Price + b.DiscountedPrice).ToString("F2"))</p>
                                     </div>
                                 </div>
 
                                 <div class="checkout-and-pay col-11">
-                                    <a class="checkout-btn" asp-controller="cart" asp-action="checkout" role="button">
+                                    <a class="checkout-btn" asp-controller="order" asp-action="index" role="button">
                                         <span class="checkout-text">
                                             Proceed To Checkout
                                         </span>

@@ -1,0 +1,39 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+<script src="~/assets/ckeditor5-build-classic/ckeditor.js"></script>
+<div class="content">
+    <div class="main product-index">
+        <div class="row">
+            <form method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <div class="form-group">
+                        <label asp-for="Name" for="inputCKname" class="form-label">Category Name</label>
+                        <input asp-for="Name" id="inputCKname" class="form-control">
+                        <span asp-validation-for="Name"></span>
+                    </div>
+
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+@*<script>
+    ClassicEditor
+        .create(document.querySelector('#inputCKname'), {
+        })
+        .then(editor => {
+            window.editor = editor;
+        })
+        .catch(err => {
+            console.error( err.stack);
+        });
+</script>*@
+
