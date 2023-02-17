@@ -21,7 +21,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
+<link rel="icon" href="https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/dwfa874e29/images/favicons/favicon.ico">
 <body>
 
     @await Component.InvokeAsync("Header", headerVM)
@@ -55,6 +55,7 @@
     <script src="~/assets/script/scroll-top.js"></script>
     <script src="~/assets/script/lock-menu.js"></script>
     <script src="~/assets/script/load-more.js"></script>
+    @RenderSection("Script",false)
 
 </body>
 

@@ -1,4 +1,4 @@
-﻿
+﻿@model RegisterVM
 @{
     Layout = null;
 }
@@ -36,44 +36,44 @@
 
                 <div class="registerSection">
                     <div class="registerName">
-                        <label for="sign_up_name" class="form-label">First Name</label>
+                        <label asp-for="Name" class="form-label">First Name</label>
                         <div class="register-name-field">
-                            <input name="name" type="text" id="sign_up_name">
+                            <input name="name" type="text" asp-for="Name">
                         </div>
                     </div>
                     <div class="registerLastName">
-                        <label for="sign_up_last_name" class="form-label">Last Name</label>
+                        <label asp-for="Surname" class="form-label">Last Name</label>
                         <div class="register-last-name-field">
-                            <input name="last-name" type="text" id="sign_up_last_name">
+                            <input name="last-name" type="text" asp-for="Surname">
                         </div>
                     </div>
                     <div class="registerEmail">
-                        <label for="sign_up_email" class="form-label">
+                        <label asp-for="Email" class="form-label">
                             Email address
                             <span class="form-indicator">*</span>
                         </label>
                         <div class="register-email-field">
-                            <input name="email" type="email" id="sign_up_email">
+                            <input name="email" type="email" asp-for="Email">
                         </div>
                     </div>
                     <div class="passwdSection">
                         <div class="registerPass">
-                            <label for="sign_up_passwd" class="form-label">
+                            <label asp-for="Password" class="form-label">
                                 Password
                                 <span class="form-indicator">*</span>
                             </label>
                             <div class="register-password-field">
-                                <input name="passwd" maxlength="72" type="password" id="sign_up_passwd">
+                                <input name="passwd" maxlength="72" type="password" asp-for="Password">
                             </div>
                         </div>
 
                         <div class="registerPass">
-                            <label for="sign_up_passwd" class="form-label">
+                            <label asp-for="ConfirmPassword" class="form-label">
                                 Confirm Password
                                 <span class="form-indicator">*</span>
                             </label>
                             <div class="register-password-field">
-                                <input name="passwd_confirmation" maxlength="72" type="password" id="sign_up_passwd">
+                                <input name="passwd_confirmation" maxlength="72" type="password" asp-for="ConfirmPassword">
                             </div>
                         </div>
                     </div>
@@ -103,3 +103,7 @@
 </body>
 
 </html>
+
+@section Script{ 
+  <partial name="_ValidationPartial">;
+}

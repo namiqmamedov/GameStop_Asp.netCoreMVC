@@ -13,5 +13,6 @@ namespace GameStop.Models
         public string Name { get; set; }
         [StringLength(255)]
         public string Surname { get; set; }
+        public bool IsAdmin { get; set; }
     }
 }

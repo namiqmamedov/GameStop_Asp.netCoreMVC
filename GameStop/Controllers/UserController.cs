@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using GameStop.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +10,22 @@ namespace GameStop.Controllers
 {
     public class UserController : Controller
     {
-        public IActionResult Login()
+
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly UserManager<AppUser> _userManager;
+
+        public UserController(RoleManager<IdentityRole> roleManager, UserManager<AppUser> userManager)
+        {
+            _roleManager = roleManager;
+            _userManager = userManager;
+        }
+        public async Task<IActionResult> Login()
         {
             return View();
         }
 
 
-        public IActionResult Register()
+        public async Task<IActionResult> Register()
         {
             return View();
         }
