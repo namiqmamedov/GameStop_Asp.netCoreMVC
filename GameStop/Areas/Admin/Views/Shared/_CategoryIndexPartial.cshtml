@@ -17,7 +17,7 @@
         <tr>
             <th scope="row">@counter</th>
             <td>@item.Name</td>
-            <td style="color:@(item.IsDeleted ? "red":"green")">@(item.IsDeleted ? "No-Active":"Active")</td>
+            <td style="color:@(item.IsDeleted ? "red":"green")">@(item.IsDeleted ? "Inactive":"Active")</td>
             <td>
                 @if (item.IsDeleted)
                 {

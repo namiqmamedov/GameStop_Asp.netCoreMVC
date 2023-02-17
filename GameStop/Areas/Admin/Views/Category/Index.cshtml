@@ -65,11 +65,13 @@
                                 <ul name="status" class="dropdown-menu">
                                     <span class="up-arrow"></span>
 
-                                    <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="matched" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Best Matches</a></li>
+                                    <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="Matched" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Best Matched</a></li>
+                                    <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="Active" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Active</a></li>
+                                    <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="InActive" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Inactive</a></li>
                                     <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="OldToNew" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Date Oldest to Newest</a></li>
                                     <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="NewToOld" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Date Newest to Oldtest</a></li>
-                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/AtoZ/2">Category Name A-Z</a></li>
-                                    <li><a class="dropdown-item sort-item priceSortArea" href="/product/ZtoA/2">Category Name Z-A</a></li>
+                                    <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="AtoZ" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Category Name A-Z</a></li>
+                                    <li><a class="dropdown-item sort-item priceSortArea" asp-area="admin" asp-controller="category" asp-action="ZtoA" asp-route-id="@Model.Select(x=>x.Id).FirstOrDefault()">Category Name Z-A</a></li>
                                 </ul>
                             </div>
                         </form>
